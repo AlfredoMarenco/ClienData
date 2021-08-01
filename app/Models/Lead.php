@@ -13,15 +13,18 @@ class Lead extends Model
 
 
     //Relaciones uno a muchos
-    public function tasks(){
+    public function tasks()
+    {
         return $this->hasMany(Task::class);
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany(Comment::class);
     }
 
-    public function calls(){
+    public function calls()
+    {
         return $this->hasMany(Call::class);
     }
 
@@ -29,5 +32,11 @@ class Lead extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+
+    public function fullName()
+    {
+        return $this->name . ' ' . $this->last_name;
     }
 }
