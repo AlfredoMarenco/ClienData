@@ -12,4 +12,9 @@ class LeadController extends Controller
     {
         return view('leads.index');
     }
+
+    public function show(Lead $lead)
+    {
+        return view('leads.show', compact('lead'));
+    }
 }

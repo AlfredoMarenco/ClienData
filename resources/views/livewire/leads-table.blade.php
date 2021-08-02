@@ -25,9 +25,9 @@
                                 class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
                                 Ultimo contacto
                             </th>
-                            <th scope="col" class="relative px-6 py-3">
+                            {{-- <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
-                            </th>
+                            </th> --}}
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -37,8 +37,11 @@
 
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-12 w-12">
-                                            <img class="h-12 w-12 rounded-full object-cover"
-                                                src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&color=7F9CF5&background=random" />
+                                            <a href="{{ route('leads.show', $lead) }}">
+                                                <img
+                                                    class="h-12 w-12 rounded-full object-cover"
+                                                    src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&color=7F9CF5&background=random" />
+                                            </a>
                                         </div>
                                         <div class="ml-12">
                                             <div class="text-sm font-medium text-gray-900 hover:text-gray-700">
@@ -69,9 +72,9 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                                     {{ $lead->updated_at->diffForHumans() }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                     </tbody>
