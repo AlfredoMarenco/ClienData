@@ -18,6 +18,12 @@
                     <x-jet-nav-link href="{{ route('leads.index') }}" :active="request()->routeIs('leads.*')">
                         {{ __('Leads') }}
                     </x-jet-nav-link>
+
+                    @role('Administrador')
+                        <x-jet-nav-link href="#" :active="request()->routeIs('system.*')">
+                            {{ __('System config') }}
+                        </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 

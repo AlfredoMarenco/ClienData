@@ -21,10 +21,13 @@ class CreateLeadsTable extends Migration
             $table->string('phone');
             $table->string('city');
             $table->string('state');
-            $table->string('status')->nullable();
+            $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('development_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('development_id')->references('id')->on('developments');
 
             $table->timestamps();
         });

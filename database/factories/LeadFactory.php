@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Development;
 use App\Models\Lead;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -29,8 +31,9 @@ class LeadFactory extends Factory
             'phone' => $this->faker->phoneNumber(),
             'city' => $this->faker->city(),
             'state' => $this->faker->state(),
-            'status' => 'Caliente',
-            'user_id' => User::all()->random()->id
+            'status_id' => Status::all()->random()->id,
+            'user_id' => User::all()->random()->id,
+            'development_id' => Development::all()->random()->id
         ];
     }
 }

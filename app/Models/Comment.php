@@ -16,4 +16,9 @@ class Comment extends Model
     {
         return $this->belongsTo(Lead::class);
     }
+
+    public function events()
+    {
+        return $this->morphMany(Event::class, 'eventable');
+    }
 }

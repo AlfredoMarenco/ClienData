@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Collections\TimeLineCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,10 @@ class Lead extends Model
 
     protected $guarded = ['id'];
 
+    //Relacion uno a uno inversa
+    public function status(){
+        return $this->belongsTo(Status::class);
+    }
 
     //Relaciones uno a muchos
     public function tasks()
@@ -39,4 +44,10 @@ class Lead extends Model
     {
         return $this->name . ' ' . $this->last_name;
     }
+
+    public function events()
+    {
+        return $this->morphMany(Event::class, 'eventable');
+    }
+
 }

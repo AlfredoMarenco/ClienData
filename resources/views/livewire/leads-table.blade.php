@@ -32,14 +32,12 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @foreach ($leads as $lead)
-                            <tr>
+                            <tr class="cursor-pointer hover:bg-blue-100" onclick="window.location='{{ route('leads.show',$lead) }}';">
                                 <td class="px-6 py-4 whitespace-nowrap cursor-pointer">
-
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-12 w-12">
                                             <a href="{{ route('leads.show', $lead) }}">
-                                                <img
-                                                    class="h-12 w-12 rounded-full object-cover"
+                                                <img class="h-12 w-12 rounded-full object-cover shadow-2xl"
                                                     src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&color=7F9CF5&background=random" />
                                             </a>
                                         </div>
@@ -55,15 +53,14 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-700">{{ $lead->user->name }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span
-                                        class="px-2 inline-flex text-sm font-bold leading-5 rounded-full bg-red-600 text-white">
-                                        {{ $lead->status }}
+                                        class="px-2 inline-flex text-sm font-bold leading-5 rounded-full" style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">
+                                        {{ $lead->status->name }}
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
