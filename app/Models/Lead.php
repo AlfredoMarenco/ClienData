@@ -13,7 +13,8 @@ class Lead extends Model
     protected $guarded = ['id'];
 
     //Relacion uno a uno inversa
-    public function status(){
+    public function status()
+    {
         return $this->belongsTo(Status::class);
     }
 
@@ -23,11 +24,10 @@ class Lead extends Model
         return $this->hasMany(Task::class);
     }
 
-    public function comments()
+    public function notes()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Note::class);
     }
-
     public function calls()
     {
         return $this->hasMany(Call::class);
@@ -49,5 +49,4 @@ class Lead extends Model
     {
         return $this->morphMany(Event::class, 'eventable');
     }
-
 }

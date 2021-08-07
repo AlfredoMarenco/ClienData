@@ -17,6 +17,12 @@ class Call extends Model
         return $this->belongsTo(Lead::class);
     }
 
+    //Relacion uno a muchos polimorfica
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
     public function events()
     {
         return $this->morphMany(Event::class, 'eventable');

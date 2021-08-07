@@ -13,7 +13,7 @@
                         @livewire('lead-description', ['lead' => $lead], key('description'.$lead->id))
                     </div>
                     <div class="bg-gray-200 rounded-2xl col-span-2 shadow-lg">
-                        @livewire('lead-tasks', ['lead' => $lead], key('tasks'.$lead->id))
+                        @livewire('lead-events', ['lead' => $lead], key('events'.$lead->id))
                     </div>
                     <div class="bg-white rounded-2xl">3</div>
                 </div>

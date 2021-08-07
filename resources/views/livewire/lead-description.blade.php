@@ -64,7 +64,7 @@
 
     <label class="text-gray-400">Estatus del Lead:</label>
     <div class="flex mb-2" x-data="{open:false}">
-        <div wire:loading.remov wire:target="updateStatus">
+        <div wire:loading.remove wire:target="updateStatus">
             <p class="text-gray-900 underline" x-show="!open">{{ $lead->status->name }}</p>
         </div>
         <div wire:loading='updateStatus' wire:target='updateStatus'>

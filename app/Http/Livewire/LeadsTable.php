@@ -10,7 +10,7 @@ class LeadsTable extends Component
     public function render()
     {
         return view('livewire.leads-table', [
-            'leads' => Lead::where('user_id',auth()->user()->id)->paginate(10)
+            'leads' => Lead::where('user_id',auth()->user()->id)->latest('id')->paginate(10)
         ]);
     }
 }

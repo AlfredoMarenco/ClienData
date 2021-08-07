@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Note extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
+
 
     //Relacion uno a muchos inversa
     public function lead()
@@ -17,8 +17,15 @@ class Comment extends Model
         return $this->belongsTo(Lead::class);
     }
 
-    public function commentable()
+
+    //Relacion uno a muchos polimorfica
+    public function comments()
     {
-        return $this->morphTo();
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function events()
+    {
+        return $this->morphMany(Event::class, 'eventable');
     }
 }
