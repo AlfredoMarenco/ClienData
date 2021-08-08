@@ -14,6 +14,24 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
-        Status::factory(5)->create();
+        /* Status::factory(5)->create(); */
+
+        Status::create([
+            'name' => 'Lead caliente',
+            'color_bg' => '#FF0000',
+            'color_text' => '#FFFFFF'
+        ]);
+
+        Status::create([
+            'name' => 'Lead templado',
+            'color_bg' => '#FF7033',
+            'color_text' => '#FFFFFF'
+        ]);
+
+        Status::create([
+            'name' => 'Lead frio',
+            'color_bg' => '#00B3FF',
+            'color_text' => '#FFFFFF'
+        ]);
     }
 }

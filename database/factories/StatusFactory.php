@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Status;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 class StatusFactory extends Factory
 {
@@ -22,7 +23,7 @@ class StatusFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
+            'name' => Arr::random(['Lead caliente','Lead templado','Lead frio','Lead perdido']),
             'color_bg' => $this->faker->hexColor(),
             'color_text' => $this->faker->hexColor()
         ];

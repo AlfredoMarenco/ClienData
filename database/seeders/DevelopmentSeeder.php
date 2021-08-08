@@ -14,6 +14,25 @@ class DevelopmentSeeder extends Seeder
      */
     public function run()
     {
-        Development::factory(5)->create();
+        /* Development::factory(5)->create(); */
+
+        Development::create([
+            'name' => 'Ciudad Central'
+        ]);
+
+        Development::create([
+            'name' => 'Alea'
+        ]);
+        Development::create([
+            'name' => 'Andarenas'
+        ]);
+
+        Development::create([
+            'name' => 'Palumar'
+        ]);
+
+        Development::create([
+            'name' => 'Costa linda'
+        ]);
     }
 }

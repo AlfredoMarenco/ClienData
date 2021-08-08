@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Lead;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 class TaskFactory extends Factory
 {
@@ -23,8 +24,18 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->word(),
-            'body' => $this->faker->sentence(),
+            'name' => $this->faker->word(),
+            'type' => Arr::random(['video_conferencia', 'reunion', 'contacto', 'enviar_email', 'llamar', 'whatsapp']),
+            'platform' => $this->faker->word(),
+            'link' => $this->faker->url(),
+            'place' => $this->faker->country(),
+            'date_start' => $this->faker->date(),
+            'time_start' => $this->faker->time(),
+            'date_end' => $this->faker->date(),
+            'time_end' => $this->faker->time(),
+            'observations' => $this->faker->paragraph(),
+            'expiration' => $this->faker->dateTime(),
+            'status' => Arr::random(['create', 'pending', 'modified', 'complete']),
             'lead_id' => Lead::all()->random()->id,
         ];
     }

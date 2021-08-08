@@ -20,7 +20,7 @@
                     </x-jet-nav-link>
 
                     @role('Administrador')
-                        <x-jet-nav-link href="#" :active="request()->routeIs('system.*')">
+                        <x-jet-nav-link href="{{ route('system.index') }}" :active="request()->routeIs('system.*')">
                             {{ __('System config') }}
                         </x-jet-nav-link>
                     @endcan

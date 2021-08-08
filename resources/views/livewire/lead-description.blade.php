@@ -4,8 +4,12 @@
     <p class="text-xl font-semibold text-gray-700 text-center my-2">
         {{ $lead->fullName() }}
     </p>
-    <p class="text-center mb-6">
-        <span class="rounded-md px-1 text-white text-sm font-bold uppercase" style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">{{ $lead->status->name }}</span>
+    <p class="text-center mb-1">
+        <span class="rounded-md px-1 text-white text-sm font-bold uppercase"
+            style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">{{ $lead->status->name }}</span>
+    </p>
+    <p class="text-center mb-6 text-gray-600 text-lg">
+        {{ $lead->development->name }}
     </p>
     <label class="text-gray-400">Asignado a:</label>
     <p class="text-gray-900 underline mb-2">{{ $lead->user->name }}</p>

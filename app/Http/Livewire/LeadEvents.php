@@ -15,13 +15,22 @@ class LeadEvents extends Component
 {
     use WithPagination;
 
-    public $lead, $note_name, $note_body, $paginate = 5, $success = false, $call_type = 'recibida', $call_date, $call_time, $call_result = 'conectado', $call_comment;
+    public $lead, $note_name, $note_body, $paginate = 5, $success = false, $call_type = 'recibida', $call_date, $call_time, $call_result = 'conectado', $call_comment, $comment_body;
+
+    public $task_name, $task_type, $task_platform, $task_link, $task_place, $task_datestart, $task_dateend, $task_timestart, $task_timeend, $task_observations, $task_expiration, $task_expoption;
 
     public function mount(Lead $lead)
     {
         $this->lead = $lead;
         $this->call_date = Carbon::now()->toDateString();
-        $this->call_time = Carbon::now()->toTimeString();
+        $this->call_time = '23:59';
+        $this->task_datestart = Carbon::now()->toDateString();
+        $this->task_timestart = '00:00';
+        $this->task_dateend = Carbon::now()->toDateString();
+        $this->task_timeend = '23:59';
+        $this->task_type = 'contacto';
+        $this->task_platform = 'zoom';
+        $this->task_expoption = 'date';
     }
 
     public function render()
@@ -89,5 +98,90 @@ class LeadEvents extends Component
     {
         $call->events()->delete();
         $call->delete();
+    }
+
+    public function commentNote(Note $note)
+    {
+        $note->comments()->create([
+            'body' => $this->comment_body
+        ]);
+
+        $this->reset('comment_body');
+    }
+
+    public function commentCall(Call $call)
+    {
+        $call->comments()->create([
+            'body' => $this->comment_body
+        ]);
+
+        $this->reset('comment_body');
+    }
+
+    public function commentTask(Task $task)
+    {
+        $task->comments()->create([
+            'body' => $this->comment_body
+        ]);
+
+        $this->reset('comment_body');
+    }
+
+
+    public function storeTask()
+    {
+        switch ($this->task_type) {
+            case 'video_conferencia':
+                $task = Task::create([
+                    'name' => $this->task_name,
+                    'type' => $this->task_type,
+                    'platform' => $this->task_platform,
+                    'link' => $this->task_link,
+                    'date_start' => $this->task_datestart,
+                    'date_end' => $this->task_dateend,
+                    'time_start' => $this->task_timestart,
+                    'time_end' => $this->task_timeend,
+                    'observations' => $this->task_observations,
+                    'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
+                    'status' => 'pending',
+                    'lead_id' => $this->lead->id
+                ]);
+                break;
+            case 'reunion':
+                $task = Task::create([
+                    'name' => $this->task_name,
+                    'type' => $this->task_type,
+                    'place' => $this->task_place,
+                    'date_start' => $this->task_datestart,
+                    'date_end' => $this->task_dateend,
+                    'time_start' => $this->task_timestart,
+                    'time_end' => $this->task_timeend,
+                    'observations' => $this->task_observations,
+                    'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
+                    'status' => 'pending',
+                    'lead_id' => $this->lead->id
+                ]);
+                break;
+            default:
+                $task = Task::create([
+                    'name' => $this->task_name,
+                    'type' => $this->task_type,
+                    'date_start' => $this->task_datestart,
+                    'time_end' => $this->task_timeend,
+                    'observations' => $this->task_observations,
+                    'expiration' => $this->task_datestart . ' ' . $this->task_timeend,
+                    'status' => 'pending',
+                    'lead_id' => $this->lead->id
+                ]);
+                break;
+        }
+        $task->events()->create(['lead_id' => $this->lead->id]);
+        $this->success = true;
+    }
+
+    public function deleteTask(Task $task)
+    {
+        $task->events()->delete();
+        $task->delete();
     }
 }

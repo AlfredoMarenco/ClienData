@@ -18,6 +18,10 @@ class Lead extends Model
         return $this->belongsTo(Status::class);
     }
 
+    public function development()
+    {
+        return $this->belongsTo(Development::class);
+    }
     //Relaciones uno a muchos
     public function tasks()
     {

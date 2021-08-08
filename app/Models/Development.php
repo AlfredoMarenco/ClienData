@@ -10,4 +10,10 @@ class Development extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    //Relacion uno a uno
+    public function lead()
+    {
+        return $this->hasOne(Lead::class);
+    }
 }
