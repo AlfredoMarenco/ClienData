@@ -15,7 +15,7 @@
                     <div class="bg-gray-200 rounded-2xl col-span-2 shadow-lg">
                         @livewire('lead-events', ['lead' => $lead], key('events'.$lead->id))
                     </div>
-                    <div class="bg-gray-200 rounded-2xl">
+                    <div class="bg-gray-200 rounded-2xl shadow-lg">
                         @livewire('lead-tasks', ['lead' => $lead], key('tasks'.$lead->id))
                     </div>
                 </div>
