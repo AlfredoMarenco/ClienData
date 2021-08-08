@@ -177,11 +177,14 @@ class LeadEvents extends Component
         }
         $task->events()->create(['lead_id' => $this->lead->id]);
         $this->success = true;
+        $this->emit('render');
+        $this->reset('task_name', 'task_observations');
     }
 
     public function deleteTask(Task $task)
     {
         $task->events()->delete();
-        $task->delete();
+        /* $task->delete(); */
+        $this->emit('render');
     }
 }

@@ -11,6 +11,8 @@ class LeadTasks extends Component
 {
     public $lead;
 
+    protected $listeners = ['render' => 'render'];
+
     public function mount(Lead $lead)
     {
         $this->lead = $lead;
