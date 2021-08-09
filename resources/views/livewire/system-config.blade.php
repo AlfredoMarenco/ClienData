@@ -6,6 +6,17 @@
         <x-jet-nav-link :active="$nav_status" wire:click="activeStatus" class="cursor-pointer">
             {{ __('Leads status') }}
         </x-jet-nav-link>
+
+    </div>
+    <div class="block lg:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link :active="$nav_dev" wire:click="activeDev" class="cursor-pointer">
+                {{ __('Developments') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link :active="$nav_status" wire:click="activeStatus" class="cursor-pointer">
+                {{ __('Leads status') }}
+            </x-jet-responsive-nav-link>
+        </div>
     </div>
 
 
@@ -14,7 +25,8 @@
         @if ($nav_dev)
             <div>
                 <div class="flex justify-end" x-data="{open:false}">
-                    <button x-on:click="open=!open" wire:click="$set('development_name','')" class="bg-gray-800 py-2 px-3 rounded-md text-white">Agregar
+                    <button x-on:click="open=!open" wire:click="$set('development_name','')"
+                        class="bg-gray-800 py-2 px-3 rounded-md text-white">Agregar
                         desarrollo</button>
 
                     <div x-show="open">
@@ -72,8 +84,8 @@
                                                 <div class="grid grid-cols-1">
                                                     <div class="w-full mt-4 px-4">
                                                         <label for="" class="block mb-2 ml-1">Nombre</label>
-                                                        <input type="text" wire:model="development_name" class="form-input"
-                                                            placeholder="Nombre">
+                                                        <input type="text" wire:model="development_name"
+                                                            class="form-input" placeholder="Nombre">
                                                     </div>
                                                 </div>
 
@@ -144,7 +156,8 @@
                                                                         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-6xl sm:w-full">
                                                                         <div
                                                                             class="w-full bg-gray-800 text-white px-4 py-4">
-                                                                            <h2 class="text-xl">Editar desarrollo inmobiliario
+                                                                            <h2 class="text-xl">Editar desarrollo
+                                                                                inmobiliario
                                                                             </h2>
                                                                         </div>
                                                                         <div
@@ -255,14 +268,14 @@
                                 <span class="hidden sm:inline-block sm:align-top sm:h-screen"
                                     aria-hidden="true">&#8203;</span>
                                 <div
-                                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-6xl sm:w-full">
+                                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle max-w-6xl sm:w-full">
                                     <div class="w-full bg-gray-800 text-white px-4 py-4">
                                         <h2 class="text-xl">Editar estado de lead
                                         </h2>
                                     </div>
                                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                         <div class="sm:flex">
-                                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                            <div class="mt-3 text-left sm:mt-0 sm:ml-4">
                                                 <h3 class="text-xl leading-6 font-medium text-gray-900"
                                                     id="modal-title">
                                                     Estado de lead
@@ -295,8 +308,8 @@
                                                 </div>
                                             </div>
                                             <form wire:submit.prevent="storeStatus" wire:loading.remove>
-                                                <div class="grid grid-cols-3">
-                                                    <div class="w-full mt-4 px-4">
+                                                <div class="grid sm:grid-col-1 lg:grid-cols-3">
+                                                    <div class="w-full mt-4 px-4 col-span-3">
                                                         <label for="" class="block mb-2 ml-1">Nombre</label>
                                                         <input type="text" wire:model="status_name" class="form-input"
                                                             placeholder="Nombre">

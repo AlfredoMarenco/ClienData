@@ -21,7 +21,7 @@ class LeadTasks extends Component
     public function render()
     {
         return view('livewire.lead-tasks', [
-            'tasks' => Task::where('lead_id', $this->lead->id)->where('status','!=', 'complete')->where('status','!=', 'create')->orderBy('expiration', 'ASC')->get(),
+            'tasks' => Task::where('lead_id', $this->lead->id)->where('status', 'pending')->orderBy('expiration', 'ASC')->get(),
             'carbon' => new Carbon(),
         ]);
     }

@@ -51,7 +51,7 @@ class TaskEdit extends Component
                     'date_end' => 'required',
                     'time_end' => 'required',
                 ]);
-                $task->update([
+                /* $task->update([
                     'name' => $this->name,
                     'type' => $this->type,
                     'platform' => $this->platform,
@@ -65,7 +65,22 @@ class TaskEdit extends Component
                     'status' => 'modified',
                     'priority' => $this->priority,
                 ]);
-                $task->save();
+                $task->save(); */
+                $newTask = Task::create([
+                    'name' => $this->name,
+                    'type' => $this->type,
+                    'platform' => $this->platform,
+                    'link' => $this->link,
+                    'date_start' => $this->date_start,
+                    'date_end' => $this->date_end,
+                    'time_start' => $this->time_start,
+                    'time_end' => $this->time_end,
+                    'observations' => $this->observations,
+                    'expiration' => $this->date_end . ' ' . $this->time_end,
+                    'status' => 'modified',
+                    'priority' => $this->priority,
+                    'lead_id' => $task->lead->id
+                ]);
                 break;
             case 'reunion':
                 $this->validate([
@@ -77,7 +92,22 @@ class TaskEdit extends Component
                     'time_end' => 'required',
                 ]);
 
-                $task->update([
+                /* $task->update([
+                    'name' => $this->name,
+                    'type' => $this->type,
+                    'place' => $this->place,
+                    'date_start' => $this->date_start,
+                    'date_end' => $this->date_end,
+                    'time_start' => $this->time_start,
+                    'time_end' => $this->time_end,
+                    'observations' => $this->observations,
+                    'expiration' => $this->date_end . ' ' . $this->time_end,
+                    'status' => 'pending',
+                    'priority' => $this->priority,
+                ]);
+                $task->save(); */
+
+                $newTask = Task::create([
                     'name' => $this->name,
                     'type' => $this->type,
                     'place' => $this->place,
@@ -89,18 +119,16 @@ class TaskEdit extends Component
                     'expiration' => $this->date_end . ' ' . $this->time_end,
                     'status' => 'modified',
                     'priority' => $this->priority,
+                    'lead_id' => $task->lead->id
                 ]);
-                $task->save();
                 break;
             default:
                 $this->validate([
                     'name' => 'required',
                     'date_start' => 'required',
-                    'time_start' => 'required',
-                    'date_end' => 'required',
                     'time_end' => 'required',
                 ]);
-                $task->update([
+                /* $task->update([
                     'name' => $this->name,
                     'type' => $this->type,
                     'date_start' => $this->date_start,
@@ -110,10 +138,23 @@ class TaskEdit extends Component
                     'status' => 'modified',
                     'priority' => $this->priority,
                 ]);
-                $task->save();
+                $task->save(); */
+
+                $newTask = Task::create([
+                    'name' => $this->name,
+                    'type' => $this->type,
+                    'date_start' => $this->date_start,
+                    'time_end' => $this->time_end,
+                    'observations' => $this->observations,
+                    'expiration' => $this->date_start . ' ' . $this->time_end,
+                    'status' => 'modified',
+                    'priority' => $this->priority,
+                    'lead_id' => $task->lead->id
+                ]);
                 break;
         }
-        $task->events()->create(['lead_id' => $task->lead->id]);
+        /* $task->events()->create(['lead_id' => $task->lead->id]); */
+        $newTask->events()->create(['lead_id' => $task->lead->id]);
         $this->success = true;
         $this->emit('render');
         $this->reset('name', 'observations');

@@ -1,5 +1,5 @@
 <div>
-    <div class="flex justify-between mb-3">
+    <div class="flex justify-between mb-3 px-4">
         <div>
             <label>Mostrar:</label>
             <select class="py-0.5 rounded-md" wire:model="paginate">
