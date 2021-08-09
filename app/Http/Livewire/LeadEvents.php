@@ -17,7 +17,9 @@ class LeadEvents extends Component
 
     public $lead, $note_name, $note_body, $paginate = 5, $success = false, $call_type = 'recibida', $call_date, $call_time, $call_result = 'conectado', $call_comment, $comment_body;
 
-    public $task_name, $task_type, $task_platform, $task_link, $task_place, $task_datestart, $task_dateend, $task_timestart, $task_timeend, $task_observations, $task_expiration, $task_expoption;
+    public $task_name, $task_type, $task_platform, $task_link, $task_place, $task_datestart, $task_dateend, $task_timestart, $task_timeend, $task_observations, $task_priority, $task_expiration, $task_expoption;
+
+    protected $listeners = ['render' => 'render'];
 
     public function mount(Lead $lead)
     {
@@ -31,6 +33,7 @@ class LeadEvents extends Component
         $this->task_type = 'contacto';
         $this->task_platform = 'zoom';
         $this->task_expoption = 'date';
+        $this->task_priority = 'normal';
     }
 
     public function render()
@@ -132,6 +135,15 @@ class LeadEvents extends Component
     {
         switch ($this->task_type) {
             case 'video_conferencia':
+                $this->validate([
+                    'task_name' => 'required',
+                    'task_link' => 'required',
+                    'task_platform' => 'required',
+                    'task_datestart' => 'required',
+                    'task_timestart' => 'required',
+                    'task_dateend' => 'required',
+                    'task_timeend' => 'required',
+                ]);
                 $task = Task::create([
                     'name' => $this->task_name,
                     'type' => $this->task_type,
@@ -144,10 +156,20 @@ class LeadEvents extends Component
                     'observations' => $this->task_observations,
                     'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
                     'status' => 'pending',
+                    'priority' => $this->task_priority,
                     'lead_id' => $this->lead->id
                 ]);
                 break;
             case 'reunion':
+                $this->validate([
+                    'task_name' => 'required',
+                    'task_place' => 'required',
+                    'task_datestart' => 'required',
+                    'task_timestart' => 'required',
+                    'task_dateend' => 'required',
+                    'task_timeend' => 'required',
+                ]);
+
                 $task = Task::create([
                     'name' => $this->task_name,
                     'type' => $this->task_type,
@@ -159,10 +181,18 @@ class LeadEvents extends Component
                     'observations' => $this->task_observations,
                     'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
                     'status' => 'pending',
+                    'priority' => $this->task_priority,
                     'lead_id' => $this->lead->id
                 ]);
                 break;
             default:
+                $this->validate([
+                    'task_name' => 'required',
+                    'task_datestart' => 'required',
+                    'task_timestart' => 'required',
+                    'task_dateend' => 'required',
+                    'task_timeend' => 'required',
+                ]);
                 $task = Task::create([
                     'name' => $this->task_name,
                     'type' => $this->task_type,
@@ -171,6 +201,7 @@ class LeadEvents extends Component
                     'observations' => $this->task_observations,
                     'expiration' => $this->task_datestart . ' ' . $this->task_timeend,
                     'status' => 'pending',
+                    'priority' => $this->task_priority,
                     'lead_id' => $this->lead->id
                 ]);
                 break;

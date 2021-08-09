@@ -10,6 +10,8 @@ class LeadDescription extends Component
 {
     public $lead, $phone, $status, $email;
 
+    protected $listeners = ['render' => 'render'];
+
     public function mount(Lead $lead)
     {
         $this->lead = $lead;

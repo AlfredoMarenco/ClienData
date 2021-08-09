@@ -5,7 +5,7 @@
         {{ $lead->fullName() }}
     </p>
     <p class="text-center mb-1">
-        <span class="rounded-md px-1 text-white text-sm font-bold uppercase"
+        <span class="rounded-md px-1 text-white text-sm font-bold uppercase shadow-md"
             style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">{{ $lead->status->name }}</span>
     </p>
     <p class="text-center mb-6 text-gray-600 text-lg">

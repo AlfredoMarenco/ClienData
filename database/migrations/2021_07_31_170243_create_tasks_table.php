@@ -27,6 +27,7 @@ class CreateTasksTable extends Migration
             $table->text('observations')->nullable();
             $table->datetime('expiration');
             $table->string('status');
+            $table->string('priority');
             $table->unsignedBigInteger('lead_id');
 
             $table->foreign('lead_id')->references('id')->on('leads')->onDelete('cascade');

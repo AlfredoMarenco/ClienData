@@ -36,6 +36,7 @@ class TaskFactory extends Factory
             'observations' => $this->faker->paragraph(),
             'expiration' => $this->faker->dateTime(),
             'status' => Arr::random(['create', 'pending', 'modified', 'complete']),
+            'priority' => Arr::random(['normal', 'alta']),
             'lead_id' => Lead::all()->random()->id,
         ];
     }

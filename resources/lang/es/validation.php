@@ -146,6 +146,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'task_name' => 'nombre',
+        'task_link' => 'enlace',
+        'task_place' => 'lugar',
+        'name' => 'nombre',
+        'link' => 'enlace',
+        'place' => 'lugar',
+    ],
 
 ];

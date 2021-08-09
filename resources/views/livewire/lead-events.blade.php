@@ -239,6 +239,9 @@
                                                 <label for="" class="block mb-2 ml-1">Nombre:</label>
                                                 <input wire:model="task_name" class="w-full rounded-md py-1"
                                                     type="text">
+                                                @error('task_name')
+                                                    <span class="text-xs text-red-600">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <div class="w-full mt-4 px-4">
                                                 <label for="" class="block mb-2 ml-1">Tipo:</label>
@@ -270,6 +273,9 @@
                                                             <textarea wire:model="task_link" rows="1"
                                                                 class="w-full rounded-md"
                                                                 placeholder="Aqui puedes ingresar el link de la plataforma en la que realizaras la reunion en linea"></textarea>
+                                                            @error('task_link')
+                                                                <span class="text-xs text-red-600">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                         <div class="w-full mt-4 px-4">
                                                             <label for="" class="block mb-2 ml-1">Inicio fecha:</label>
@@ -301,6 +307,9 @@
                                                             <input wire:model="task_place"
                                                                 class="form-input border-gray-50 border"
                                                                 placeholder="Lugar de la reunion" type="text"></input>
+                                                            @error('task_place')
+                                                                <span class="text-xs text-red-600">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                         <div class="w-full mt-4 px-4">
                                                             <label for="" class="block mb-2 ml-1">Inicio fecha:</label>
@@ -351,6 +360,13 @@
                                                         @endif
                                                     </div>
                                             @endswitch
+                                            <div class="w-full mt-2 px-4 col-span-2">
+                                                <label for="" class="block mb-2 ml-1">Prioridad:</label>
+                                                <select wire:model="task_priority" class="w-full rounded-md py-1">
+                                                    <option value="normal">Normal</option>
+                                                    <option value="alta">Alta</option>
+                                                </select>
+                                            </div>
                                             <div class="w-full mt-4 px-4 col-span-2">
                                                 <label for="" class="block mb-2 ml-1">Observaciones:</label>
                                                 <textarea wire:model="task_observations" rows="4"
@@ -472,8 +488,34 @@
                             </div>
                         </div>
                         <div class="col-span-4 self-center py-2">
-                            <p class="font-bold text-lg text-gray-900">{{ $tasks->find($event->eventable_id)->name }}
-                            </p>
+                            <div class="flex item-center justify-between">
+
+                                @switch($tasks->find($event->eventable_id)->status)
+                                    @case('pending')
+                                        <p class="font-bold text-lg text-gray-900">
+                                            {{ $tasks->find($event->eventable_id)->name }} - Programada
+                                        </p>
+                                        <i class="far fa-clock text-2xl text-yellow-600 ml-2"></i>
+                                    @break
+                                    @case('modified')
+                                        <p class="font-bold text-lg text-gray-900">
+                                            {{ $tasks->find($event->eventable_id)->name }} - Modificada
+                                        </p>
+                                        <i class="far fa-clock text-2xl text-yellow-600 ml-2"></i>
+                                    @break
+                                    @case('complete')
+                                        <p class="font-bold text-lg text-gray-900">
+                                            {{ $tasks->find($event->eventable_id)->name }} - Completada
+                                        </p>
+                                        <i class="far fa-check-circle text-2xl text-green-700 ml-2"></i>
+                                    @break
+                                    @default
+                                        <p class="font-bold text-lg text-gray-900">
+                                            {{ $tasks->find($event->eventable_id)->name }} - Programada
+                                        </p>
+                                        <i class="far fa-clock text-2xl text-yellow-600 ml-2"></i>
+                                @endswitch
+                            </div>
                             @switch($tasks->find($event->eventable_id)->type)
                                 @case('video_conferencia')
                                     <p class="text-sm text-gray-600 capitalize"><span class="font-bold">Tipo:
@@ -536,80 +578,80 @@
                         </div>
                     </div>
                 @break
-            @case('App\Models\Call')
-                <div class="grid grid-cols-6 items-center max-w-screen-md" x-data="{open:false}">
-                    <div class="grid grid-cols-2">
-                        <div>&nbsp;</div>
-                        <div class="border-l-2 w-full"></div>
-                    </div>
-                    <div class="flex col-span-5 place-self-end">
-                        <div>
-                            <a class="cursor-pointer mr-2" x-on:click="open=!open">
-                                <i class="fas fa-comment text-gray-300 hover:text-gray-600"></i>
-                            </a>
+                @case('App\Models\Call')
+                    <div class="grid grid-cols-6 items-center max-w-screen-md" x-data="{open:false}">
+                        <div class="grid grid-cols-2">
+                            <div>&nbsp;</div>
+                            <div class="border-l-2 w-full"></div>
                         </div>
-                        <div>
-                            <a class="cursor-pointer"
-                                wire:click="deleteCall({{ $calls->find($event->eventable_id) }})">
-                                <i class="fas fa-trash text-gray-300 hover:text-gray-600"></i>
-                            </a>
+                        <div class="flex col-span-5 place-self-end">
+                            <div>
+                                <a class="cursor-pointer mr-2" x-on:click="open=!open">
+                                    <i class="fas fa-comment text-gray-300 hover:text-gray-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="cursor-pointer"
+                                    wire:click="deleteCall({{ $calls->find($event->eventable_id) }})">
+                                    <i class="fas fa-trash text-gray-300 hover:text-gray-600"></i>
+                                </a>
 
-                        </div>
-                    </div>
-                    <div class="grid grid-rows-2 justify-items-center items-center">
-                        <div class="text-gray-800 font-semibold">
-                            {{ $calls->find($event->eventable_id)->created_at->toFormattedDateString() }}
-                        </div>
-                        <div
-                            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 ">
-                            <!-- Heroicon name: outline/exclamation -->
-                            <i class="fas fa-phone-alt text-green-700 text-xl font-light"></i>
-                        </div>
-                    </div>
-                    <div class="col-span-4 self-center py-2">
-                        <p class="ml-2 font-bold text-lg text-gray-900">
-                            Llamada {{ $calls->find($event->eventable_id)->type }}
-                        </p>
-                        <p class="ml-2 text-sm text-gray-700">
-                            <span class="font-semibold">Resultado:</span>
-                            {{ $calls->find($event->eventable_id)->result }}
-                        </p>
-                        <p class="ml-2 text-sm text-gray-700">
-                            <span class="font-semibold">Realizada:</span>
-                            {{ $carbon->parse($calls->find($event->eventable_id)->time)->format('g:i:s A') }}
-                        </p>
-                        <p class="ml-2 text-sm text-gray-700"><span class="font-semibold">Comentario:</span>
-                            {{ $calls->find($event->eventable_id)->comment }}</p>
-                        @foreach ($calls->find($event->eventable_id)->comments as $comment)
-                            <p class="ml-2 text-xs text-gray-700 mt-1 bg-gray-100 p-2 rounded-lg">
-                                {{ $comment->body }}
-                            </p>
-                        @endforeach
-                        {{-- Apartado de commentarios --}}
-                        <div class="bg-gray-100 p-2 my-2" x-show="open">
-                            <label for="comment_body" class="text-sm">Comentarios:</label>
-                            <textarea wire:model="comment_body" rows="2" class="w-full rounded-md"></textarea>
-                            <div class="text-right">
-                                <button
-                                    class="px-2 py-1 bg-transparent text-gray-700 border-gray-700 border font-light rounded-md"
-                                    x-on:click="open=!open">Cancelar</button>
-                                <button wire:click="commentCall({{ $calls->find($event->eventable_id) }})"
-                                    class="px-2 py-1 bg-gray-800 text-white font-light rounded-md"
-                                    x-on:click="open=!open">Guardar</button>
                             </div>
                         </div>
-                    </div>
+                        <div class="grid grid-rows-2 justify-items-center items-center">
+                            <div class="text-gray-800 font-semibold">
+                                {{ $calls->find($event->eventable_id)->created_at->toFormattedDateString() }}
+                            </div>
+                            <div
+                                class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 ">
+                                <!-- Heroicon name: outline/exclamation -->
+                                <i class="fas fa-phone-alt text-green-700 text-xl font-light"></i>
+                            </div>
+                        </div>
+                        <div class="col-span-4 self-center py-2">
+                            <p class="ml-2 font-bold text-lg text-gray-900">
+                                Llamada {{ $calls->find($event->eventable_id)->type }}
+                            </p>
+                            <p class="ml-2 text-sm text-gray-700">
+                                <span class="font-semibold">Resultado:</span>
+                                {{ $calls->find($event->eventable_id)->result }}
+                            </p>
+                            <p class="ml-2 text-sm text-gray-700">
+                                <span class="font-semibold">Realizada:</span>
+                                {{ $carbon->parse($calls->find($event->eventable_id)->time)->format('g:i:s A') }}
+                            </p>
+                            <p class="ml-2 text-sm text-gray-700"><span class="font-semibold">Comentario:</span>
+                                {{ $calls->find($event->eventable_id)->comment }}</p>
+                            @foreach ($calls->find($event->eventable_id)->comments as $comment)
+                                <p class="ml-2 text-xs text-gray-700 mt-1 bg-gray-100 p-2 rounded-lg">
+                                    {{ $comment->body }}
+                                </p>
+                            @endforeach
+                            {{-- Apartado de commentarios --}}
+                            <div class="bg-gray-100 p-2 my-2" x-show="open">
+                                <label for="comment_body" class="text-sm">Comentarios:</label>
+                                <textarea wire:model="comment_body" rows="2" class="w-full rounded-md"></textarea>
+                                <div class="text-right">
+                                    <button
+                                        class="px-2 py-1 bg-transparent text-gray-700 border-gray-700 border font-light rounded-md"
+                                        x-on:click="open=!open">Cancelar</button>
+                                    <button wire:click="commentCall({{ $calls->find($event->eventable_id) }})"
+                                        class="px-2 py-1 bg-gray-800 text-white font-light rounded-md"
+                                        x-on:click="open=!open">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="text-right text-xs px-1">
-                        <p>{{ $calls->find($event->eventable_id)->created_at->diffForHumans() }}</p>
+                        <div class="text-right text-xs px-1">
+                            <p>{{ $calls->find($event->eventable_id)->created_at->diffForHumans() }}</p>
+                        </div>
                     </div>
-                </div>
-            @break
-        @endswitch
+                @break
+            @endswitch
+        </div>
+    @endforeach
+
+    <div class="px-4 text-center py-4">
+        <a class="cursor-pointer hover:text-gray-700" wire:click="viewMore">Ver más</a>
     </div>
-@endforeach
-
-<div class="px-4 text-center py-4">
-    <a class="cursor-pointer hover:text-gray-700" wire:click="viewMore">Ver más</a>
-</div>
 </div>
