@@ -43,6 +43,7 @@ class LeadTasks extends Component
             'status' => 'complete',
             'priority' => $task->priority,
             'lead_id' => $task->lead->id,
+            'user_id' => auth()->user()->id,
         ]);
 
         $task->update([

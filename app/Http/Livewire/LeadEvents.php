@@ -157,7 +157,8 @@ class LeadEvents extends Component
                     'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
                     'status' => 'pending',
                     'priority' => $this->task_priority,
-                    'lead_id' => $this->lead->id
+                    'lead_id' => $this->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
             case 'reunion':
@@ -182,7 +183,8 @@ class LeadEvents extends Component
                     'expiration' => $this->task_dateend . ' ' . $this->task_timeend,
                     'status' => 'pending',
                     'priority' => $this->task_priority,
-                    'lead_id' => $this->lead->id
+                    'lead_id' => $this->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
             default:
@@ -202,7 +204,8 @@ class LeadEvents extends Component
                     'expiration' => $this->task_datestart . ' ' . $this->task_timeend,
                     'status' => 'pending',
                     'priority' => $this->task_priority,
-                    'lead_id' => $this->lead->id
+                    'lead_id' => $this->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
         }

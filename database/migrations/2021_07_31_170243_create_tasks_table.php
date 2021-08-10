@@ -29,8 +29,10 @@ class CreateTasksTable extends Migration
             $table->string('status');
             $table->string('priority');
             $table->unsignedBigInteger('lead_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('lead_id')->references('id')->on('leads')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

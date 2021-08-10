@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SystemController;
 use Illuminate\Support\Facades\Route;
@@ -15,16 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [AdminController::class, 'index'])->name('index');
 
 Route::prefix('leads')->group(function () {
     Route::get('/', [LeadController::class, 'index'])->name('leads.index');
     Route::get('/{lead}/show', [LeadController::class, 'show'])->name('leads.show');
 });
 
-Route::get('system',SystemController::class)->name('system.index');
+Route::get('system', SystemController::class)->name('system.index');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->get('/dashboard', function () {

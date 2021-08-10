@@ -79,7 +79,8 @@ class TaskEdit extends Component
                     'expiration' => $this->date_end . ' ' . $this->time_end,
                     'status' => 'modified',
                     'priority' => $this->priority,
-                    'lead_id' => $task->lead->id
+                    'lead_id' => $task->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
             case 'reunion':
@@ -119,7 +120,8 @@ class TaskEdit extends Component
                     'expiration' => $this->date_end . ' ' . $this->time_end,
                     'status' => 'modified',
                     'priority' => $this->priority,
-                    'lead_id' => $task->lead->id
+                    'lead_id' => $task->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
             default:
@@ -149,7 +151,8 @@ class TaskEdit extends Component
                     'expiration' => $this->date_start . ' ' . $this->time_end,
                     'status' => 'modified',
                     'priority' => $this->priority,
-                    'lead_id' => $task->lead->id
+                    'lead_id' => $task->lead->id,
+                    'user_id' => auth()->user()->id,
                 ]);
                 break;
         }

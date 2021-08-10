@@ -1,5 +1,5 @@
 <div>
-    <div class="flex justify-between mb-3 px-4">
+    <div class="flex justify-between mb-3 px-4 text-sm">
         <div>
             <label>Mostrar:</label>
             <select class="py-0.5 rounded-md" wire:model="paginate">
@@ -9,6 +9,11 @@
                 <option value="20">20</option>
             </select>
             registros.
+            @role('Administrador')
+            <label class="ml-4">Mostrar todos:</label>
+            <input wire:model="all" type="checkbox"
+                class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded ml-1">
+            @endcan
         </div>
         <div>
             <label>Buscar:</label>

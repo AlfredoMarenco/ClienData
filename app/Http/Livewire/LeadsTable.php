@@ -13,7 +13,7 @@ class LeadsTable extends Component
 {
     use WithPagination;
 
-    public $paginate = '10', $search, $sortBy = 'created_at', $sortDirection = 'desc';
+    public $paginate = '10', $search, $sortBy = 'created_at', $sortDirection = 'desc', $all = false;
 
 
     public function updatingSearch()
@@ -23,7 +23,7 @@ class LeadsTable extends Component
 
     public function render()
     {
-        if (auth()->user()->hasRole('Administrador')) {
+        if (auth()->user()->hasRole('Administrador') && $this->all) {
             $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
         } else {
             $leads = Lead::where('user_id', auth()->user()->id)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
