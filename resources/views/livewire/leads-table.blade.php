@@ -22,25 +22,30 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-800">
                             <tr>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                <th wire:click="sortBy('name')" scope="col"
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Nombre
+                                    @include('partials._sort-icon',['field' => 'name'])
                                 </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                <th wire:click="sortBy('user_id')" scope="col"
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Propietario
+                                    @include('partials._sort-icon',['field' => 'user_id'])
                                 </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                <th wire:click="sortBy('status_id')" scope="col"
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Estado
+                                    @include('partials._sort-icon',['field' => 'status_id'])
                                 </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                <th wire:click="sortBy('created_at')" scope="col"
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Fecha de creacion
+                                    @include('partials._sort-icon',['field' => 'created_at'])
                                 </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                <th wire:click="sortBy('updated_at')" scope="col"
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Ultimo contacto
+                                    @include('partials._sort-icon',['field' => 'updated_at'])
                                 </th>
                                 {{-- <th scope="col" class="relative px-6 py-3">
             <span class="sr-only">Edit</span>

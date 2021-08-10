@@ -6,12 +6,15 @@ use App\Models\Lead;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class LeadsTable extends Component
 {
     use WithPagination;
 
-    public $paginate = '10', $search;
+    public $paginate = '10', $search, $sortBy = 'created_at', $sortDirection = 'desc';
+
 
     public function updatingSearch()
     {
@@ -20,9 +23,25 @@ class LeadsTable extends Component
 
     public function render()
     {
-        return view('livewire.leads-table', [
-            'leads' => Lead::where('user_id', auth()->user()->id)->latest('id')->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate),
+        if (auth()->user()->hasRole('Administrador')) {
+            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+        } else {
+            $leads = Lead::where('user_id', auth()->user()->id)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+        }
 
+
+        return view('livewire.leads-table', [
+            'leads' => $leads,
         ]);
+    }
+
+    public function sortBy($field)
+    {
+        if ($this->sortDirection == 'asc') {
+            $this->sortDirection = 'desc';
+        } else {
+            $this->sortDirection = 'asc';
+        }
+        return $this->sortBy = $field;
     }
 }

@@ -29,11 +29,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e063bfe6f92c62db070fc1bc486f2187ce09c9f8',
+    'reference' => '8a34c94d2c88b8999c5c88cf32bf9f7c2f66639a',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'arielmejiadev/larapex-charts' => 
+    array (
+      'pretty_version' => '3.0.1',
+      'version' => '3.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '56fc693dc27c7eda0b9925c905a4d34ce5d9669f',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.3',
@@ -522,7 +531,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e063bfe6f92c62db070fc1bc486f2187ce09c9f8',
+      'reference' => '8a34c94d2c88b8999c5c88cf32bf9f7c2f66639a',
     ),
     'laravel/sail' => 
     array (
@@ -974,6 +983,15 @@ private static $installed = array (
       ),
       'reference' => 'cd4032040a750077205918c86049aa0f43d22947',
     ),
+    'rappasoft/laravel-livewire-tables' => 
+    array (
+      'pretty_version' => 'v1.12.0',
+      'version' => '1.12.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ed03c588e560cc906f2bb884bf02253de4ad851f',
+    ),
     'rhumsaa/uuid' => 
     array (
       'replaced' => 
@@ -1124,6 +1142,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'spatie/laravel-package-tools' => 
+    array (
+      'pretty_version' => '1.9.0',
+      'version' => '1.9.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cf4c4cec220575e2864c6082842d76822421f1b1',
     ),
     'spatie/laravel-permission' => 
     array (

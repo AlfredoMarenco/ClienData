@@ -39,6 +39,9 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Spatie\\Permission\\' => array($vendorDir . '/spatie/laravel-permission/src'),
+    'Spatie\\LaravelPackageTools\\Database\\Factories\\' => array($vendorDir . '/spatie/laravel-package-tools/database/factories'),
+    'Spatie\\LaravelPackageTools\\' => array($vendorDir . '/spatie/laravel-package-tools/src'),
+    'Rappasoft\\LaravelLivewireTables\\' => array($vendorDir . '/rappasoft/laravel-livewire-tables/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
@@ -95,5 +98,6 @@ return array(
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
+    'ArielMejiaDev\\LarapexCharts\\' => array($vendorDir . '/arielmejiadev/larapex-charts/src'),
     'App\\' => array($baseDir . '/app'),
 );

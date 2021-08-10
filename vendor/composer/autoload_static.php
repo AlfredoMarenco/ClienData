@@ -32,10 +32,10 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
+        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
@@ -87,9 +87,12 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Spatie\\Permission\\' => 18,
+            'Spatie\\LaravelPackageTools\\Database\\Factories\\' => 46,
+            'Spatie\\LaravelPackageTools\\' => 27,
         ),
         'R' => 
         array (
+            'Rappasoft\\LaravelLivewireTables\\' => 32,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
@@ -188,6 +191,7 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'A' => 
         array (
             'Asm89\\Stack\\' => 12,
+            'ArielMejiaDev\\LarapexCharts\\' => 28,
             'App\\' => 4,
         ),
     );
@@ -326,6 +330,18 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'Spatie\\Permission\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
+        ),
+        'Spatie\\LaravelPackageTools\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/database/factories',
+        ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
+        ),
+        'Rappasoft\\LaravelLivewireTables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -553,6 +569,10 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
         ),
+        'ArielMejiaDev\\LarapexCharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -588,13 +608,18 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'App\\Http\\Controllers\\CallController' => __DIR__ . '/../..' . '/app/Http/Controllers/CallController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\LeadController' => __DIR__ . '/../..' . '/app/Http/Controllers/LeadController.php',
+        'App\\Http\\Controllers\\SystemController' => __DIR__ . '/../..' . '/app/Http/Controllers/SystemController.php',
         'App\\Http\\Controllers\\TaskController' => __DIR__ . '/../..' . '/app/Http/Controllers/TaskController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\LeadAdd' => __DIR__ . '/../..' . '/app/Http/Livewire/LeadAdd.php',
         'App\\Http\\Livewire\\LeadDescription' => __DIR__ . '/../..' . '/app/Http/Livewire/LeadDescription.php',
+        'App\\Http\\Livewire\\LeadEvents' => __DIR__ . '/../..' . '/app/Http/Livewire/LeadEvents.php',
         'App\\Http\\Livewire\\LeadTasks' => __DIR__ . '/../..' . '/app/Http/Livewire/LeadTasks.php',
         'App\\Http\\Livewire\\LeadsTable' => __DIR__ . '/../..' . '/app/Http/Livewire/LeadsTable.php',
+        'App\\Http\\Livewire\\SystemConfig' => __DIR__ . '/../..' . '/app/Http/Livewire/SystemConfig.php',
+        'App\\Http\\Livewire\\TaskEdit' => __DIR__ . '/../..' . '/app/Http/Livewire/TaskEdit.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -622,6 +647,23 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
+        'ArielMejiaDev\\LarapexCharts\\AreaChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/AreaChart.php',
+        'ArielMejiaDev\\LarapexCharts\\BarChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/BarChart.php',
+        'ArielMejiaDev\\LarapexCharts\\Contracts\\MustAddComplexData' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/Contracts/MustAddComplexData.php',
+        'ArielMejiaDev\\LarapexCharts\\Contracts\\MustAddSimpleData' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/Contracts/MustAddSimpleData.php',
+        'ArielMejiaDev\\LarapexCharts\\DonutChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/DonutChart.php',
+        'ArielMejiaDev\\LarapexCharts\\Facades\\LarapexChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/Facades/LarapexChart.php',
+        'ArielMejiaDev\\LarapexCharts\\HeatMapChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/HeatMapChart.php',
+        'ArielMejiaDev\\LarapexCharts\\HorizontalBar' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/HorizontalBar.php',
+        'ArielMejiaDev\\LarapexCharts\\LarapexChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/LarapexChart.php',
+        'ArielMejiaDev\\LarapexCharts\\LarapexChartsServiceProvider' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/LarapexChartsServiceProvider.php',
+        'ArielMejiaDev\\LarapexCharts\\LineChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/LineChart.php',
+        'ArielMejiaDev\\LarapexCharts\\PieChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/PieChart.php',
+        'ArielMejiaDev\\LarapexCharts\\PolarAreaChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/PolarAreaChart.php',
+        'ArielMejiaDev\\LarapexCharts\\RadarChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/RadarChart.php',
+        'ArielMejiaDev\\LarapexCharts\\RadialChart' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/RadialChart.php',
+        'ArielMejiaDev\\LarapexCharts\\Traits\\ComplexChartDataAggregator' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/Traits/ComplexChartDataAggregator.php',
+        'ArielMejiaDev\\LarapexCharts\\Traits\\SimpleChartDataAggregator' => __DIR__ . '/..' . '/arielmejiadev/larapex-charts/src/Traits/SimpleChartDataAggregator.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -807,6 +849,7 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'Database\\Seeders\\CommentSeeder' => __DIR__ . '/../..' . '/database/seeders/CommentSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\DevelopmentSeeder' => __DIR__ . '/../..' . '/database/seeders/DevelopmentSeeder.php',
+        'Database\\Seeders\\EventSeeder' => __DIR__ . '/../..' . '/database/seeders/EventSeeder.php',
         'Database\\Seeders\\LeadSeeder' => __DIR__ . '/../..' . '/database/seeders/LeadSeeder.php',
         'Database\\Seeders\\NoteSeeder' => __DIR__ . '/../..' . '/database/seeders/NoteSeeder.php',
         'Database\\Seeders\\RoleSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleSeeder.php',
@@ -4779,6 +4822,20 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Rappasoft\\LaravelLivewireTables\\Commands\\MakeCommand' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Commands/MakeCommand.php',
+        'Rappasoft\\LaravelLivewireTables\\DataTableComponent' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/DataTableComponent.php',
+        'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/LaravelLivewireTablesServiceProvider.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithBulkActions' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithBulkActions.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithColumnSelect' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithColumnSelect.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithCustomPagination' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithCustomPagination.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithFilters' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithFilters.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithPerPagePagination' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithPerPagePagination.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithReordering' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithReordering.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithSearch' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithSearch.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\WithSorting' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithSorting.php',
+        'Rappasoft\\LaravelLivewireTables\\Utilities\\ColumnUtilities' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Utilities/ColumnUtilities.php',
+        'Rappasoft\\LaravelLivewireTables\\Views\\Column' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Column.php',
+        'Rappasoft\\LaravelLivewireTables\\Views\\Filter' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Filter.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
@@ -4980,6 +5037,9 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Spatie\\Permission\\Commands\\CacheReset' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CacheReset.php',
         'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
         'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',

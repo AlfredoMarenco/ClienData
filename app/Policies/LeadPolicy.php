@@ -30,7 +30,11 @@ class LeadPolicy
      */
     public function view(User $user, Lead $lead)
     {
-        return $user->id === $lead->user->id;
+        if ($user->hasRole('Administrador')) {
+            return true;
+        } else {
+            return $user->id === $lead->user->id;
+        }
     }
 
     /**
@@ -53,7 +57,11 @@ class LeadPolicy
      */
     public function update(User $user, Lead $lead)
     {
-        //
+        if ($user->hasRole('Administrador')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
