@@ -935,7 +935,7 @@
                                                 @case('reunion')
                                                     <div class="flex justify-center items-center">
                                                         <div class="flex-shrink-0 h-10 w-10 mr-4">
-                                                            <i class="fas fa-handshake text-4xl text-pink-600"></i>
+                                                            <i class="fas fa-handshake text-4xl text-yellow-600"></i>
                                                         </div>
                                                         <div class="ml-4">
                                                             <p class="text-gray-700"><span
