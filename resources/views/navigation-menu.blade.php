@@ -18,11 +18,9 @@
                     <x-jet-nav-link href="{{ route('leads.index') }}" :active="request()->routeIs('leads.*')">
                         {{ __('Leads') }}
                     </x-jet-nav-link>
-
-                    <x-jet-nav-link href="{{ route('leads.index') }}" :active="request()->routeIs('task.*')">
-                        {{ __('Task') }}
+                    <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
+                        {{ __('Tasks') }}
                     </x-jet-nav-link>
-
                     @role('Administrador')
                     <x-jet-nav-link href="{{ route('system.index') }}" :active="request()->routeIs('system.*')">
                         {{ __('System config') }}
@@ -138,7 +136,7 @@
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            this.closest('form').submit();">
+                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -216,7 +214,7 @@
             @csrf
 
             <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                            this.closest('form').submit();">
+                    this.closest('form').submit();">
                 {{ __('Log Out') }}
             </x-jet-responsive-nav-link>
         </form>

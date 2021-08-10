@@ -27,4 +27,10 @@ class Task extends Model
     {
         return $this->morphMany(Event::class, 'eventable');
     }
+
+    //Relacion uno a muchos inversa
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

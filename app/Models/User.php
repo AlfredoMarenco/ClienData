@@ -68,4 +68,10 @@ class User extends Authenticatable
         return $this->hasMany(Lead::class);
     }
 
+    //Relacion uno a muchos
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
 }

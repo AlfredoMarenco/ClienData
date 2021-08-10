@@ -3,39 +3,56 @@
 namespace App\Http\Livewire;
 
 use App\Models\Task;
+use Carbon\Carbon;
 use Livewire\Component;
 
-class TaskEdit extends Component
+class TasksIndex extends Component
 {
-    public $success = false, $task;
     public $name, $type, $platform, $link, $place, $date_start, $date_end, $time_start, $time_end, $observations, $priority, $expiration, $expoption;
-
-    public function mount(Task $task)
-    {
-        $this->task = $task;
-        $this->name = $task->name;
-        $this->type = $task->type;
-        $this->platform = $task->platform;
-        $this->link = $task->link;
-        $this->place = $task->place;
-        $this->date_start = $task->date_start;
-        $this->date_end = $task->date_end;
-        $this->time_start = $task->time_start;
-        $this->time_end = $task->time_end;
-        $this->observations = $task->observations;
-        $this->expiration = $task->expiration;
-        $this->priority = $task->priority;
-        $this->expoption = 'date';
-    }
 
     public function render()
     {
-        return view('livewire.task-edit');
+        return view('livewire.tasks-index', [
+            'tasks_today' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
+            'tasks_tomorrow' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
+            'tasks_thisweek' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
+            'tasks_expired' => Task::where('user_id', auth()->user()->id)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
+            'carbon' => new Carbon()
+        ]);
     }
 
-    public function resetSuccess()
+
+    public function setCompleteTask(Task $task)
     {
-        $this->reset('success');
+        $newTask = Task::create([
+            'name' => $task->name,
+            'type' => $task->type,
+            'platform' => $task->platform,
+            'link' => $task->link,
+            'place' => $task->place,
+            'date_start' => $task->date_start,
+            'time_start' => $task->time_start,
+            'date_start' => $task->date_end,
+            'time_start' => $task->time_end,
+            'observations' => $task->observations,
+            'expiration' => $task->expiration,
+            'status' => 'complete',
+            'priority' => $task->priority,
+            'lead_id' => $task->lead->id,
+            'user_id' => auth()->user()->id,
+        ]);
+
+        $task->update([
+            'status' => 'create',
+        ]);
+
+        $newTask->events()->create(['lead_id' => $task->lead_id]);
+
+        $task->lead->update([
+            'updated_at' => Carbon::now()
+        ]);
+
+        $this->emit('render');
     }
 
     public function updateTask(Task $task)
@@ -103,7 +120,7 @@ class TaskEdit extends Component
                     'time_end' => $this->time_end,
                     'observations' => $this->observations,
                     'expiration' => $this->date_end . ' ' . $this->time_end,
-                    'status' => 'modified',
+                    'status' => 'pending',
                     'priority' => $this->priority,
                 ]);
                 $task->save();
