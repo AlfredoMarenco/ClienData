@@ -17,7 +17,7 @@ class LeadAdd extends Component
         'name' => 'required',
         'last_name' => 'required',
         'email' => 'required|email|unique:leads',
-        'phone' => 'required'
+        'phone' => 'required|unique:leads'
     ];
 
     protected $messages = [
