@@ -15,10 +15,50 @@
     <p class="text-gray-800 underline mb-2">{{ $lead->user->name }}</p>
 
     <label class="text-gray-400">Nombre:</label>
-    <p class="text-gray-800 underline mb-2">{{ $lead->name }}</p>
+    <div class="flex mb-2" x-data="{open:false}">
+        <div wire:loading.remove wire:target="updateName">
+            <p class="text-gray-800 underline" x-show="!open">{{ $lead->name }}</p>
+        </div>
+        <div wire:loading='updateName' wire:target='updateName'>
+            <i class="animate-spin fas fa-spinner"></i>
+        </div>
+        <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+                class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+        <div x-show="open" class="flex items-center justify-between">
+            <div>
+                <input type="text" class="py-1 w-full rounded-lg" placeholder="Nombre" wire:model="name"
+                    wire:keydown.enter="updateName" @keyup.enter="open=!open">
+            </div>
+            <div>
+                <button wire:click="updateName" x-on:click="open=!open"><i
+                        class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+            </div>
+        </div>
+    </div>
 
     <label class="text-gray-400">Apellidos:</label>
-    <p class="text-gray-800 underline mb-2">{{ $lead->last_name }}</p>
+    <div class="flex mb-2" x-data="{open:false}">
+        <div wire:loading.remove wire:target="updateLastName">
+            <p class="text-gray-800 underline" x-show="!open">{{ $lead->last_name }}</p>
+        </div>
+        <div wire:loading='updateLastName' wire:target='updateLastName'>
+            <i class="animate-spin fas fa-spinner"></i>
+        </div>
+        <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+                class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+        <div x-show="open" class="flex items-center justify-between">
+            <div>
+                <input type="text" class="py-1 w-full rounded-lg" placeholder="Nombre" wire:model="last_name"
+                    wire:keydown.enter="updateLastName" @keyup.enter="open=!open">
+            </div>
+            <div>
+                <button wire:click="updateLastName" x-on:click="open=!open"><i
+                        class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+            </div>
+        </div>
+    </div>
 
     <label class="text-gray-400">Correo electrónico:</label>
     @role('Administrador')
@@ -43,11 +83,11 @@
             </div>
         </div>
     </div>
-    @else
+@else
     <div>
         <p class="text-gray-800 underline" x-show="!open">{{ $lead->email }}</p>
     </div>
-    @endcan
+@endcan
 
 <label class="text-gray-400">Teléfonos:</label>
 <div class="flex mb-2" x-data="{open:false}">
@@ -99,42 +139,82 @@
 </div>
 
 <label class="text-gray-400">Desarrollo:</label>
-    @role('Administrador')
-    <div class="flex mb-2" x-data="{open:false}">
-        <div wire:loading.remove wire:target="updateDevelopment">
-            <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
+@role('Administrador')
+<div class="flex mb-2" x-data="{open:false}">
+    <div wire:loading.remove wire:target="updateDevelopment">
+        <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
+    </div>
+    <div wire:loading='updateDevelopment' wire:target='updateDevelopment'>
+        <i class="animate-spin fas fa-spinner"></i>
+    </div>
+    <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+            class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+    <div x-show="open" class="flex items-center justify-between">
+        <div class="w-full">
+            <select class="rounded-lg py-1" wire:model="development">
+                @foreach ($developments as $development)
+                    <option value="{{ $development->id }}">{{ $development->name }}</option>
+                @endforeach
+            </select>
         </div>
-        <div wire:loading='updateDevelopment' wire:target='updateDevelopment'>
-            <i class="animate-spin fas fa-spinner"></i>
-        </div>
-        <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
-                class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
-        <div x-show="open" class="flex items-center justify-between">
-            <div class="w-full">
-                <select class="rounded-lg py-1" wire:model="development">
-                    @foreach ($developments as $development)
-                        <option value="{{ $development->id }}">{{ $development->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="flex">
-                <button wire:click="updateDevelopment" x-on:click="open=!open"><i
-                        class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
-                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
-            </div>
+        <div class="flex">
+            <button wire:click="updateDevelopment" x-on:click="open=!open"><i
+                    class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
         </div>
     </div>
-    @else
-    <div>
-        <p class="text-gray-800 underline" x-show="!open">{{ $lead->email }}</p>
-    </div>
-    @endcan
+</div>
+@else
+<div>
+    <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
+</div>
+@endcan
 
 <label class="text-gray-400">Estado:</label>
-<p class="text-gray-800 underline mb-2">{{ $lead->state }}</p>
+<div class="flex mb-2" x-data="{open:false}">
+    <div wire:loading.remove wire:target="updateState">
+        <p class="text-gray-800 underline" x-show="!open">{{ $lead->state }}</p>
+    </div>
+    <div wire:loading='updateState' wire:target='updateState'>
+        <i class="animate-spin fas fa-spinner"></i>
+    </div>
+    <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+            class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+    <div x-show="open" class="flex items-center justify-between">
+        <div>
+            <input type="text" class="py-1 w-full rounded-lg" placeholder="Estado, Ciudad" wire:model="state"
+                wire:keydown.enter="updateState" @keyup.enter="open=!open">
+        </div>
+        <div>
+            <button wire:click="updateState" x-on:click="open=!open"><i
+                    class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+        </div>
+    </div>
+</div>
 
 <label class="text-gray-400">Ciudad:</label>
-<p class="text-gray-800 underline mb-2">{{ $lead->city }}</p>
+<div class="flex mb-2" x-data="{open:false}">
+    <div wire:loading.remove wire:target="updateCity">
+        <p class="text-gray-800 underline" x-show="!open">{{ $lead->city }}</p>
+    </div>
+    <div wire:loading='updateCity' wire:target='updateCity'>
+        <i class="animate-spin fas fa-spinner"></i>
+    </div>
+    <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+            class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+    <div x-show="open" class="flex items-center justify-between">
+        <div>
+            <input type="text" class="py-1 w-full rounded-lg" placeholder="Nombre" wire:model="city"
+                wire:keydown.enter="updateCity" @keyup.enter="open=!open">
+        </div>
+        <div>
+            <button wire:click="updateCity" x-on:click="open=!open"><i
+                    class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+        </div>
+    </div>
+</div>
 
 <label class="text-gray-400">Último contacto:</label>
 <p class="text-gray-800 underline mb-2">{{ $lead->updated_at->diffForHumans() }}</p>

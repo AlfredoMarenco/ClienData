@@ -9,17 +9,21 @@ use Livewire\Component;
 
 class LeadDescription extends Component
 {
-    public $lead, $phone, $status, $email, $development;
+    public $lead, $name, $last_name, $phone, $status, $email, $development, $state, $city;
 
     protected $listeners = ['render' => 'render'];
 
     public function mount(Lead $lead)
     {
         $this->lead = $lead;
+        $this->name = $lead->name;
+        $this->last_name = $lead->last_name;
         $this->phone = $lead->phone;
         $this->status = $lead->status_id;
         $this->email = $lead->email;
         $this->development = $lead->development_id;
+        $this->state = $lead->state;
+        $this->city = $lead->city;
     }
 
     public function render()
@@ -29,6 +33,24 @@ class LeadDescription extends Component
         return view('livewire.lead-description', compact('statuses', 'developments'));
     }
 
+
+    public function updateName()
+    {
+        $this->lead->update([
+            'name' => $this->name,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
+
+    public function updateLastName()
+    {
+        $this->lead->update([
+            'last_name' => $this->last_name,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
 
     public function updatePhone()
     {
@@ -52,6 +74,22 @@ class LeadDescription extends Component
     {
         $this->lead->update([
             'development_id' => $this->development,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
+    public function updateState()
+    {
+        $this->lead->update([
+            'state' => $this->state,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
+    public function updateCity()
+    {
+        $this->lead->update([
+            'city' => $this->city,
         ]);
 
         $this->lead = Lead::find($this->lead->id);
