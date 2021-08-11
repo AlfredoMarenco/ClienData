@@ -8,6 +8,7 @@ class SystemController extends Controller
 {
     public function __invoke()
     {
+        $this->middleware(['role:Administrador']);
         return view('system.index');
     }
 }
