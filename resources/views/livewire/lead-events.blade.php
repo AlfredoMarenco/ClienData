@@ -147,7 +147,7 @@
                                                 <input wire:model="call_time" class="w-full rounded-md py-1"
                                                     type="time">
                                             </div>
-                                            <div class="w-full mt-4 px-4 col-span-2">
+                                            <div class="w-full mt-4 px-4">
                                                 <label for="" class="block mb-2 ml-1">Resultado:</label>
                                                 <select wire:model="call_result" class="w-full rounded-md py-1">
                                                     <option value="conectado" selected>conectado</option>
@@ -158,6 +158,13 @@
                                                     <option value="número equivocado">número equivocado</option>
                                                     <option value="no interesado">no interesado</option>
                                                 </select>
+                                            </div>
+                                            <div class="w-full mt-4 px-4 col-span-2">
+                                                <label for="" class="block mb-2 ml-1">Duracion:</label>
+                                                <label class="ml-2" for="">Horas:</label><input type="number" wire:model="call_hours" class="py-1 rounded-lg w-16 text-sm ml-2" min="0">
+                                                <label class="ml-2" for="">Minutos:</label><input type="number" wire:model="call_minutes" class="py-1 rounded-lg w-16 text-sm ml-2" min="0" max="59">
+                                                <label class="ml-2" for="">Segundos:</label><input type="number" wire:model="call_seconds" class="py-1 rounded-lg w-16 text-sm ml-2" min="0" max="59">
+
                                             </div>
                                             <div class="w-full mt-4 px-4 col-span-3">
                                                 <label for="" class="block mb-2 ml-1">Descripción:</label>
@@ -619,6 +626,12 @@
                             <p class="ml-2 text-sm text-gray-700">
                                 <span class="font-semibold">Realizada:</span>
                                 {{ $carbon->parse($calls->find($event->eventable_id)->time)->format('g:i:s A') }}
+                            </p>
+                            <p class="ml-2 text-sm text-gray-700">
+                                <span class="font-semibold">Duración:</span>
+                                H:{{ $calls->find($event->eventable_id)->hours }}
+                                M:{{ $calls->find($event->eventable_id)->minutes }}
+                                S:{{ $calls->find($event->eventable_id)->seconds }} 
                             </p>
                             <p class="ml-2 text-sm text-gray-700"><span class="font-semibold">Comentario:</span>
                                 {{ $calls->find($event->eventable_id)->comment }}</p>

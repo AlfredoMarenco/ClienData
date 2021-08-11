@@ -15,7 +15,7 @@ class LeadEvents extends Component
 {
     use WithPagination;
 
-    public $lead, $note_name, $note_body, $paginate = 5, $success = false, $call_type = 'recibida', $call_date, $call_time, $call_result = 'conectado', $call_comment, $comment_body;
+    public $lead, $note_name, $note_body, $paginate = 5, $success = false, $call_type = 'recibida', $call_date, $call_time, $call_result = 'conectado', $call_comment, $call_hours, $call_minutes, $call_seconds, $comment_body;
 
     public $task_name, $task_type, $task_platform, $task_link, $task_place, $task_datestart, $task_dateend, $task_timestart, $task_timeend, $task_observations, $task_priority, $task_expiration, $task_expoption;
 
@@ -26,6 +26,9 @@ class LeadEvents extends Component
         $this->lead = $lead;
         $this->call_date = Carbon::now()->toDateString();
         $this->call_time = '23:59';
+        $this->call_hours = 0;
+        $this->call_minutes = 0;
+        $this->call_seconds = 0;
         $this->task_datestart = Carbon::now()->toDateString();
         $this->task_timestart = '00:00';
         $this->task_dateend = Carbon::now()->toDateString();
@@ -87,6 +90,9 @@ class LeadEvents extends Component
             'date' => $this->call_date,
             'time' => $this->call_time,
             'result' => $this->call_result,
+            'hours' => $this->call_hours,
+            'minutes' => $this->call_minutes,
+            'seconds' => $this->call_seconds,
             'comment' => $this->call_comment,
             'lead_id' => $this->lead->id
         ]);
