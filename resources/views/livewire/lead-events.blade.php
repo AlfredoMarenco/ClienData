@@ -527,7 +527,7 @@
                                             class="text-gray-900 hover:text-gray-700 cursor-pointer">{{ $tasks->find($event->eventable_id)->link }}</a>
                                     </p>
                                     <p class="text-sm text-gray-600 normal-case"><span class="font-bold">Inicio:</span>
-                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_start)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ H:mm:ss A') }}
+                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_start)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ hh:mm:ss A') }}
                                     </p>
                                     <p class="text-sm text-gray-600 normal-case"><span class="font-bold">Final:</span>
                                         {{ $carbon->parse($tasks->find($event->eventable_id)->date_end . ' ' . $tasks->find($event->eventable_id)->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ H:mm:ss A') }}
@@ -539,17 +539,17 @@
                                     <p class="text-sm text-gray-600 "><span class="font-bold">Lugar:</span>
                                         {{ $tasks->find($event->eventable_id)->place }}</p>
                                     <p class="text-sm text-gray-600 normal-case"><span class="font-bold">Inicio:</span>
-                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_start)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ H:mm:ss A') }}
+                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_start)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ hh:mm:ss A') }}
                                     </p>
                                     <p class="text-sm text-gray-600 normal-case"><span class="font-bold">Final:</span>
-                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_end . ' ' . $tasks->find($event->eventable_id)->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ H:mm:ss A') }}
+                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_end . ' ' . $tasks->find($event->eventable_id)->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ hh:mm:ss A') }}
                                     </p>
                                 @break
                                 @default
                                     <p class="text-sm text-gray-600 capitalize"><span class="font-bold">Tipo:
                                         </span>{{ $tasks->find($event->eventable_id)->type }}</p>
                                     <p class="text-sm text-gray-600 normal-case"><span class="font-bold">Inicio:</span>
-                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ H:mm:ss A') }}
+                                        {{ $carbon->parse($tasks->find($event->eventable_id)->date_start . ' ' . $tasks->find($event->eventable_id)->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMM Y -\ hh:mm:ss A') }}
                                     </p>
                             @endswitch
                             <p class="text-sm text-gray-700 mt-1">Observaciones:<br> {!! $tasks->find($event->eventable_id)->observations !!}</p>

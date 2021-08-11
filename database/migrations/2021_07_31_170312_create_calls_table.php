@@ -18,7 +18,7 @@ class CreateCallsTable extends Migration
             $table->string('type');
             $table->date('date');
             $table->time('time');
-            $table->string('result');
+            $table->string('result')->nullable();
             $table->string('comment');
             $table->unsignedBigInteger('lead_id');
 
