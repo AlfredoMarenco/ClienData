@@ -163,9 +163,6 @@
         </div>
     </div>
 </div>
-<div>
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
-</div>
 
 <label class="text-gray-400">Estado:</label>
 <div class="flex mb-2" x-data="{open:false}">
