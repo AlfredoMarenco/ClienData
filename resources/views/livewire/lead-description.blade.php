@@ -139,7 +139,6 @@
 </div>
 
 <label class="text-gray-400">Desarrollo:</label>
-@role('Administrador')
 <div class="flex mb-2" x-data="{open:false}">
     <div wire:loading.remove wire:target="updateDevelopment">
         <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
@@ -164,11 +163,9 @@
         </div>
     </div>
 </div>
-@else
 <div>
     <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
 </div>
-@endcan
 
 <label class="text-gray-400">Estado:</label>
 <div class="flex mb-2" x-data="{open:false}">
