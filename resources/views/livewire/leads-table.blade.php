@@ -83,7 +83,7 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <img class="h-10 w-10 rounded-full object-cover ml-8" src="{{ $lead->user->profile_photo_url }}" alt="">
+                                        <img class="h-10 w-10 rounded-full object-cover ml-8 pb-1" src="{{ $lead->user->profile_photo_url }}" alt="">
                                         <div class="text-sm text-gray-700">{{ $lead->user->name }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
