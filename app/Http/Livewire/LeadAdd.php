@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class LeadAdd extends Component
 {
-    public $name, $last_name, $email, $phone, $city, $state, $status_id = 1, $user_id = 1, $development_id = 1, $success = false;
+    public $name, $last_name, $email, $phone, $city, $state, $status_id = 1, $user_id , $development_id = 1, $success = false;
 
     protected $rules = [
         'name' => 'required',
@@ -50,7 +50,7 @@ class LeadAdd extends Component
             'city' => $this->city,
             'state' => $this->state,
             'status_id' => $this->status_id,
-            'user_id' => $this->user_id,
+            'user_id' => auth()->user()->id,
             'development_id' => $this->development_id,
         ]);
         $this->reset('name', 'last_name', 'email', 'phone', 'city', 'state');

@@ -99,7 +99,36 @@
 </div>
 
 <label class="text-gray-400">Desarrollo:</label>
-<p class="text-gray-800 underline mb-2">{{ $lead->development->name }}</p>
+    @role('Administrador')
+    <div class="flex mb-2" x-data="{open:false}">
+        <div wire:loading.remove wire:target="updateDevelopment">
+            <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
+        </div>
+        <div wire:loading='updateDevelopment' wire:target='updateDevelopment'>
+            <i class="animate-spin fas fa-spinner"></i>
+        </div>
+        <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+                class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+        <div x-show="open" class="flex items-center justify-between">
+            <div class="w-full">
+                <select class="rounded-lg py-1" wire:model="development">
+                    @foreach ($developments as $development)
+                        <option value="{{ $development->id }}">{{ $development->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="flex">
+                <button wire:click="updateDevelopment" x-on:click="open=!open"><i
+                        class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+            </div>
+        </div>
+    </div>
+    @else
+    <div>
+        <p class="text-gray-800 underline" x-show="!open">{{ $lead->email }}</p>
+    </div>
+    @endcan
 
 <label class="text-gray-400">Estado:</label>
 <p class="text-gray-800 underline mb-2">{{ $lead->state }}</p>

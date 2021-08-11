@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Status;
 use Livewire\Component;
 
 class LeadDescription extends Component
 {
-    public $lead, $phone, $status, $email;
+    public $lead, $phone, $status, $email, $development;
 
     protected $listeners = ['render' => 'render'];
 
@@ -18,12 +19,14 @@ class LeadDescription extends Component
         $this->phone = $lead->phone;
         $this->status = $lead->status_id;
         $this->email = $lead->email;
+        $this->development = $lead->development_id;
     }
 
     public function render()
     {
         $statuses = Status::all();
-        return view('livewire.lead-description', compact('statuses'));
+        $developments = Development::all();
+        return view('livewire.lead-description', compact('statuses', 'developments'));
     }
 
 
@@ -40,6 +43,15 @@ class LeadDescription extends Component
     {
         $this->lead->update([
             'status_id' => $this->status,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
+
+    public function updateDevelopment()
+    {
+        $this->lead->update([
+            'development_id' => $this->development,
         ]);
 
         $this->lead = Lead::find($this->lead->id);
