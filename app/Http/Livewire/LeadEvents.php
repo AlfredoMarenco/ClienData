@@ -19,6 +19,8 @@ class LeadEvents extends Component
 
     public $task_name, $task_type, $task_platform, $task_link, $task_place, $task_datestart, $task_dateend, $task_timestart, $task_timeend, $task_observations, $task_priority, $task_expiration, $task_expoption;
 
+    public $edit_note = false, $name, $body;
+
     protected $listeners = ['render' => 'render'];
 
     public function mount(Lead $lead)
@@ -136,7 +138,6 @@ class LeadEvents extends Component
         $this->reset('comment_body');
     }
 
-
     public function storeTask()
     {
         switch ($this->task_type) {
@@ -226,5 +227,19 @@ class LeadEvents extends Component
         $task->events()->delete();
         /* $task->delete(); */
         $this->emit('render');
+    }
+
+    public function setInputs(Note $note){
+        $this->name = $note->name;
+        $this->body = $note->body;
+    }
+    public function updateNote(Note $note)
+    {
+        $note->update([
+            'name' => $this->name,
+            'body' => $this->body,
+        ]);
+
+        $this->reset('note_name', 'note_body');
     }
 }

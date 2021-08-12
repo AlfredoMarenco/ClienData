@@ -161,9 +161,15 @@
                                             </div>
                                             <div class="w-full mt-4 px-4 col-span-2">
                                                 <label for="" class="block mb-2 ml-1">Duracion:</label>
-                                                <label class="ml-2" for="">Horas:</label><input type="number" wire:model="call_hours" class="py-1 rounded-lg w-16 text-sm ml-2" min="0">
-                                                <label class="ml-2" for="">Minutos:</label><input type="number" wire:model="call_minutes" class="py-1 rounded-lg w-16 text-sm ml-2" min="0" max="59">
-                                                <label class="ml-2" for="">Segundos:</label><input type="number" wire:model="call_seconds" class="py-1 rounded-lg w-16 text-sm ml-2" min="0" max="59">
+                                                <label class="ml-2" for="">Horas:</label><input type="number"
+                                                    wire:model="call_hours" class="py-1 rounded-lg w-16 text-sm ml-2"
+                                                    min="0">
+                                                <label class="ml-2" for="">Minutos:</label><input type="number"
+                                                    wire:model="call_minutes" class="py-1 rounded-lg w-16 text-sm ml-2"
+                                                    min="0" max="59">
+                                                <label class="ml-2" for="">Segundos:</label><input type="number"
+                                                    wire:model="call_seconds" class="py-1 rounded-lg w-16 text-sm ml-2"
+                                                    min="0" max="59">
 
                                             </div>
                                             <div class="w-full mt-4 px-4 col-span-3">
@@ -404,16 +410,23 @@
     <div class="bg-gray-800 rounded-t-lg mb-2">
         <h2 class="text-gray-100 font-bold text-2xl text-center">Linea de tiempo</h2>
     </div>
-    @foreach ($events as $event)
+    @forelse ($events as $event)
         <div class="p-2 mx-2 bg-white shadow-lg mb-2 rounded-lg">
             @switch($event->eventable_type)
                 @case('App\Models\Note')
-                    <div class="grid grid-cols-6 items-center max-w-screen-md" x-data="{open:false}">
+                    <div class="grid grid-cols-6 items-center max-w-screen-md" x-data="{open:false,edit:false}">
                         <div class="grid grid-cols-2">
                             <div>&nbsp;</div>
                             <div class="border-l-2 w-full"></div>
                         </div>
                         <div class="flex col-span-5 place-self-end">
+                            <div>
+                                <a x-on:click="edit=!edit"
+                                    wire:click="setInputs({{ $notes->find($event->eventable_id) }})"
+                                    class="cursor-pointer mr-2">
+                                    <i class="fas fa-pen text-gray-300 hover:text-gray-600"></i>
+                                </a>
+                            </div>
                             <div>
                                 <a x-on:click="open=!open" class="cursor-pointer mr-2">
                                     <i class="fas fa-comment text-gray-300 hover:text-gray-600"></i>
@@ -438,9 +451,29 @@
                             </div>
                         </div>
                         <div class="col-span-4  self-center py-2">
-                            <p class="ml-2 font-bold text-lg text-gray-900">{{ $notes->find($event->eventable_id)->name }}
-                            </p>
-                            <p class="ml-2 text-sm text-gray-700 mt-">{!! $notes->find($event->eventable_id)->body !!}</p>
+                            <div x-show="!edit">
+                                <p class="ml-2 font-bold text-lg text-gray-900">
+                                    {{ $notes->find($event->eventable_id)->name }}
+                                </p>
+                                <p class="ml-2 text-sm text-gray-700 mt-">{!! $notes->find($event->eventable_id)->body !!}</p>
+                            </div>
+                            <div x-show="edit" class="px-3">
+                                <label class="block font-bold text-sm">Nombre:</label>
+                                <input type="text" class="form-input" wire:model="name"
+                                    value="{{ $notes->find($event->eventable_id)->name }}">
+                                <label class="block font-bold text-sm">Comentario:</label>
+                                <textarea type="text" class="form-input"
+                                    wire:model="body">{!! $notes->find($event->eventable_id)->body !!}</textarea>
+                                <div class="text-right">
+                                    <button
+                                        class="px-2 py-1 bg-transparent text-gray-700 border-gray-700 border font-light rounded-md"
+                                        x-on:click="edit=!edit">Cancelar</button>
+                                    <button wire:click="updateNote({{ $notes->find($event->eventable_id) }})"
+                                        class="px-2 py-1 bg-gray-800 text-white font-light rounded-md"
+                                        x-on:click="edit=!edit">Guardar</button>
+                                </div>
+
+                            </div>
                             @foreach ($notes->find($event->eventable_id)->comments as $comment)
                                 <p class="ml-2 text-xs text-gray-700 mt-1 bg-gray-100 p-2 rounded-lg">{{ $comment->body }}
                                 </p>
@@ -631,7 +664,7 @@
                                 <span class="font-semibold">Duración:</span>
                                 H:{{ $calls->find($event->eventable_id)->hours }}
                                 M:{{ $calls->find($event->eventable_id)->minutes }}
-                                S:{{ $calls->find($event->eventable_id)->seconds }} 
+                                S:{{ $calls->find($event->eventable_id)->seconds }}
                             </p>
                             <p class="ml-2 text-sm text-gray-700"><span class="font-semibold">Comentario:</span>
                                 {{ $calls->find($event->eventable_id)->comment }}</p>
@@ -662,9 +695,14 @@
                 @break
             @endswitch
         </div>
-    @endforeach
-
-    <div class="px-4 text-center py-4">
-        <a class="cursor-pointer hover:text-gray-700" wire:click="viewMore">Ver más</a>
+        @empty
+            <div class="px-4 text-center py-4">
+                <a class="cursor-pointer hover:text-gray-700">No hay actividades</a>
+            </div>
+        @endforelse
+        @if ($events->count() >= $paginate)
+            <div class="px-4 text-center py-4">
+                <a class="cursor-pointer hover:text-gray-700" wire:click="viewMore">Ver más</a>
+            </div>
+        @endif
     </div>
-</div>

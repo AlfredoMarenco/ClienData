@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class LeadDescription extends Component
 {
-    public $lead, $name, $last_name, $phone, $status, $email, $development, $state, $city;
+    public $lead, $name, $last_name, $phone, $status, $email, $development, $state, $city, $observations;
 
     protected $listeners = ['render' => 'render'];
 
@@ -24,6 +24,7 @@ class LeadDescription extends Component
         $this->development = $lead->development_id;
         $this->state = $lead->state;
         $this->city = $lead->city;
+        $this->observations = $lead->observations;
     }
 
     public function render()
