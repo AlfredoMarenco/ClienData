@@ -54,8 +54,10 @@
                                             <div>
                                                 <div class="text-center">
                                                     <div wire:loading wire:target="storeLead">
-                                                        <i class="animate-spin text-gray-600 fas fa-spinner text-9xl mx-auto"></i>
-                                                        <p class="text-2xl font-bold py-4">Cargando información del lead...</p>
+                                                        <i
+                                                            class="animate-spin text-gray-600 fas fa-spinner text-9xl mx-auto"></i>
+                                                        <p class="text-2xl font-bold py-4">Cargando información del
+                                                            lead...</p>
                                                         <div class="mx-auto mt-6">
                                                             <a href="{{ route('leads.index') }}"
                                                                 class="bg-gray-700 text-white font-bold px-6 py-2 rounded-lg hover:bg-gray-600">Continuar</a>
@@ -169,7 +171,14 @@
                                                                     <input type="text" wire:model="state"
                                                                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                                 </div>
-
+                                                                <div class="col-span-6 sm:col-span-3 lg:col-span-6">
+                                                                    <label for="observations"
+                                                                        class="block text-sm font-medium text-gray-700">Observaciones</label>
+                                                                    <textarea type="text" wire:model="observations"
+                                                                        rows="2"
+                                                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                                    </textarea>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">

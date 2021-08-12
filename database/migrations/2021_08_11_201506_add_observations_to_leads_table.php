@@ -14,7 +14,7 @@ class AddObservationsToLeadsTable extends Migration
     public function up()
     {
         Schema::table('leads', function (Blueprint $table) {
-            $table->text('observations')->nullable();
+            $table->text('observations')->after('state')->nullable();
         });
     }
 
