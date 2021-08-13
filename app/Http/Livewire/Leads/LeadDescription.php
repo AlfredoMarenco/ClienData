@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Leads;
 
 use App\Models\Development;
 use App\Models\Lead;
@@ -31,7 +31,7 @@ class LeadDescription extends Component
     {
         $statuses = Status::all();
         $developments = Development::all();
-        return view('livewire.lead-description', compact('statuses', 'developments'));
+        return view('livewire.leads.lead-description', compact('statuses', 'developments'));
     }
 
 

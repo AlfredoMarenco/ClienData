@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Tasks;
 
 use App\Models\Task;
 use Livewire\Component;
@@ -30,7 +30,7 @@ class TaskEdit extends Component
 
     public function render()
     {
-        return view('livewire.task-edit');
+        return view('livewire.tasks.task-edit');
     }
 
     public function resetSuccess()

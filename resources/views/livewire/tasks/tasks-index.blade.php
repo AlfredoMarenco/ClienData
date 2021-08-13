@@ -271,7 +271,7 @@
                                                             class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
                                                             wire:click="setCompleteTask({{ $task }})">Marcar
                                                             como completada</a>
-                                                        @livewire('task-edit', ['task' => $task],
+                                                        @livewire('tasks.task-edit', ['task' => $task],
                                                         key('task-edit'.$task->id))
                                                     </div>
                                                 </div>
@@ -857,7 +857,7 @@
                                                             class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
                                                             wire:click="setCompleteTask({{ $task }})">Marcar
                                                             como completada</a>
-                                                        @livewire('task-edit', ['task' => $task],
+                                                        @livewire('tasks.task-edit', ['task' => $task],
                                                         key('task-edit'.$task->id))
                                                     </div>
                                                 </div>
@@ -1150,7 +1150,7 @@
                                                             class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
                                                             wire:click="setCompleteTask({{ $task }})">Marcar
                                                             como completada</a>
-                                                        @livewire('task-edit', ['task' => $task],
+                                                        @livewire('tasks.task-edit', ['task' => $task],
                                                         key('task-edit'.$task->id))
                                                     </div>
                                                 </div>

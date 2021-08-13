@@ -10,13 +10,13 @@
             <div class="bg-gray-100  shadow-xl sm:rounded-lg">
                 <div class="grid grid-cols-4 gap-4">
                     <div class="bg-white rounded-md shadow-lg">
-                        @livewire('lead-description', ['lead' => $lead], key('description'.$lead->id))
+                        @livewire('leads.lead-description', ['lead' => $lead], key('description'.$lead->id))
                     </div>
                     <div class="bg-gray-200 rounded-2xl col-span-2 shadow-lg">
-                        @livewire('lead-events', ['lead' => $lead], key('events'.$lead->id))
+                        @livewire('leads.lead-events', ['lead' => $lead], key('events'.$lead->id))
                     </div>
                     <div class="bg-gray-200 rounded-2xl shadow-lg">
-                        @livewire('lead-tasks', ['lead' => $lead], key('tasks'.$lead->id))
+                        @livewire('leads.lead-tasks', ['lead' => $lead], key('tasks'.$lead->id))
                     </div>
                 </div>
             </div>

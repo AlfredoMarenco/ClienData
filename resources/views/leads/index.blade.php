@@ -9,10 +9,10 @@
         <div class="w-full mx-auto sm:px-6 lg:px-1">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="px-2">
-                    @livewire('lead-add')
+                    @livewire('leads.lead-add')
                 </div>
                 <div class="px-2">
-                    @livewire('leads-table')
+                    @livewire('leads.leads-table')
                 </div>
             </div>
         </div>

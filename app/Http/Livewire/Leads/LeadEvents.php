@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Leads;
 
 use App\Models\Call;
 use App\Models\Event;
@@ -43,7 +43,7 @@ class LeadEvents extends Component
 
     public function render()
     {
-        return view('livewire.lead-events', [
+        return view('livewire.leads.lead-events', [
             'events' => Event::where('lead_id', $this->lead->id)->latest('id')->paginate($this->paginate),
             'tasks' => Task::all(),
             'calls' => Call::all(),

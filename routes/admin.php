@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SystemController;
 use App\Http\Controllers\TaskController;
@@ -23,9 +24,9 @@ Route::prefix('leads')->group(function () {
     Route::get('/', [LeadController::class, 'index'])->name('leads.index');
     Route::get('/{lead}/show', [LeadController::class, 'show'])->name('leads.show');
 });
-
 Route::get('system', SystemController::class)->name('system.index');
 Route::get('tasks', TaskController::class)->name('tasks.index');
+Route::get('emails', EmailController::class)->name('emails.index');
 
 
 

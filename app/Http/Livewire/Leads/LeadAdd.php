@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Leads;
 
 use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Status;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class LeadAdd extends Component
@@ -30,7 +29,7 @@ class LeadAdd extends Component
 
     public function render()
     {
-        return view('livewire.lead-add', [
+        return view('livewire.leads.lead-add', [
             'users' => User::all(),
             'statuses' => Status::all(),
             'developments' => Development::all(),

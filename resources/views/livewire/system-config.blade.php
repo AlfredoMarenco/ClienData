@@ -19,8 +19,6 @@
         </div>
     </div>
 
-
-
     <div class="p-10">
         @if ($nav_dev)
             <div>
@@ -28,7 +26,6 @@
                     <button x-on:click="open=!open" wire:click="$set('development_name','')"
                         class="bg-gray-800 py-2 px-3 rounded-md text-white">Agregar
                         desarrollo</button>
-
                     <div x-show="open">
                         <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
                             aria-modal="true">
@@ -238,7 +235,6 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-
                                     </tbody>
                                 </table>
                             </div>

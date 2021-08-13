@@ -21,6 +21,9 @@
                     <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
                         {{ __('Tasks') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('emails.index') }}" :active="request()->routeIs('emails.*')">
+                        {{ __('Emails') }}
+                    </x-jet-nav-link>
                     @role('Administrador')
                     <x-jet-nav-link href="{{ route('system.index') }}" :active="request()->routeIs('system.*')">
                         {{ __('System config') }}
@@ -173,6 +176,10 @@
 
         <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
             {{ __('Tasks') }}
+        </x-jet-responsive-nav-link>
+
+        <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
+            {{ __('Emails') }}
         </x-jet-responsive-nav-link>
 
         @role('Administrador')

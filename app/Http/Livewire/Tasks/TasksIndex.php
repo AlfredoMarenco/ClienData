@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Tasks;
 
 use App\Models\Task;
 use Carbon\Carbon;
@@ -12,7 +12,7 @@ class TasksIndex extends Component
 
     public function render()
     {
-        return view('livewire.tasks-index', [
+        return view('livewire.tasks.tasks-index', [
             'tasks_today' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
             'tasks_tomorrow' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
             'tasks_thisweek' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),

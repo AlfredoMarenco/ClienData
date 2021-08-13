@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Leads;
 
 use App\Models\Lead;
-use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class LeadsTable extends Component
 {
@@ -30,7 +27,7 @@ class LeadsTable extends Component
         }
 
 
-        return view('livewire.leads-table', [
+        return view('livewire.leads.leads-table', [
             'leads' => $leads,
         ]);
     }
