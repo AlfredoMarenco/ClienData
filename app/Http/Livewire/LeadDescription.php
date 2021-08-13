@@ -104,4 +104,13 @@ class LeadDescription extends Component
 
         $this->lead = Lead::find($this->lead->id);
     }
+
+    public function updateObservations()
+    {
+        $this->lead->update([
+            'observations' => $this->observations,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
 }

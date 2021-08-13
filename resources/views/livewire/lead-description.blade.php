@@ -218,6 +218,26 @@
 <label class="text-gray-400">Fecha de creación:</label>
 <p class="text-gray-800 underline mb-2">{{ $lead->created_at->diffForHumans() }}</p>
 
-<label class="text-gray-400">Observaciones:</label>
-<p class="text-gray-800 mb-2 text-justify">{{ $lead->observations }}</p>
+<label class="text-gray-400">Observations:</label>
+<div class="flex mb-2" x-data="{open:false}">
+    <div wire:loading.remove wire:target="updateObservations">
+        <p class="text-gray-800" x-show="!open">{{ $lead->observations }}</p>
+    </div>
+    <div wire:loading='updateObservations' wire:target='updateObservations'>
+        <i class="animate-spin fas fa-spinner"></i>
+    </div>
+    <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
+            class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
+    <div x-show="open" class="w-full">
+        <div>
+            <textarea type="text" class="w-full rounded-lg" rows="3" placeholder="Observations" wire:model="observations"
+                wire:keydown.enter="updateObservations" @keyup.enter="open=!open"></textarea>
+        </div>
+        <div>
+            <button wire:click="updateObservations" x-on:click="open=!open"><i
+                    class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
+            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+        </div>
+    </div>
+</div>
 </div>
