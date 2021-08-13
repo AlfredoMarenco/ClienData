@@ -69,9 +69,34 @@
                                             </a>
                                         </div>
                                         <div class="ml-12">
-                                            <div class="text-sm font-medium text-gray-900 hover:text-gray-700">
-                                                <a href="{{ route('leads.show', $lead) }}"
+                                            <div class="flex text-sm font-medium text-gray-900 hover:text-gray-700">
+                                                <div>
+                                                    <a href="{{ route('leads.show', $lead) }}"
                                                     target="_blank">{{ $lead->fullName() }}</a>
+                                                </div>
+                                                <div class="relative inline-block text-left ml-2"
+                                                    x-data="{open:false}">
+                                                    <div>
+                                                        <i class="fas fa-info-circle text-gray-600 hover:text-gray-700"
+                                                            x-on:click="open=!open"
+                                                            @click.outside="open = false"></i>
+                                                    </div>
+                                                    <div class="origin-top-right absolute left-2 mt-2 rounded-md shadow-lg bg-gray-200 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                                        role="menu" aria-orientation="vertical"
+                                                        aria-labelledby="menu-button" tabindex="-1" x-show="open">
+                                                        <div class="py-2" role="none">
+                                                            @isset($lead->observations)
+                                                                <div class="px-4 text-sm text-gray-800 text-justify">
+                                                                    {{ $lead->observations }}
+                                                                </div>
+                                                            @else
+                                                                <div class="px-4 text-sm text-gray-800 text-justify">
+                                                                    Sin observaciones
+                                                                </div>
+                                                            @endisset
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="text-sm text-gray-500 hover:text-gray-900">
                                                 <a href="mailto:{{ $lead->email }}">{{ $lead->email }}</a>

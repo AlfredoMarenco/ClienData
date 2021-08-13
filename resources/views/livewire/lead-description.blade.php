@@ -4,26 +4,6 @@
     <div class="mb-2 flex justify-center">
         <p class="text-xl font-semibold text-gray-800 text-center my-2">
             {{ $lead->fullName() }}
-        <div class="relative inline-block text-left ml-2" x-data="{open:false}">
-            <div>
-                <i class="fas fa-info-circle text-gray-600 hover:text-gray-700" x-on:click="open=!open"
-                    @click.outside="open = false"></i>
-            </div>
-            <div class="origin-top-right absolute left-2 mt-2 w-64 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none"
-                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" x-show="open">
-                <div class="py-2" role="none">
-                    @isset($lead->observations)
-                        <div class="px-4 text-sm text-gray-800 text-justify">
-                            {{ $lead->observations }}
-                        </div>
-                    @else
-                        <div class="px-4 text-sm text-gray-800 text-justify">
-                            Sin observaciones
-                        </div>
-                    @endisset
-                </div>
-            </div>
-        </div>
         </p>
     </div>
     <p class="text-center mb-1">
@@ -237,4 +217,7 @@
 
 <label class="text-gray-400">Fecha de creación:</label>
 <p class="text-gray-800 underline mb-2">{{ $lead->created_at->diffForHumans() }}</p>
+
+<label class="text-gray-400">Observaciones:</label>
+<p class="text-gray-800 mb-2 text-justify">{{ $lead->observations }}</p>
 </div>
