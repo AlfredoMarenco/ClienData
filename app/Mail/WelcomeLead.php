@@ -28,6 +28,6 @@ class WelcomeLead extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.leads.welcome');
+        return $this->markdown('maileclipse::templates.welcome');
     }
 }

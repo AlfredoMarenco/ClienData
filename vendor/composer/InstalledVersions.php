@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '8a34c94d2c88b8999c5c88cf32bf9f7c2f66639a',
+    'reference' => '81048c337819e5226173030e7200c386bdb031e0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -531,7 +531,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '8a34c94d2c88b8999c5c88cf32bf9f7c2f66639a',
+      'reference' => '81048c337819e5226173030e7200c386bdb031e0',
+    ),
+    'laravel/legacy-factories' => 
+    array (
+      'pretty_version' => 'v1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5e3fe2fd5fda64e20ea5c74c831a7346294e902a',
     ),
     'laravel/sail' => 
     array (
@@ -956,6 +965,15 @@ private static $installed = array (
       ),
       'reference' => 'e4573f47750dd6c92dca5aee543fa77513cbd8d3',
     ),
+    'qoraiche/laravel-mail-editor' => 
+    array (
+      'pretty_version' => 'v3.4.1',
+      'version' => '3.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5c39835e3f7a76a11e8ac16a4d77d552ab265c0f',
+    ),
     'ralouphie/getallheaders' => 
     array (
       'pretty_version' => '3.0.3',
@@ -991,6 +1009,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ed03c588e560cc906f2bb884bf02253de4ad851f',
+    ),
+    'reecem/mocker' => 
+    array (
+      'pretty_version' => 'v1.1.5',
+      'version' => '1.1.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7cf5c04e87933629a5a3160f7064ef27f119452f',
     ),
     'rhumsaa/uuid' => 
     array (

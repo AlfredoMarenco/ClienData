@@ -1,4 +1,4 @@
-<div>
+<div class="bg-gray-100 shadow-md pt-4">
     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex pb-4">
         <x-jet-nav-link :active="$nav_dev" wire:click="activeDev" class="cursor-pointer">
             {{ __('Developments') }}

@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Livewire\Leads;
+namespace App\Http\Livewire\Emails;
 
+use App\Models\Lead;
 use Livewire\Component;
 
 class EmailIndex extends Component
 {
     public $nav_emails = true, $nav_templates;
-
+    
     public function render()
     {
         return view('livewire.emails.email-index');
     }
-
 
     public function navigation($link)
     {
@@ -25,9 +25,8 @@ class EmailIndex extends Component
                 $this->nav_emails = false;
                 $this->nav_templates = true;
                 break;
-
             default:
-                # code...
+
                 break;
         }
     }

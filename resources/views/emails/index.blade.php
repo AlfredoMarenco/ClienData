@@ -5,11 +5,13 @@
         </h2>
     </x-slot>
 
-    <div >
+    <div>
         <div class="w-full mx-auto sm:px-6 lg:px-1">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    @livewire('emails.email-index')
+                @livewire('emails.email-index')
             </div>
         </div>
     </div>
+
+    
 </x-app-layout>
