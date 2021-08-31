@@ -24,8 +24,8 @@
                                 class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                                 <span class="sr-only">Close panel</span>
                                 <!-- Heroicon name: outline/x -->
-                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M6 18L18 6M6 6l12 12" />
                                 </svg>
@@ -132,6 +132,7 @@
                                                                 </div>
 
                                                                 <div class="col-span-6 sm:col-span-3">
+                                                                    @role('Administrador')
                                                                     <label for="user_id"
                                                                         class="block text-sm font-medium text-gray-700">Asignado
                                                                         a</label>
@@ -142,62 +143,63 @@
                                                                                 {{ $user->name }}</option>
                                                                         @endforeach
                                                                     </select>
-                                                                </div>
+                                                                @endcan
+                                                            </div>
 
-                                                                <div class="col-span-6 sm:col-span-4">
-                                                                    <label for="development_id"
-                                                                        class="block text-sm font-medium text-gray-700">Desarrollo</label>
-                                                                    <select wire:model="development_id"
-                                                                        autocomplete="development_id"
-                                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                                                        @foreach ($developments as $development)
-                                                                            <option value="{{ $development->id }}">
-                                                                                {{ $development->name }}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </div>
+                                                            <div class="col-span-6 sm:col-span-4">
+                                                                <label for="development_id"
+                                                                    class="block text-sm font-medium text-gray-700">Desarrollo</label>
+                                                                <select wire:model="development_id"
+                                                                    autocomplete="development_id"
+                                                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                    @foreach ($developments as $development)
+                                                                        <option value="{{ $development->id }}">
+                                                                            {{ $development->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
 
-                                                                <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                                                                    <label for="city"
-                                                                        class="block text-sm font-medium text-gray-700">Ciudad</label>
-                                                                    <input type="text" wire:model="city"
-                                                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                                </div>
+                                                            <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                                                <label for="city"
+                                                                    class="block text-sm font-medium text-gray-700">Ciudad</label>
+                                                                <input type="text" wire:model="city"
+                                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                            </div>
 
-                                                                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                                                    <label for="state"
-                                                                        class="block text-sm font-medium text-gray-700">Estado
-                                                                        / Provincia</label>
-                                                                    <input type="text" wire:model="state"
-                                                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                                </div>
-                                                                <div class="col-span-6 sm:col-span-3 lg:col-span-6">
-                                                                    <label for="observations"
-                                                                        class="block text-sm font-medium text-gray-700">Observaciones</label>
-                                                                    <textarea type="text" wire:model="observations"
-                                                                        rows="2"
-                                                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                                    </textarea>
-                                                                </div>
+                                                            <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                                                                <label for="state"
+                                                                    class="block text-sm font-medium text-gray-700">Estado
+                                                                    / Provincia</label>
+                                                                <input type="text" wire:model="state"
+                                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                            </div>
+                                                            <div class="col-span-6 sm:col-span-3 lg:col-span-6">
+                                                                <label for="observations"
+                                                                    class="block text-sm font-medium text-gray-700">Observaciones</label>
+                                                                <textarea type="text" wire:model="observations"
+                                                                    rows="2"
+                                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                </textarea>
                                                             </div>
                                                         </div>
-                                                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                                            <button
-                                                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2">
-                                                                Guardar
-                                                            </button>
-                                                        </div>
                                                     </div>
-                                                </form>
-                                            </div>
+                                                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                                        <button
+                                                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                                            Guardar
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
