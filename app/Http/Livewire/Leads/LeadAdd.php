@@ -26,6 +26,10 @@ class LeadAdd extends Component
         'phone.required' => 'El campo telefono es obligatorio',
     ];
 
+    public function mount()
+    {
+        $this->user_id = auth()->user()->id;
+    }
 
     public function render()
     {
