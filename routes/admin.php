@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SystemController;
@@ -27,6 +28,7 @@ Route::prefix('leads')->group(function () {
 Route::get('system', SystemController::class)->name('system.index');
 Route::get('tasks', TaskController::class)->name('tasks.index');
 Route::get('emails', EmailController::class)->name('emails.index');
+Route::get('documents', DocumentController::class)->name('documents.index');
 
 
 

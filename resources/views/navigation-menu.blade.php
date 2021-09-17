@@ -24,6 +24,9 @@
                     <x-jet-nav-link href="{{ route('emails.index') }}" :active="request()->routeIs('emails.*')">
                         {{ __('Emails') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('documents.index') }}" :active="request()->routeIs('documents.*')">
+                        {{ __('Documents') }}
+                    </x-jet-nav-link>
                     @role('Administrador')
                     <x-jet-nav-link href="{{ route('system.index') }}" :active="request()->routeIs('system.*')">
                         {{ __('System config') }}
