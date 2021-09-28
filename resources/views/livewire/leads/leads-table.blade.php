@@ -1,30 +1,45 @@
 <div>
-    <div class="flex justify-between mb-3 px-4 text-sm">
-        <div>
-            <label>Mostrar:</label>
-            <select class="py-0.5 rounded-md" wire:model="paginate">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-            </select>
-            registros.
+    <div class="flex justify-between mb-3 px-4 items-center text-xs">
+        <div class="flex justify-between items-center">
+            <div class="mx-1">
+                <label>Mostrar:</label>
+                <select class="py-0.5 rounded-md text-xs" wire:model="paginate">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
             @role('Administrador')
-            <label class="ml-4">Mostrar todos:</label>
+            <div class="mx-1">
+                <label>Mostrar todos:</label>
             <input wire:model="all" type="checkbox"
-                class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded ml-1">
-            <label class="ml-4">Mostrar solo de:</label>
-            <select wire:model="user" class="py-0.5 rounded-md">
-                <option value="" selected disabled>Seleccione una opcion</option>
-                @foreach ($users as $user)
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
+                    class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+            </div>
+            <div class="mx-1">
+                <label class="">Mostrar solo de:</label>
+                <select wire:model="user" class="py-0.5 rounded-md text-xs">
+                    <option value="" selected >Seleccione una opcion</option>
+                    @foreach ($users as $user)
+                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mx-1">
+                <label class="">Por estatus:</label>
+                <select wire:model="status"
+                    class="py-0.5 rounded-md text-xs">
+                    <option value="" selected >Seleccione una opcion</option>
+                    @foreach ($statuses as $status)
+                        <option class="hover:bg-transparent" style="background:{{ $status->color_bg }}; color:{{ $status->color_text }};" value="{{ $status->id }}">{{ $status->name }}</option>
+                    @endforeach
+                    </select>
+            </div>
         @endcan
     </div>
     <div>
         <label>Buscar:</label>
-        <input wire:model="search" type="text" class="w-96 py-0.5 rounded-md" placeholder="Busqueda por nombre">
+        <input wire:model="search" type="text" class="w-96 py-0.5 rounded-md text-sm" placeholder="Busqueda por nombre">
     </div>
 </div>
 <div class="flex flex-col">
