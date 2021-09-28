@@ -151,8 +151,10 @@ return [
         'task_link' => 'enlace',
         'task_place' => 'lugar',
         'name' => 'nombre',
+        'last_name' => 'apellido',
         'link' => 'enlace',
         'place' => 'lugar',
+        'policy' => 'aviso de privacidad',
     ],
 
 ];

@@ -42,6 +42,7 @@ return array(
     'Spatie\\LaravelPackageTools\\Database\\Factories\\' => array($vendorDir . '/spatie/laravel-package-tools/database/factories'),
     'Spatie\\LaravelPackageTools\\' => array($vendorDir . '/spatie/laravel-package-tools/src'),
     'ReeceM\\Mocker\\' => array($vendorDir . '/reecem/mocker/src'),
+    'RealRashid\\SweetAlert\\' => array($vendorDir . '/realrashid/sweet-alert/src'),
     'Rappasoft\\LaravelLivewireTables\\' => array($vendorDir . '/rappasoft/laravel-livewire-tables/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),

@@ -37,6 +37,7 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
@@ -94,6 +95,7 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'R' => 
         array (
             'ReeceM\\Mocker\\' => 14,
+            'RealRashid\\SweetAlert\\' => 22,
             'Rappasoft\\LaravelLivewireTables\\' => 32,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
@@ -349,6 +351,10 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'ReeceM\\Mocker\\' => 
         array (
             0 => __DIR__ . '/..' . '/reecem/mocker/src',
+        ),
+        'RealRashid\\SweetAlert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/realrashid/sweet-alert/src',
         ),
         'Rappasoft\\LaravelLivewireTables\\' => 
         array (
@@ -4885,6 +4891,13 @@ class ComposerStaticInite1c34d6d7c8cd77aee132489afe10180
         'Rappasoft\\LaravelLivewireTables\\Utilities\\ColumnUtilities' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Utilities/ColumnUtilities.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Column' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Column.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Filter' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Filter.php',
+        'RealRashid\\SweetAlert\\Console\\PublishCommand' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Console/PublishCommand.php',
+        'RealRashid\\SweetAlert\\Facades\\Alert' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Facades/Alert.php',
+        'RealRashid\\SweetAlert\\Storage\\AlertSessionStore' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Storage/AlertSessionStore.php',
+        'RealRashid\\SweetAlert\\Storage\\SessionStore' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Storage/SessionStore.php',
+        'RealRashid\\SweetAlert\\SweetAlertServiceProvider' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/SweetAlertServiceProvider.php',
+        'RealRashid\\SweetAlert\\ToSweetAlert' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/ToSweetAlert.php',
+        'RealRashid\\SweetAlert\\Toaster' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Toaster.php',
         'ReeceM\\Mocker\\Exceptions\\VarStoreMissingException' => __DIR__ . '/..' . '/reecem/mocker/src/Exceptions/VarStoreMissingException.php',
         'ReeceM\\Mocker\\Mocked' => __DIR__ . '/..' . '/reecem/mocker/src/Mocked.php',
         'ReeceM\\Mocker\\ReflectionMockery' => __DIR__ . '/..' . '/reecem/mocker/src/ReflectionMockery.php',

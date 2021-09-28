@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd3b96b1c452df0c4aea0114a12db5550cdef6916',
+        'reference' => '4ffe70b9c8399bbd8044c1c6aff062f1ca417906',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -472,7 +472,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd3b96b1c452df0c4aea0114a12db5550cdef6916',
+            'reference' => '4ffe70b9c8399bbd8044c1c6aff062f1ca417906',
             'dev_requirement' => false,
         ),
         'laravel/legacy-factories' => array(
@@ -942,6 +942,15 @@
             'install_path' => __DIR__ . '/../rappasoft/laravel-livewire-tables',
             'aliases' => array(),
             'reference' => 'ed03c588e560cc906f2bb884bf02253de4ad851f',
+            'dev_requirement' => false,
+        ),
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v4.0.0',
+            'version' => '4.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
+            'aliases' => array(),
+            'reference' => '4923bb91d7144c2ac5dacda0b5e1472fff3d88af',
             'dev_requirement' => false,
         ),
         'reecem/mocker' => array(
