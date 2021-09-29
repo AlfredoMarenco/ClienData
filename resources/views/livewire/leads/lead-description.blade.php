@@ -1,4 +1,4 @@
-<div class="w-full mt-6 mb-4 px-6 sticky z-50">
+<div class="w-full mt-6 mb-4 px-6 sticky z-25">
     <img class="h-20 w-20 mx-auto rounded-full object-cover shadow-lg"
         src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&background=random" />
     <div class="mb-2 flex justify-center">
