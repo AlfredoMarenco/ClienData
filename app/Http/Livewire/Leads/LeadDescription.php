@@ -5,11 +5,12 @@ namespace App\Http\Livewire\Leads;
 use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Status;
+use App\Models\User;
 use Livewire\Component;
 
 class LeadDescription extends Component
 {
-    public $lead, $name, $last_name, $phone, $status, $email, $development, $state, $city, $observations;
+    public $lead, $name, $last_name, $phone, $status, $email, $development, $state, $city, $observations, $user_id;
 
     protected $listeners = ['render' => 'render'];
 
@@ -25,13 +26,15 @@ class LeadDescription extends Component
         $this->state = $lead->state;
         $this->city = $lead->city;
         $this->observations = $lead->observations;
+        $this->user_id = $lead->user->id;
     }
 
     public function render()
     {
         $statuses = Status::all();
         $developments = Development::all();
-        return view('livewire.leads.lead-description', compact('statuses', 'developments'));
+        $users = User::all();
+        return view('livewire.leads.lead-description', compact('statuses', 'developments', 'users'));
     }
 
 
@@ -109,6 +112,14 @@ class LeadDescription extends Component
     {
         $this->lead->update([
             'observations' => $this->observations,
+        ]);
+
+        $this->lead = Lead::find($this->lead->id);
+    }
+    public function updateUser()
+    {
+        $this->lead->update([
+            'user_id' => $this->user_id,
         ]);
 
         $this->lead = Lead::find($this->lead->id);

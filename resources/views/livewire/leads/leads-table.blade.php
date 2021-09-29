@@ -17,9 +17,11 @@
                     class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
             </div>
             <div class="mx-1">
-                <label class="">Mostrar solo de:</label>
-                <select wire:model=" user"
-                    class="py-0.5 rounded-md text-xs">
+                <label
+                    class="">Mostrar solo de:</label>
+                <select wire:model='user'
+                    class="
+                    py-0.5 rounded-md text-xs">
                     <option value="" selected>Seleccione una opcion</option>
                     @foreach ($users as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -29,7 +31,7 @@
         @endcan
         <div class="mx-1">
             <label class="">Por estatus:</label>
-            <select wire:model="status"
+            <select wire:model='status'
                 class="py-0.5 rounded-md text-xs">
                 <option value="" selected>Seleccione una opcion</option>
                 @foreach ($statuses as $status)
