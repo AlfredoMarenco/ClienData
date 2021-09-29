@@ -1,1 +1,1 @@
-    <img class="w-11 h-11" src="{{ asset('img/logoTerrenosMid.png') }}" alt="">
+    <img class="w-32" src="{{ asset('img/logoTerrenos.svg') }}" alt="">
