@@ -28,7 +28,7 @@
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD6X3XEGL3"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208883762-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -37,7 +37,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-TD6X3XEGL3');
+        gtag('config', 'UA-208883762-1');
     </script>
 </head>
 
