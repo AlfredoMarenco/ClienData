@@ -27,6 +27,18 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD6X3XEGL3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TD6X3XEGL3');
+    </script>
 </head>
 
 <body class="antialiased">
@@ -330,8 +342,8 @@
                         </x-jet-label>
                     </div>
                     @error('policy')
-                            <span class="text-xs text-red-700">{{ $message }}</span>
-                        @enderror
+                        <span class="text-xs text-red-700">{{ $message }}</span>
+                    @enderror
                     <div class="flex items-start my-3">
                         <x-jet-label>
                             <x-jet-input type="checkbox" class="mr-2" name="marketing"></x-jet-input>
@@ -340,8 +352,8 @@
                         </x-jet-label>
                     </div>
                     @error('marketing')
-                            <span class="text-xs text-red-700">{{ $message }}</span>
-                        @enderror
+                        <span class="text-xs text-red-700">{{ $message }}</span>
+                    @enderror
                     <div class="my-3">
                         <button type="submit"
                             class="w-full flex items-center justify-center px-8 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600 md:py-2 md:text-lg md:px-10">
