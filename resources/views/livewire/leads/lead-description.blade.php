@@ -1,4 +1,4 @@
-<div class="w-full mt-6 mb-4 px-6">
+<div class="w-full mt-6 mb-4 px-6 z-50">
     <img class="h-20 w-20 mx-auto rounded-full object-cover shadow-lg"
         src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&background=random" />
     <div class="mb-2 flex justify-center">
@@ -15,7 +15,6 @@
     </p>
     <label class="text-gray-400">Asignado a:</label>
     @role('Administrador')
-
     <div class="flex mb-2" x-data="{open:false}">
         <div wire:loading.remove wire:target="updateUser">
             <p class="text-gray-800 underline" x-show="!open">{{ $lead->user->name }}</p>
