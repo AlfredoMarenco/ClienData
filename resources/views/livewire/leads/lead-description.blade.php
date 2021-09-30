@@ -25,8 +25,8 @@
         <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
                 class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>
         <div x-show="open" class="flex items-center justify-between">
-            <div class="w-1/2">
-                <select class="rounded-lg py-1" wire:model="user_id">
+            <div class="">
+                <select class="rounded-lg py-1 text-sm" wire:model="user_id">
                     @foreach ($users as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                     @endforeach
@@ -34,8 +34,8 @@
             </div>
             <div class="flex">
                 <button wire:click="updateUser" x-on:click="open=!open"><i
-                        class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
-                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+                        class="fas fa-check-circle text-green-600 ml-1 text-2xl"></i></button>
+                <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-1 text-2xl"></i></button>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
             <input type="text" class="py-1 w-full rounded-lg" placeholder="Nombre" wire:model="name"
                 wire:keydown.enter="updateName" @keyup.enter="open=!open">
         </div>
-        <div>
+        <div class="flex">
             <button wire:click="updateName" x-on:click="open=!open"><i
                     class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
             <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
