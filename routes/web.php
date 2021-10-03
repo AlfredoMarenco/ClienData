@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use Spatie\GoogleCalendar\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +44,12 @@ Route::post('leads', function (LeadsRequest $request) {
 
 Route::get('migrates', function () {
     Artisan::call('migrate');
+});
+
+
+
+Route::get('/calendario', function () {
+    $events = Event::get();
+
+    return $events;
 });
