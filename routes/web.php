@@ -50,6 +50,5 @@ Route::get('migrates', function () {
 
 Route::get('/calendario', function () {
     $events = Event::get();
-
     return $events;
 });
