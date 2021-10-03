@@ -23,7 +23,7 @@
             "require": {
                 "ext-json": "*",
                 "illuminate/support": "^8.0",
-                "php": "^7.3|^8.0"
+                "php": "^7.4|^8.0"
             },
             "require-dev": {
                 "orchestra/testbench": "^6.0",
@@ -2025,7 +2025,7 @@
             "require": {
                 "ext-mbstring": "*",
                 "league/config": "^1.1.1",
-                "php": "^7.3 || ^8.0",
+                "php": "^7.4 || ^8.0",
                 "psr/event-dispatcher": "^1.0",
                 "symfony/polyfill-php80": "^1.15"
             },
@@ -2136,7 +2136,7 @@
             "require": {
                 "dflydev/dot-access-data": "^3.0.1",
                 "nette/schema": "^1.2",
-                "php": "^7.3 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
                 "phpstan/phpstan": "^0.12.90",
@@ -4091,7 +4091,7 @@
             "require": {
                 "illuminate/contracts": "^8.0",
                 "livewire/livewire": "^2.6.5",
-                "php": "^7.3|^8.0",
+                "php": "^7.4|^8.0",
                 "spatie/laravel-package-tools": "^1.4.3"
             },
             "require-dev": {
@@ -4392,7 +4392,7 @@
             },
             "require": {
                 "illuminate/contracts": "^7.0|^8.0",
-                "php": "^7.3|^8.0"
+                "php": "^7.4|^8.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.4",
@@ -9618,5 +9618,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "1.1.0"
 }
