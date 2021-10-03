@@ -4,7 +4,6 @@ namespace Qoraiche\MailEclipse;
 
 use ErrorException;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Collection;
@@ -30,7 +29,7 @@ class MailEclipse
 {
     public const VIEW_NAMESPACE = 'maileclipse';
 
-    public const VERSION = '3.4.0';
+    public const VERSION = '3.5.0';
 
     /**
      * Default type examples for being passed to reflected classes.
@@ -39,15 +38,18 @@ class MailEclipse
      */
     public const TYPES = [
         'int' => 31,
-        // 'string' => 'test_string', // not needed as it can be cast __toString()
+        'string' => null,
         'bool' => false,
         'float' => 3.14159,
+        'iterable' => null,
+        'array' => null,
     ];
 
     public static $traversed = 0;
 
     /**
      * @return array
+     *
      * @throws \ReflectionException
      */
     public static function getMailables()
@@ -59,6 +61,7 @@ class MailEclipse
      * @param $key
      * @param $name
      * @return Collection
+     *
      * @throws \ReflectionException
      */
     public static function getMailable($key, $name): Collection
@@ -119,7 +122,7 @@ class MailEclipse
     /**
      * Save templates to templates.json file.
      *
-     * @param Collection $templates
+     * @param  Collection  $templates
      */
     public static function saveTemplates(Collection $templates): void
     {
@@ -313,9 +316,10 @@ class MailEclipse
      * @param $simpleview
      * @param $content
      * @param $viewName
-     * @param bool $template
-     * @param null $namespace
+     * @param  bool  $template
+     * @param  null  $namespace
      * @return bool|string|void
+     *
      * @throws \ReflectionException
      */
     public static function previewMarkdownViewContent($simpleview, $content, $viewName, $template = false, $namespace = null)
@@ -385,7 +389,7 @@ class MailEclipse
     }
 
     /**
-     * @param null $request
+     * @param  null  $request
      * @return JsonResponse
      */
     public static function generateMailable($request = null): JsonResponse
@@ -446,6 +450,7 @@ class MailEclipse
      * Get Mailables list.
      *
      * @return array
+     *
      * @throws \ReflectionException
      */
     protected static function mailablesList()
@@ -548,8 +553,10 @@ class MailEclipse
 
     /**
      * Handle Mailable Constructor arguments and pass the fake ones.
+     *
      * @param $mailable
      * @return object|void
+     *
      * @throws \ReflectionException
      */
     public static function handleMailableViewDataArgs($mailable)
@@ -624,9 +631,8 @@ class MailEclipse
     /**
      * Gets any missing params that may not be collectable in the reflection.
      *
-     * @param string $arg the argument string|array
-     * @param array $params the reflection param list
-     *
+     * @param  string  $arg  the argument string|array
+     * @param  array  $params  the reflection param list
      * @return array|string|\ReeceM\Mocker\Mocked
      */
     private static function getMissingParams($arg, $params)
@@ -638,24 +644,22 @@ class MailEclipse
          * getName() is undocumented alternative to casting to string.
          * https://www.php.net/manual/en/class.reflectiontype.php#124658
          *
-         * @var \ReflectionType $reflection
+         * @var \ReflectionNamedType|null $reflection
          */
-        $reflection = collect($params)->where('name', $arg)->first()->getType();
-
-        if (version_compare(phpversion(), '7.1', '>=')) {
-            $type = ! is_null($reflection)
-                ? self::TYPES[$reflection->getName()]
-                : null;
-        } else {
-            $type = ! is_null($reflection)
-                ? self::TYPES[/** @scrutinizer ignore-deprecated */ $reflection->__toString()]
-                : null;
-        }
+        $reflection = collect($params)->where('name', $arg)->first()->getType() ?? null;
 
         try {
-            return ! is_null($type)
-                    ? $type
-                    : new Mocked($arg, \ReeceM\Mocker\Utils\VarStore::singleton());
+            if (is_null($reflection)) {
+                return new Mocked($arg, \ReeceM\Mocker\Utils\VarStore::singleton());
+            }
+
+            $type = version_compare(phpversion(), '7.1', '>=')
+                ? self::TYPES[$reflection->getName()]
+                : self::TYPES[/** @scrutinizer ignore-deprecated */ $reflection->__toString()];
+
+            return is_null($type)
+                ? new Mocked($arg, \ReeceM\Mocker\Utils\VarStore::singleton())
+                : $type;
         } catch (\Exception $e) {
             return $arg;
         }
@@ -665,6 +669,7 @@ class MailEclipse
      * @param $mailable
      * @param $mailable_data
      * @return array|Collection
+     *
      * @throws \ReflectionException
      */
     private static function getMailableViewData($mailable, $mailable_data)
@@ -760,6 +765,7 @@ class MailEclipse
     /**
      * @param $mailable
      * @return mixed|void
+     *
      * @throws \ReflectionException
      */
     protected static function getMarkdownViewName($mailable)
@@ -779,8 +785,9 @@ class MailEclipse
 
     /**
      * @param $instance
-     * @param string $type
+     * @param  string  $type
      * @return mixed
+     *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      * @throws \ReflectionException
      */
@@ -800,9 +807,10 @@ class MailEclipse
     /**
      * @param $simpleview
      * @param $view
-     * @param bool $template
-     * @param null $instance
+     * @param  bool  $template
+     * @param  null  $instance
      * @return string|void
+     *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      * @throws \ReflectionException
      */
@@ -900,7 +908,6 @@ class MailEclipse
      *
      * @param $eloquentFactory
      * @param $model
-     *
      * @return null|object
      */
     private static function resolveFactory($eloquentFactory, $model): ?object
@@ -928,44 +935,48 @@ class MailEclipse
      * single level relation resolving for a model.
      * It will load the relations or set to mocked class.
      *
-     * @param mixed $eloquentFactory
-     * @param mixed $factoryModel
-     *
+     * @param  mixed  $eloquentFactory
+     * @param  mixed  $factoryModel
      * @return null|object
      */
     private static function hydrateRelations($eloquentFactory, $factoryModel): ?object
     {
-        if (config('maileclipse.relation_depth') === 0) {
+        if (config('maileclipse.relations.relation_depth', 1) === 0) {
             return $factoryModel;
         }
 
         if (self::$traversed >= 5) {
-            Log::warning('[MailEclipse]: more than 5 calls to relation loader', ['last_model' => get_class($factoryModel) ?? null]);
+            Log::warning('[MailEclipse]: more than 5 calls to relation loader', ['last_model' => get_class($factoryModel) ?? 'model unknown']);
             self::$traversed = 6;
 
             return $factoryModel;
         }
 
-        $model = new ReflectionClass(Model::class);
+        $model = new ReflectionClass(config('maileclipse.relations.model', \Illuminate\Foundation\Auth\User::class));
 
         self::$traversed += 1;
 
         collect((new ReflectionClass($factoryModel))->getMethods())
-            ->pluck('name')
-            ->diff(collect($model->getMethods())->pluck('name'))
-            ->filter(function ($method) use ($factoryModel) {
-                return rescue(
-                    function () use ($factoryModel, $method) {
-                        $parents = class_parents($factoryModel->$method());
-
-                        return isset($parents["Illuminate\Database\Eloquent\Relations\Relation"]);
-                    },
-                    false,
-                    false
-                );
+            ->filter(function (\ReflectionMethod $method) use ($model) {
+                return ! $model->hasMethod($method->getName());
             })
-            ->each(function ($relationName) use (&$factoryModel, $eloquentFactory) {
-                $factoryModel = self::loadRelations($relationName, $factoryModel, $eloquentFactory);
+            ->filter(function (\ReflectionMethod $method) use ($factoryModel) {
+                if ($method->getNumberOfParameters() >= 1) {
+                    return false;
+                }
+
+                $parents = rescue(function () use ($method, $factoryModel) {
+                    $methodName = $method->getName();
+
+                    return $method->hasReturnType()
+                        ? class_parents($method->getReturnType()->getName())
+                        : class_parents($factoryModel->$methodName());
+                }, [], false);
+
+                return isset($parents["Illuminate\Database\Eloquent\Relations\Relation"]);
+            })
+            ->each(function (\ReflectionMethod $relationName) use (&$factoryModel, $eloquentFactory) {
+                $factoryModel = self::loadRelations($relationName->getName(), $factoryModel, $eloquentFactory);
             });
 
         return $factoryModel;
@@ -976,10 +987,9 @@ class MailEclipse
      *
      * @todo Account for the many type relations, link back to parent model for belongsTo
      *
-     * @param mixed $relationName
-     * @param mixed $factoryModel
-     * @param mixed|null $eloquentFactory
-     *
+     * @param  mixed  $relationName
+     * @param  mixed  $factoryModel
+     * @param  mixed|null  $eloquentFactory
      * @return null|object
      */
     public static function loadRelations($relationName, $factoryModel, $eloquentFactory = null): ?object
@@ -993,7 +1003,7 @@ class MailEclipse
                 $related = $factoryModel->$relationName()->getRelated();
                 $relatedFactory = self::resolveFactory($eloquentFactory, get_class($related));
 
-                if (self::$traversed <= config('maileclipse.relation_depth')) {
+                if (self::$traversed <= config('maileclipse.relations.relation_depth')) {
                     if (! $loadIfIterable) {
                         $relatedFactory = self::hydrateRelations($eloquentFactory, $relatedFactory);
                     } else {
@@ -1026,8 +1036,9 @@ class MailEclipse
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      * @return bool|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     *
      * @throws \ReflectionException
      */
     public static function renderMailable(string $name)
@@ -1050,8 +1061,8 @@ class MailEclipse
     }
 
     /**
-     * @param string $name
-     * @param string $recipient
+     * @param  string  $name
+     * @param  string  $recipient
      */
     public static function sendTest(string $name, string $recipient): void
     {
@@ -1066,7 +1077,7 @@ class MailEclipse
 
     /**
      * @param $mailable
-     * @param string $email
+     * @param  string  $email
      * @return mixed
      */
     public static function setMailableSendTestRecipient($mailable, string $email)
@@ -1081,6 +1092,7 @@ class MailEclipse
     /**
      * @param $mailable
      * @return object|void
+     *
      * @throws \ReflectionException
      */
     private static function resolveMailableInstance($mailable)

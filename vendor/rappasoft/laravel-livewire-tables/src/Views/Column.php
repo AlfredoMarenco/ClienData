@@ -2,6 +2,7 @@
 
 namespace Rappasoft\LaravelLivewireTables\Views;
 
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 
 /**
@@ -73,6 +74,31 @@ class Column
      * @var bool
      */
     public bool $selectable = true;
+
+    /**
+     * @var bool
+     */
+    public bool $selected = false;
+
+    /**
+     * @var bool
+     */
+    public bool $footer = false;
+
+    /**
+     * @var
+     */
+    public $footerCallback;
+
+    /**
+     * @var
+     */
+    public $linkCallback;
+
+    /**
+     * @var ?string
+     */
+    public ?string $linkTarget;
 
     /**
      * Column constructor.
@@ -198,6 +224,14 @@ class Column
     }
 
     /**
+     * @return bool
+     */
+    public function isHtml(): bool
+    {
+        return $this->asHtml === true;
+    }
+
+    /**
      * @return string|null
      */
     public function class(): ?string
@@ -260,7 +294,16 @@ class Column
         $value = data_get($row, $columnName);
 
         if ($this->formatCallback) {
-            return app()->call($this->formatCallback, ['value' => $value, 'column' => $column, 'row' => $row]);
+            $value = call_user_func($this->formatCallback, $value, $column, $row);
+        }
+
+        if ($this->linkCallback) {
+            $url = call_user_func($this->linkCallback, $value, $column, $row);
+
+            if ($url) {
+                $linkTarget = $this->linkTarget ? "target='$this->linkTarget'" : '';
+                $value = new HtmlString("<a href='$url' $linkTarget>$value</a>");
+            }
         }
 
         return $value;
@@ -334,5 +377,73 @@ class Column
     public function isSelectable(): bool
     {
         return $this->selectable === true;
+    }
+
+    /**
+     * @return $this
+     */
+    public function selected(): self
+    {
+        $this->selected = true;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSelected(): bool
+    {
+        return $this->selected;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasFooter(): bool
+    {
+        return $this->footer === true;
+    }
+
+    /**
+     * @return $this
+     */
+    public function footer($callback = null): self
+    {
+        $this->footer = true;
+
+        $this->footerCallback = $callback;
+
+        return $this;
+    }
+
+    /**
+     * @param $rows
+     *
+     * @return false|mixed|null
+     */
+    public function footerFormatted($rows)
+    {
+        $value = null;
+
+        if ($this->footerCallback) {
+            $value = call_user_func($this->footerCallback, $rows);
+        }
+
+        return $value;
+    }
+
+    /**
+     * @param  callable  $callable
+     * @param  string|null  $target
+     *
+     * @return $this
+     */
+    public function linkTo(callable $callable, string $target = null): self
+    {
+        $this->linkCallback = $callable;
+        $this->linkTarget = $target;
+
+        return $this;
     }
 }

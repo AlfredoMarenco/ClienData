@@ -1,4 +1,4 @@
-@if ($bulkActionsEnabled && count($bulkActions) && (($selectPage && $rows->total() > $rows->count()) || count($selected)))
+@if ($bulkActionsEnabled && count($this->bulkActions) && (($selectPage && $rows->total() > $rows->count()) || count($selected)))
     <x-livewire-tables::bs4.table.row wire:key="row-message">
         <x-livewire-tables::bs4.table.cell colspan="{{ $colspan }}">
             @if (count($selected) && !$selectAll && !$selectPage)
@@ -6,7 +6,7 @@
                     <span>
                         @lang('You have selected')
                         <strong>{{ count($selected) }}</strong>
-                        @lang(':rows', ['rows' => count($selected) === 1 ? 'row' : 'rows']).
+                        @lang(count($selected) === 1 ? 'row' : 'rows').
                     </span>
 
                     <button
@@ -41,7 +41,7 @@
                         <span>
                             @lang('You have selected')
                             <strong>{{ count($selected) }}</strong>
-                            @lang(':rows', ['rows' => count($selected) === 1 ? 'row' : 'rows']).
+                            @lang(count($selected) === 1 ? 'row' : 'rows').
                         </span>
 
                         <button

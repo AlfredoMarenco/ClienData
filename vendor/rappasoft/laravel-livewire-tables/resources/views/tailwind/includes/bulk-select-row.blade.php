@@ -1,19 +1,19 @@
-@if ($bulkActionsEnabled && count($bulkActions) && (($selectPage && $rows->total() > $rows->count()) || count($selected)))
-    <x-livewire-tables::table.row wire:key="row-message" class="bg-indigo-50">
+@if ($bulkActionsEnabled && count($this->bulkActions) && (($selectPage && $rows->total() > $rows->count()) || count($selected)))
+    <x-livewire-tables::table.row wire:key="row-message" class="bg-indigo-50 dark:bg-gray-900 dark:text-white">
         <x-livewire-tables::table.cell :colspan="$colspan">
             @if (count($selected) && !$selectAll && !$selectPage)
                 <div>
                     <span>
                         @lang('You have selected')
                         <strong>{{ count($selected) }}</strong>
-                        @lang(':rows', ['rows' => count($selected) === 1 ? 'row' : 'rows']).
+                        @lang(count($selected) === 1 ? 'row' : 'rows').
                     </span>
 
                     <button
                         wire:click="resetBulk"
                         wire:loading.attr="disabled"
                         type="button"
-                        class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out"
+                        class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out dark:text-white dark:hover:text-gray-400"
                     >
                         @lang('Unselect All')
                     </button>
@@ -30,7 +30,7 @@
                         wire:click="resetBulk"
                         wire:loading.attr="disabled"
                         type="button"
-                        class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out"
+                        class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out dark:text-white dark:hover:text-gray-400"
                     >
                         @lang('Unselect All')
                     </button>
@@ -41,14 +41,14 @@
                         <span>
                             @lang('You have selected')
                             <strong>{{ count($selected) }}</strong>
-                            @lang(':rows', ['rows' => count($selected) === 1 ? 'row' : 'rows']).
+                            @lang(count($selected) === 1 ? 'row' : 'rows').
                         </span>
 
                         <button
                             wire:click="resetBulk"
                             wire:loading.attr="disabled"
                             type="button"
-                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out"
+                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out dark:text-white dark:hover:text-gray-400"
                         >
                             @lang('Unselect All')
                         </button>
@@ -66,7 +66,7 @@
                             wire:click="selectAll"
                             wire:loading.attr="disabled"
                             type="button"
-                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out"
+                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out dark:text-white dark:hover:text-gray-400"
                         >
                             @lang('Select All')
                         </button>
@@ -75,7 +75,7 @@
                             wire:click="resetBulk"
                             wire:loading.attr="disabled"
                             type="button"
-                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out"
+                            class="ml-1 text-blue-600 underline text-gray-700 text-sm leading-5 font-medium focus:outline-none focus:text-gray-800 focus:underline transition duration-150 ease-in-out dark:text-white dark:hover:text-gray-400"
                         >
                             @lang('Unselect All')
                         </button>

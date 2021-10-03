@@ -9,6 +9,7 @@ use Rappasoft\LaravelLivewireTables\Traits\WithBulkActions;
 use Rappasoft\LaravelLivewireTables\Traits\WithColumnSelect;
 use Rappasoft\LaravelLivewireTables\Traits\WithCustomPagination;
 use Rappasoft\LaravelLivewireTables\Traits\WithFilters;
+use Rappasoft\LaravelLivewireTables\Traits\WithFooter;
 use Rappasoft\LaravelLivewireTables\Traits\WithPerPagePagination;
 use Rappasoft\LaravelLivewireTables\Traits\WithReordering;
 use Rappasoft\LaravelLivewireTables\Traits\WithSearch;
@@ -25,10 +26,18 @@ abstract class DataTableComponent extends Component
     use WithColumnSelect;
     use WithCustomPagination;
     use WithFilters;
+    use WithFooter;
     use WithPerPagePagination;
     use WithReordering;
     use WithSearch;
     use WithSorting;
+
+    /**
+     * Dump the filters array for debugging at the top of the datatable
+     *
+     * @var bool
+     */
+    public bool $dumpFilters = false;
 
     /**
      * The default pagination theme.
@@ -59,7 +68,14 @@ abstract class DataTableComponent extends Component
      *
      * @var string
      */
-    public string $emptyMessage = 'No items found. Try narrowing your search.';
+    public string $emptyMessage = 'No items found. Try to broaden your search.';
+
+    /**
+     * Whether or not to display a responsive table
+     *
+     * @var bool
+     */
+    public bool $responsive = true;
 
     /**
      * Name of the page parameter for pagination
