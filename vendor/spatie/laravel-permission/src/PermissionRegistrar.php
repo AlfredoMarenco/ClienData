@@ -5,7 +5,7 @@ namespace Spatie\Permission;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Access\Gate;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Spatie\Permission\Contracts\Permission;
 use Spatie\Permission\Contracts\Role;
 
@@ -23,7 +23,7 @@ class PermissionRegistrar
     /** @var string */
     protected $roleClass;
 
-    /** @var \Illuminate\Database\Eloquent\Collection */
+    /** @var \Illuminate\Support\Collection */
     protected $permissions;
 
     /** @var \DateInterval|int */
@@ -32,8 +32,8 @@ class PermissionRegistrar
     /** @var string */
     public static $cacheKey;
 
-    /** @var array */
-    private $cachedRoles = [];
+    /** @var string */
+    public static $cacheModelKey;
 
     /**
      * PermissionRegistrar constructor.
@@ -49,19 +49,19 @@ class PermissionRegistrar
         $this->initializeCache();
     }
 
-    public function initializeCache()
+    protected function initializeCache()
     {
-        self::$cacheExpirationTime = config('permission.cache.expiration_time') ?: \DateInterval::createFromDateString('24 hours');
+        self::$cacheExpirationTime = config('permission.cache.expiration_time', config('permission.cache_expiration_time'));
 
         self::$cacheKey = config('permission.cache.key');
+        self::$cacheModelKey = config('permission.cache.model_key');
 
         $this->cache = $this->getCacheStoreFromConfig();
     }
 
     protected function getCacheStoreFromConfig(): \Illuminate\Contracts\Cache\Repository
     {
-        // the 'default' fallback here is from the permission.php config file,
-        // where 'default' means to use config(cache.default)
+        // the 'default' fallback here is from the permission.php config file, where 'default' means to use config(cache.default)
         $cacheDriver = config('permission.cache.store', 'default');
 
         // when 'default' is specified, no action is required since we already have the default instance
@@ -115,70 +115,26 @@ class PermissionRegistrar
     }
 
     /**
-     * Load permissions from cache
-     * This get cache and turns array into \Illuminate\Database\Eloquent\Collection
-     */
-    private function loadPermissions()
-    {
-        if ($this->permissions !== null) {
-            return;
-        }
-
-        $this->permissions = $this->cache->remember(self::$cacheKey, self::$cacheExpirationTime, function () {
-            // make the cache smaller using an array with only required fields
-            return $this->getPermissionClass()->select('id', 'id as i', 'name as n', 'guard_name as g')
-                ->with('roles:id,id as i,name as n,guard_name as g')->get()
-                ->map(function ($permission) {
-                    return $permission->only('i', 'n', 'g') +
-                        ['r' => $permission->roles->map->only('i', 'n', 'g')->all()];
-                })->all();
-        });
-
-        if (is_array($this->permissions)) {
-            $this->permissions = $this->getPermissionClass()::hydrate(
-                collect($this->permissions)->map(function ($item) {
-                    return ['id' => $item['i'] ?? $item['id'], 'name' => $item['n'] ?? $item['name'], 'guard_name' => $item['g'] ?? $item['guard_name']];
-                })->all()
-            )
-            ->each(function ($permission, $i) {
-                $roles = Collection::make($this->permissions[$i]['r'] ?? $this->permissions[$i]['roles'] ?? [])
-                        ->map(function ($item) {
-                            return $this->getHydratedRole($item);
-                        });
-
-                $permission->setRelation('roles', $roles);
-            });
-
-            $this->cachedRoles = [];
-        }
-    }
-
-    /**
      * Get the permissions based on the passed params.
      *
      * @param array $params
-     * @param bool $onlyOne
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Support\Collection
      */
-    public function getPermissions(array $params = [], bool $onlyOne = false): Collection
+    public function getPermissions(array $params = []): Collection
     {
-        $this->loadPermissions();
+        if ($this->permissions === null) {
+            $this->permissions = $this->cache->remember(self::$cacheKey, self::$cacheExpirationTime, function () {
+                return $this->getPermissionClass()
+                    ->with('roles')
+                    ->get();
+            });
+        }
 
-        $method = $onlyOne ? 'first' : 'filter';
+        $permissions = clone $this->permissions;
 
-        $permissions = $this->permissions->$method(static function ($permission) use ($params) {
-            foreach ($params as $attr => $value) {
-                if ($permission->getAttribute($attr) != $value) {
-                    return false;
-                }
-            }
-
-            return true;
-        });
-
-        if ($onlyOne) {
-            $permissions = new Collection($permissions ? [$permissions] : []);
+        foreach ($params as $attr => $value) {
+            $permissions = $permissions->where($attr, $value);
         }
 
         return $permissions;
@@ -219,23 +175,5 @@ class PermissionRegistrar
     public function getCacheStore(): \Illuminate\Contracts\Cache\Store
     {
         return $this->cache->getStore();
-    }
-
-    private function getHydratedRole(array $item)
-    {
-        $roleId = $item['i'] ?? $item['id'];
-
-        if (isset($this->cachedRoles[$roleId])) {
-            return $this->cachedRoles[$roleId];
-        }
-
-        $roleClass = $this->getRoleClass();
-        $roleInstance = new $roleClass;
-
-        return $this->cachedRoles[$roleId] = $roleInstance->newFromBuilder([
-            'id' => $roleId,
-            'name' => $item['n'] ?? $item['name'],
-            'guard_name' => $item['g'] ?? $item['guard_name'],
-        ]);
     }
 }

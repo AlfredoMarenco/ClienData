@@ -1,9 +1,7 @@
 ---
-title: Using Permissions via Roles
+title: Using permissions via roles
 weight: 3
 ---
-
-## Assigning Roles
 
 A role can be assigned to any user:
 
@@ -29,8 +27,6 @@ Roles can also be synced:
 $user->syncRoles(['writer', 'admin']);
 ```
 
-## Checking Roles
-
 You can determine if a user has a certain role:
 
 ```php
@@ -54,17 +50,8 @@ You can also determine if a user has all of a given list of roles:
 $user->hasAllRoles(Role::all());
 ```
 
-You can also determine if a user has exactly all of a given list of roles:
-
-```php
-$user->hasExactRoles(Role::all());
-```
-
-The `assignRole`, `hasRole`, `hasAnyRole`, `hasAllRoles`, `hasExactRoles`  and `removeRole` functions can accept a
+The `assignRole`, `hasRole`, `hasAnyRole`, `hasAllRoles`  and `removeRole` functions can accept a
  string, a `\Spatie\Permission\Models\Role` object or an `\Illuminate\Support\Collection` object.
-
-
-## Assigning Permissions to Roles
 
 A permission can be given to a role:
 
@@ -88,28 +75,7 @@ The `givePermissionTo` and `revokePermissionTo` functions can accept a
 string or a `Spatie\Permission\Models\Permission` object.
 
 
-**NOTE: Permissions are inherited from roles automatically.**
-
-
-### What Permissions Does A Role Have?
-
-The `permissions` property on any given role returns a collection with all the related permission objects. This collection can respond to usual Eloquent Collection operations, such as count, sort, etc.
-
-```php
-// get collection
-$role->permissions;
-
-// return only the permission names:
-$role->permissions->pluck('name');
-
-// count the number of permissions assigned to a role
-count($role->permissions);
-// or
-$role->permissions->count();
-```
-
-## Assigning Direct Permissions To A User
-
+Permissions are inherited from roles automatically. 
 Additionally, individual permissions can be assigned to the user too. 
 For instance:
 
@@ -129,13 +95,9 @@ but `false` for `$user->hasDirectPermission('edit articles')`.
 
 This method is useful if one builds a form for setting permissions for roles and users in an application and wants to restrict or change inherited permissions of roles of the user, i.e. allowing to change only direct permissions of the user.
 
-
-You can check if the user has a Specific or All or Any of a set of permissions directly assigned:
+You can check if the user has All or Any of a set of permissions directly assigned:
 
 ```php
-// Check if the user has Direct permission
-$user->hasDirectPermission('edit articles')
-
 // Check if the user has All direct permissions
 $user->hasAllDirectPermissions(['edit articles', 'delete articles']);
 
@@ -148,7 +110,7 @@ When we call
 `$user->hasAnyDirectPermission('edit articles')`, it returns `true` because the user has one of the provided permissions.
 
 
-You can examine all of these permissions:
+You can list all of these permissions:
 
 ```php
 // Direct permissions
@@ -162,6 +124,11 @@ $user->getAllPermissions();
 ```
 
 All these responses are collections of `Spatie\Permission\Models\Permission` objects.
+
+
+
+If we follow the previous example, the first response will be a collection with the `delete article` permission and 
+the second will be a collection with the `edit article` permission and the third will contain both.
 
 If we follow the previous example, the first response will be a collection with the `delete article` permission and 
 the second will be a collection with the `edit article` permission and the third will contain both.

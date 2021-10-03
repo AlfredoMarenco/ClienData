@@ -52,7 +52,7 @@ trait HasRoles
      * Scope the model query to certain roles only.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string|int|array|\Spatie\Permission\Contracts\Role|\Illuminate\Support\Collection $roles
+     * @param string|array|\Spatie\Permission\Contracts\Role|\Illuminate\Support\Collection $roles
      * @param string $guard
      *
      * @return \Illuminate\Database\Eloquent\Builder
@@ -86,7 +86,7 @@ trait HasRoles
     /**
      * Assign the given role to the model.
      *
-     * @param array|string|int|\Spatie\Permission\Contracts\Role ...$roles
+     * @param array|string|\Spatie\Permission\Contracts\Role ...$roles
      *
      * @return $this
      */
@@ -120,11 +120,13 @@ trait HasRoles
 
             $class::saved(
                 function ($object) use ($roles, $model) {
-                    if ($model->getKey() != $object->getKey()) {
+                    static $modelLastFiredOn;
+                    if ($modelLastFiredOn !== null && $modelLastFiredOn === $model) {
                         return;
                     }
-                    $model->roles()->sync($roles, false);
-                    $model->load('roles');
+                    $object->roles()->sync($roles, false);
+                    $object->load('roles');
+                    $modelLastFiredOn = $object;
                 }
             );
         }
@@ -137,7 +139,7 @@ trait HasRoles
     /**
      * Revoke the given role from the model.
      *
-     * @param string|int|\Spatie\Permission\Contracts\Role $role
+     * @param string|\Spatie\Permission\Contracts\Role $role
      */
     public function removeRole($role)
     {
@@ -153,7 +155,7 @@ trait HasRoles
     /**
      * Remove all current roles and set the given ones.
      *
-     * @param  array|\Spatie\Permission\Contracts\Role|string|int  ...$roles
+     * @param  array|\Spatie\Permission\Contracts\Role|string  ...$roles
      *
      * @return $this
      */
@@ -252,34 +254,6 @@ trait HasRoles
                 ? $this->roles->where('guard_name', $guard)->pluck('name')
                 : $this->getRoleNames()
         ) == $roles;
-    }
-
-    /**
-     * Determine if the model has exactly all of the given role(s).
-     *
-     * @param  string|array|\Spatie\Permission\Contracts\Role|\Illuminate\Support\Collection  $roles
-     * @param  string|null  $guard
-     * @return bool
-     */
-    public function hasExactRoles($roles, string $guard = null): bool
-    {
-        if (is_string($roles) && false !== strpos($roles, '|')) {
-            $roles = $this->convertPipeToArray($roles);
-        }
-
-        if (is_string($roles)) {
-            $roles = [$roles];
-        }
-
-        if ($roles instanceof Role) {
-            $roles = [$roles->name];
-        }
-
-        $roles = collect()->make($roles)->map(function ($role) {
-            return $role instanceof Role ? $role->name : $role;
-        });
-
-        return $this->roles->count() == $roles->count() && $this->hasAllRoles($roles, $guard);
     }
 
     /**
