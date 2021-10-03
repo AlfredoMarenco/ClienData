@@ -20,7 +20,7 @@
         "rappasoft/laravel-livewire-tables": "^1.12",
         "realrashid/sweet-alert": "^4.0",
         "spatie/laravel-google-calendar": "^3.4",
-        "spatie/laravel-permission": "^3.2"
+        "spatie/laravel-permission": "^4.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
