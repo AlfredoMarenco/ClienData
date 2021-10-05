@@ -2,8 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\RemindTask;
+use App\Models\Task;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class TestTask extends Command
@@ -39,10 +44,12 @@ class TestTask extends Command
      */
     public function handle()
     {
-        $user = User::create([
-            'name' => 'User',
-            'email' => date('YmdHis').'@gmail.com',
-            'password' => bcrypt('password'),
-        ]);
+        $tasks = Task::all();
+
+        foreach ($tasks as $task) {
+            if ($task->expiration > Carbon::now()) {
+                Mail::to($task->user->email)->send(new RemindTask);
+            }
+        }
     }
 }
