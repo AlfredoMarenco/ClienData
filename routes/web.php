@@ -69,7 +69,7 @@ Route::get('/calendario', function () {
 Route::get('email', function () {
     $tasks = Task::whereBetween('expiration', [now()->subDay()->toDateTimeString(), now()])->get();
     foreach ($tasks as $task) {
-        Mail::to('prueba@gmail.com')->queue(new RemindTask);
+        Mail::to('marencocode@gmail.com')->queue(new RemindTask);
     }
     /* Artisan::call('queue:work'); */
     return $tasks;
