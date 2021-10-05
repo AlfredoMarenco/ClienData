@@ -64,13 +64,13 @@ Route::get('/calendario', function () {
 
 
 Route::get('email', function () {
-    $tasks = Task::all();
+    /* $tasks = Task::all();
         foreach ($tasks as $task) {
             if ($task->expiration > Carbon::now()) {
                 Mail::to('prueba@gmail.com')->queue(new RemindTask);
             }
         }
         $carbon = new Carbon;
-        $carbon = $carbon->setTimezone('America/Mexico_City');
-        return $carbon;
+        $carbon = $carbon->setTimezone('America/Mexico_City'); */
+    return Carbon::now();
 });
