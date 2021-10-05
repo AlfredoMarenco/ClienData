@@ -72,5 +72,5 @@ Route::get('email', function () {
         }
         $carbon = new Carbon;
         $carbon = $carbon->setTimezone('America/Mexico_City'); */
-    return Carbon::now();
+    return Carbon::now('America/Mexico_City');
 });
