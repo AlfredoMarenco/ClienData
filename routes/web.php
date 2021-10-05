@@ -6,9 +6,9 @@ use App\Mail\RemindTask;
 use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Task;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -53,6 +53,9 @@ Route::post('leads', function (LeadsRequest $request) {
 Route::get('migrates', function () {
     Artisan::call('migrate');
 });
+Route::get('queue', function () {
+    Artisan::call('queue:work');
+});
 
 
 
@@ -64,13 +67,10 @@ Route::get('/calendario', function () {
 
 
 Route::get('email', function () {
-    /* $tasks = Task::all();
-        foreach ($tasks as $task) {
-            if ($task->expiration > Carbon::now()) {
-                Mail::to('prueba@gmail.com')->queue(new RemindTask);
-            }
-        }
-        $carbon = new Carbon;
-        $carbon = $carbon->setTimezone('America/Mexico_City'); */
-    return Carbon::now('America/Mexico_City');
+    $tasks = Task::whereBetween('expiration', [now()->subDay()->toDateTimeString(), now()])->get();
+    foreach ($tasks as $task) {
+        Mail::to('prueba@gmail.com')->queue(new RemindTask);
+    }
+    /* Artisan::call('queue:work'); */
+    return $tasks;
 });
