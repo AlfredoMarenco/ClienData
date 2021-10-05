@@ -23,7 +23,7 @@
                     class="
                     py-0.5 rounded-md text-xs">
                     <option value="" selected>Seleccione una opcion</option>
-                    @foreach ($users as $user)
+                    @foreach ($users->except(3) as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                     @endforeach
                     </select>
@@ -32,7 +32,8 @@
         <div class="mx-1">
             <label class="">Por estatus:</label>
             <select wire:model='status'
-                class="py-0.5 rounded-md text-xs">
+                class="
+                py-0.5 rounded-md text-xs">
                 <option value="" selected>Seleccione una opcion</option>
                 @foreach ($statuses as $status)
                     <option class="hover:bg-transparent"
@@ -86,7 +87,7 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach ($leads as $lead)
+                        @foreach ($leads->except(['user_id' => 3]) as $lead)
                             <tr class="cursor-pointer hover:bg-blue-100">
                                 <td class="px-6 py-4 whitespace-nowrap cursor-pointer">
                                     <div class="flex items-center">
