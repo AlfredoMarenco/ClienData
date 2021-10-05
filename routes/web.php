@@ -67,7 +67,7 @@ Route::get('/calendario', function () {
 
 
 Route::get('email', function () {
-    $tasks = Task::whereBetween('expiration', [now()->subDay()->toDateTimeString(), now()])->get();
+    $tasks = Task::whereBetween('expiration', [now()->subDay()->toDateTimeString(), now()])->where('status', 'pending')->get();
     foreach ($tasks as $task) {
         Mail::to($task->user->email)->queue(new RemindTask);
     }

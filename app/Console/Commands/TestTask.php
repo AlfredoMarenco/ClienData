@@ -44,11 +44,9 @@ class TestTask extends Command
      */
     public function handle()
     {
-        /* $tasks = Task::all();
+        $tasks = Task::whereBetween('expiration', [now()->subDay()->toDateTimeString(), now()])->where('status', 'pending')->get();
         foreach ($tasks as $task) {
-            if ($task->expiration > Carbon::now()) { */
-                Mail::to('prueba@gmail.com')->send(new RemindTask);
-         /*    }
-        } */
+            Mail::to($task->user->email)->queue(new RemindTask);
+        }
     }
 }
