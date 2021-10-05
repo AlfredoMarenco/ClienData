@@ -44,12 +44,11 @@ class TestTask extends Command
      */
     public function handle()
     {
-        $tasks = Task::all();
-
+        /* $tasks = Task::all();
         foreach ($tasks as $task) {
-            if ($task->expiration > Carbon::now()) {
-                Mail::to($task->user->email)->send(new RemindTask);
-            }
-        }
+            if ($task->expiration > Carbon::now()) { */
+                Mail::to('prueba@gmail.com')->send(new RemindTask);
+         /*    }
+        } */
     }
 }
