@@ -106,7 +106,11 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ($leads->except(['user_id' => 3]) as $lead)
+                   @role('SuperUser')
+                   @foreach ($leads as $lead)
+                   @else
+                   @foreach ($leads->except(['user_id' => 3]) as $lead)
+                   @endcan
                         <tr class="cursor-pointer hover:bg-blue-100">
                             <td class="px-6 py-4 whitespace-nowrap cursor-pointer">
                                 <div class="flex items-center">
