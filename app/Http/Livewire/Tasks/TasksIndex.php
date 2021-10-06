@@ -57,9 +57,6 @@ class TasksIndex extends Component
                 $this->tasks_thisweek = Task::where('user_id', $this->user)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
                 $this->tasks_expired = Task::where('user_id', $this->user)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get();
                 break;
-            default:
-                # code...
-                break;
         }
     }
     public function setCompleteTask(Task $task)

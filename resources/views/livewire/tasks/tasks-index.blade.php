@@ -38,19 +38,6 @@
                 </select>
         </div>
     @endcan
-    <div class="mx-1">
-        <label class="">Por estatus:</label>
-            <select wire:model='status'
-                class="
-            py-0.5 rounded-md text-xs">
-            <option value="" selected>Seleccione una opcion</option>
-            @foreach ($statuses as $status)
-                <option class="hover:bg-transparent"
-                    style="background:{{ $status->color_bg }}; color:{{ $status->color_text }};"
-                    value="{{ $status->id }}">{{ $status->name }}</option>
-            @endforeach
-            </select>
-    </div>
 </div>
 </div>
 
