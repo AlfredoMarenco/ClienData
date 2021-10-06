@@ -2,26 +2,66 @@
 
 namespace App\Http\Livewire\Tasks;
 
+use App\Models\Status;
 use App\Models\Task;
+use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
 
 class TasksIndex extends Component
 {
     public $name, $type, $platform, $link, $place, $date_start, $date_end, $time_start, $time_end, $observations, $priority, $expiration, $expoption;
+    public $user, $all = false, $tasks_today, $tasks_tomorrow, $tasks_thisweek, $tasks_expired;
+
 
     public function render()
     {
         return view('livewire.tasks.tasks-index', [
-            'tasks_today' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
-            'tasks_tomorrow' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
-            'tasks_thisweek' => Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
-            'tasks_expired' => Task::where('user_id', auth()->user()->id)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get(),
-            'carbon' => new Carbon()
+            'tasks_today' => $this->tasks_today,
+            'tasks_tomorrow' => $this->tasks_tomorrow,
+            'tasks_thisweek' => $this->tasks_thisweek,
+            'tasks_expired' => $this->tasks_expired,
+            'carbon' => new Carbon(),
+            'users' => User::all()->except(3),
+            'statuses' => Status::all(),
         ]);
     }
 
+    public function mount()
+    {
+        $this->tasks_today = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+        $this->tasks_tomorrow = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+        $this->tasks_thisweek = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+        $this->tasks_expired = Task::where('user_id', auth()->user()->id)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+    }
 
+    public function filter($filter)
+    {
+        switch ($filter) {
+            case 'all':
+                if ($this->all) {
+                    $this->tasks_today = Task::whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_tomorrow = Task::whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_thisweek = Task::whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_expired = Task::where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                } else {
+                    $this->tasks_today = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_tomorrow = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_thisweek = Task::where('user_id', auth()->user()->id)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                    $this->tasks_expired = Task::where('user_id', auth()->user()->id)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                }
+                break;
+            case 'user':
+                $this->tasks_today = Task::where('user_id', $this->user)->whereBetween('expiration', [Carbon::today(), Carbon::tomorrow()])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                $this->tasks_tomorrow = Task::where('user_id', $this->user)->whereBetween('expiration', [Carbon::tomorrow(), Carbon::tomorrow()->addHour(24)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                $this->tasks_thisweek = Task::where('user_id', $this->user)->whereBetween('expiration', [Carbon::tomorrow()->addDay(1), Carbon::tomorrow()->addMonth(5)])->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                $this->tasks_expired = Task::where('user_id', $this->user)->where('expiration', '<', Carbon::today())->where('status', 'pending')->orderBy('created_at', 'asc')->get();
+                break;
+            default:
+                # code...
+                break;
+        }
+    }
     public function setCompleteTask(Task $task)
     {
         $newTask = Task::create([
