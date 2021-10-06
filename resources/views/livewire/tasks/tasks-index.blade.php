@@ -249,7 +249,7 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700"><span
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
                                                             class="text-gray-700 font-bold">Enlace:</span>
                                                         {{ $task->link }}
                                                     </p>
@@ -546,7 +546,7 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700"><span
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
                                                             class="text-gray-700 font-bold">Enlace:</span>
                                                         {{ $task->link }}
                                                     </p>
@@ -843,7 +843,7 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700"><span
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
                                                             class="text-gray-700 font-bold">Enlace:</span>
                                                         {{ $task->link }}
                                                     </p>
@@ -1068,7 +1068,7 @@
                                         href="{{ route('leads.show', $task->lead) }}">{{ $task->lead->name }}
                                         {{ $task->lead->last_name }}</a>
                                 </div>
-                                <div class="overflow-ellipsis overflow-hidden">
+                                <div>
                                     {{ $task->user->name }}
                                 </div>
                                 <div>
@@ -1140,7 +1140,7 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700"><span
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
                                                             class="text-gray-700 font-bold">Enlace:</span>
                                                         {{ $task->link }}
                                                     </p>
