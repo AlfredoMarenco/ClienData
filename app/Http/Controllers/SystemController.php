@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class SystemController extends Controller
 {
     public function __construct(){
-        $this->middleware(['role:Administrador']);
+        $this->middleware(['role:SuperUser']);
     }
 
-    
+
     public function __invoke()
     {
 
