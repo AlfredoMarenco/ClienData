@@ -24,17 +24,17 @@ class LeadsTable extends Component
     public function render()
     {
         if (auth()->user()->hasRole('Administrador') && $this->all == true) {
-            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->where('user_id', '!=', 3)->paginate($this->paginate);
+            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->where('user_id', '!=', 3)->paginate($this->paginate);
         } elseif (auth()->user()->hasRole('SuperUser') && $this->all == true) {
-            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
         } elseif ($this->user && $this->status) {
-            $leads = Lead::where('user_id', $this->user)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+            $leads = Lead::where('user_id', $this->user)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
         } elseif ($this->user) {
-            $leads = Lead::where('user_id', $this->user)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+            $leads = Lead::where('user_id', $this->user)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
         } elseif ($this->status) {
-            $leads = Lead::where('user_id', auth()->user()->id)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+            $leads = Lead::where('user_id', auth()->user()->id)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
         } else {
-            $leads = Lead::where('user_id', auth()->user()->id)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->paginate($this->paginate);
+            $leads = Lead::where('user_id', auth()->user()->id)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
         }
 
         $users = User::all();
