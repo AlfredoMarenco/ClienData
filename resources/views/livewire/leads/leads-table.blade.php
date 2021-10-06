@@ -65,7 +65,7 @@
 <div>
     <label>Buscar:</label>
     <input wire:model="search" type="text" class="w-96 py-0.5 rounded-md text-sm"
-        placeholder="Busqueda por nombre">
+        placeholder="Busqueda por nombre o email">
 </div>
 </div>
 <div class="flex flex-col">
