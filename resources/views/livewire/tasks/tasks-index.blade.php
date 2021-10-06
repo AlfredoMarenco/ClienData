@@ -57,8 +57,7 @@
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
-                            <div>User</div>
-
+                            <div>Asesor</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
@@ -249,9 +248,9 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
-                                                            class="text-gray-700 font-bold">Enlace:</span>
-                                                        {{ $task->link }}
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden">
+                                                        <span class="text-gray-700 font-bold">Enlace:</span>
+                                                        {{ Str::limit($task->link, 20, '...') }}
                                                     </p>
                                                     <p class="text-gray-700"><span
                                                             class="text-gray-700 text-sm">{{ $carbon->parse($task->date_start . ' ' . $task->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMMM Y -\ hh:mm:ss A') }}</span>
@@ -355,7 +354,7 @@
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
-                            <div>User</div>
+                            <div>Asesor</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
@@ -546,9 +545,9 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
-                                                            class="text-gray-700 font-bold">Enlace:</span>
-                                                        {{ $task->link }}
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden">
+                                                        <span class="text-gray-700 font-bold">Enlace:</span>
+                                                        {{ Str::limit($task->link, 20, '...') }}
                                                     </p>
                                                     <p class="text-gray-700"><span
                                                             class="text-gray-700 text-sm">{{ $carbon->parse($task->date_start . ' ' . $task->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMMM Y -\ hh:mm:ss A') }}</span>
@@ -652,7 +651,7 @@
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
-                            <div>User</div>
+                            <div>Asesor</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
@@ -843,9 +842,9 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
-                                                            class="text-gray-700 font-bold">Enlace:</span>
-                                                        {{ $task->link }}
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden">
+                                                        <span class="text-gray-700 font-bold">Enlace:</span>
+                                                        {{ Str::limit($task->link, 20, '...') }}
                                                     </p>
                                                     <p class="text-gray-700"><span
                                                             class="text-gray-700 text-sm">{{ $carbon->parse($task->date_start . ' ' . $task->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMMM Y -\ hh:mm:ss A') }}</span>
@@ -949,7 +948,7 @@
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
-                            <div>User</div>
+                            <div>Asesor</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
@@ -1140,9 +1139,9 @@
                                                             class="text-gray-700 font-bold">Plataforma:</span>
                                                         {{ $task->platform }}
                                                     </p>
-                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden"><span
-                                                            class="text-gray-700 font-bold">Enlace:</span>
-                                                        {{ $task->link }}
+                                                    <p class="text-gray-700 overflow-ellipsis overflow-hidden">
+                                                        <span class="text-gray-700 font-bold">Enlace:</span>
+                                                        {{ Str::limit($task->link, 20, '...') }}
                                                     </p>
                                                     <p class="text-gray-700"><span
                                                             class="text-gray-700 text-sm">{{ $carbon->parse($task->date_start . ' ' . $task->time_end)->locale('es_Mx')->isoFormat('ddd D \d\e MMMM Y -\ hh:mm:ss A') }}</span>
