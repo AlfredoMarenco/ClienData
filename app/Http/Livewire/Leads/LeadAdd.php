@@ -45,7 +45,7 @@ class LeadAdd extends Component
             'state' => $this->state,
             'observations' => $this->observations,
             'status_id' => $this->status_id,
-            'user_id' => auth()->user()->id,
+            'user_id' => $this->user_id,
             'development_id' => $this->development_id,
         ]);
 
