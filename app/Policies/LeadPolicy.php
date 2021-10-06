@@ -30,7 +30,7 @@ class LeadPolicy
      */
     public function view(User $user, Lead $lead)
     {
-        if ($user->hasRole('Administrador')) {
+        if ($user->hasRole('Administrador')|| $user->hasRole('SuperUser')) {
             return true;
         } else {
             return $user->id === $lead->user->id;
