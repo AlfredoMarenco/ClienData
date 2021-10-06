@@ -53,16 +53,18 @@
                 <div class="overflow-hidden pb-8 sm:rounded-lg">
                     @if ($tasks_today->count() > 0)
                         <div
-                            class="grid grid-cols-5 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
+                            class="grid grid-cols-6 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
+                            <div>User</div>
+
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
                         @foreach ($tasks_today as $task)
                             <div
-                                class="grid grid-cols-5 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
+                                class="grid grid-cols-6 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
                                 <div class="px-1">
                                     @switch($task->type)
                                         @case('whatsapp')
@@ -174,6 +176,9 @@
                                     <a class="text-gray-700"
                                         href="{{ route('leads.show', $task->lead) }}">{{ $task->lead->name }}
                                         {{ $task->lead->last_name }}</a>
+                                </div>
+                                <div class="overflow-ellipsis overflow-hidden">
+                                    {{ $task->user->name }}
                                 </div>
                                 <div>
                                     @switch($task->type)
@@ -346,16 +351,17 @@
                 <div class="overflow-hidden pb-8 sm:rounded-lg">
                     @if ($tasks_tomorrow->count() > 0)
                         <div
-                            class="grid grid-cols-5 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
+                            class="grid grid-cols-6 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
+                            <div>User</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
                         @foreach ($tasks_tomorrow as $task)
                             <div
-                                class="grid grid-cols-5 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
+                                class="grid grid-cols-6 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
                                 <div class="px-1">
                                     @switch($task->type)
                                         @case('whatsapp')
@@ -467,6 +473,9 @@
                                     <a class="text-gray-700"
                                         href="{{ route('leads.show', $task->lead) }}">{{ $task->lead->name }}
                                         {{ $task->lead->last_name }}</a>
+                                </div>
+                                <div class="overflow-ellipsis overflow-hidden">
+                                    {{ $task->user->name }}
                                 </div>
                                 <div>
                                     @switch($task->type)
@@ -639,16 +648,17 @@
                 <div class="overflow-hidden pb-8 sm:rounded-lg">
                     @if ($tasks_thisweek->count() > 0)
                         <div
-                            class="grid grid-cols-5 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
+                            class="grid grid-cols-6 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
+                            <div>User</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
                         @foreach ($tasks_thisweek as $task)
                             <div
-                                class="grid grid-cols-5 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
+                                class="grid grid-cols-6 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
                                 <div class="px-1">
                                     @switch($task->type)
                                         @case('whatsapp')
@@ -760,6 +770,9 @@
                                     <a class="text-gray-700"
                                         href="{{ route('leads.show', $task->lead) }}">{{ $task->lead->name }}
                                         {{ $task->lead->last_name }}</a>
+                                </div>
+                                <div class="overflow-ellipsis overflow-hidden">
+                                    {{ $task->user->name }}
                                 </div>
                                 <div>
                                     @switch($task->type)
@@ -932,16 +945,17 @@
                 <div class="overflow-hidden pb-8 sm:rounded-lg">
                     @if ($tasks_expired->count() > 0)
                         <div
-                            class="grid grid-cols-5 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
+                            class="grid grid-cols-6 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
+                            <div>User</div>
                             <div>Detalles</div>
                             <div>Acciones</div>
                         </div>
                         @foreach ($tasks_expired as $task)
                             <div
-                                class="grid grid-cols-5 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
+                                class="grid grid-cols-6 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
                                 <div class="px-1">
                                     @switch($task->type)
                                         @case('whatsapp')
@@ -1053,6 +1067,9 @@
                                     <a class="text-gray-700"
                                         href="{{ route('leads.show', $task->lead) }}">{{ $task->lead->name }}
                                         {{ $task->lead->last_name }}</a>
+                                </div>
+                                <div class="overflow-ellipsis overflow-hidden">
+                                    {{ $task->user->name }}
                                 </div>
                                 <div>
                                     @switch($task->type)
