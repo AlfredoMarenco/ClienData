@@ -12,29 +12,34 @@ class LeadsTable extends Component
 {
     use WithPagination;
 
-    public $paginate = '10', $search, $sortBy = 'created_at', $sortDirection = 'desc', $all = false, $user = "", $status = "";
+    public $paginate = '10', $name, $email, $sortBy = 'created_at', $sortDirection = 'desc', $all = false, $user, $status = "";
 
-
-    public function updatingSearch()
+    public function updatingname()
     {
         $this->resetPage();
     }
 
+    public function mount()
+    {
+        $this->user = auth()->user()->id;
+    }
 
     public function render()
     {
-        if (auth()->user()->hasRole('Administrador') && $this->all == true) {
-            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->where('user_id', '!=', 3)->paginate($this->paginate);
-        } elseif (auth()->user()->hasRole('SuperUser') && $this->all == true) {
-            $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
-        } elseif ($this->user && $this->status) {
-            $leads = Lead::where('user_id', $this->user)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
-        } elseif ($this->user) {
-            $leads = Lead::where('user_id', $this->user)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
-        } elseif ($this->status) {
-            $leads = Lead::where('user_id', auth()->user()->id)->where('status_id', $this->status)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
+        if (auth()->user()->hasRole('SuperUser')) {
+            if ($this->all) {
+                $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('status_id', 'LIKE', '%' . $this->status . '%')->paginate($this->paginate);
+            } else {
+                $leads = Lead::where('user_id', $this->user)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('status_id', 'LIKE', '%' . $this->status . '%')->paginate($this->paginate);
+            }
+        } elseif (auth()->user()->hasRole('Administrador')) {
+            if ($this->all) {
+                $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('user_id', '!=', 3)->where('status_id', 'LIKE', '%' . $this->status . '%')->paginate($this->paginate);
+            } else {
+                $leads = Lead::where('user_id', $this->user)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('status_id', 'LIKE', '%' . $this->status . '%')->paginate($this->paginate);
+            }
         } else {
-            $leads = Lead::where('user_id', auth()->user()->id)->orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->search . '%')->orWhere('email','like','%'.$this->search.'%')->paginate($this->paginate);
+            $leads = Lead::where('user_id', auth()->user()->id)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('status_id', 'LIKE', '%' . $this->status . '%')->orderBy($this->sortBy, $this->sortDirection)->paginate($this->paginate);
         }
 
         $users = User::all();

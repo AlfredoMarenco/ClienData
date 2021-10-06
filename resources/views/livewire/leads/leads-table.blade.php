@@ -22,7 +22,6 @@
                 <select wire:model='user'
                     class="
                     py-0.5 rounded-md text-xs">
-                    <option value="" selected>Seleccione una opcion</option>
                     @foreach ($users->except(3) as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                     @endforeach
@@ -41,7 +40,6 @@
                 <select wire:model='user'
                     class="
                 py-0.5 rounded-md text-xs">
-                <option value="" selected>Seleccione una opcion</option>
                 @foreach ($users as $user)
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                 @endforeach
@@ -63,9 +61,14 @@
     </div>
 </div>
 <div>
-    <label>Buscar:</label>
-    <input wire:model="search" type="text" class="w-96 py-0.5 rounded-md text-sm"
-        placeholder="Busqueda por nombre o email">
+    <label>Nombre:</label>
+    <input wire:model="name" type="text" class="w-44 py-0.5 rounded-md text-sm"
+        placeholder="Busqueda por nombre ">
+</div>
+<div>
+    <label>Correo:</label>
+    <input wire:model="email" type="text" class="w-44 py-0.5 rounded-md text-sm"
+        placeholder="Busqueda por email">
 </div>
 </div>
 <div class="flex flex-col">
