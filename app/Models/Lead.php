@@ -53,4 +53,9 @@ class Lead extends Model
     {
         return $this->morphMany(Event::class, 'eventable');
     }
+
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class);
+    }
 }

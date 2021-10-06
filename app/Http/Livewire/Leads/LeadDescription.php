@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Leads;
 
+use App\Models\Assignment;
 use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Status;
@@ -120,6 +121,11 @@ class LeadDescription extends Component
     {
         $this->lead->update([
             'user_id' => $this->user_id,
+        ]);
+
+        Assignment::create([
+            'user_id' => auth()->user()->id,
+            'lead_id' => $this->lead->id
         ]);
 
         $this->lead = Lead::find($this->lead->id);

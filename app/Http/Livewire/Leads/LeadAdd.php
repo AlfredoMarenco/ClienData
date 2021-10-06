@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Leads;
 
+use App\Models\Assignment;
 use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Status;
@@ -31,21 +32,11 @@ class LeadAdd extends Component
         $this->user_id = auth()->user()->id;
     }
 
-    public function render()
-    {
-        return view('livewire.leads.lead-add', [
-            'users' => User::all(),
-            'statuses' => Status::all(),
-            'developments' => Development::all(),
-        ]);
-    }
-
-
     public function storeLead()
     {
         $this->validate();
 
-        Lead::create([
+        $lead = Lead::create([
             'name' => $this->name,
             'last_name' => $this->last_name,
             'email' => $this->email,
@@ -57,7 +48,23 @@ class LeadAdd extends Component
             'user_id' => auth()->user()->id,
             'development_id' => $this->development_id,
         ]);
+
+        Assignment::create([
+            'user_id' => auth()->user()->id,
+            'lead_id' => $lead->id
+        ]);
+
+
         $this->reset('name', 'last_name', 'email', 'phone', 'city', 'state');
         $this->success = true;
+    }
+
+    public function render()
+    {
+        return view('livewire.leads.lead-add', [
+            'users' => User::all(),
+            'statuses' => Status::all(),
+            'developments' => Development::all(),
+        ]);
     }
 }
