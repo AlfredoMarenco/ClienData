@@ -20,6 +20,7 @@ class LeadsTable extends Component
         $this->resetPage();
     }
 
+
     public function render()
     {
         if (auth()->user()->hasRole('Administrador') && $this->all == true) {
