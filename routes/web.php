@@ -41,6 +41,12 @@ Route::get('/avisodeprivadidad', function () {
 Route::get('storage-link', function () {
     Artisan::call('storage:link');
 });
+Route::get('route-clear', function () {
+    Artisan::call('route:clear');
+});
+Route::get('config-clear', function () {
+    Artisan::call('config:clear');
+});
 
 Route::get('task-start', function () {
     Artisan::call('schedule:work');
