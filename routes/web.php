@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\GoogleCalendar\Event;
+use UniSharp\LaravelFilemanager\Lfm;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,11 +60,9 @@ Route::get('queue', function () {
 
 
 
-Route::get('/calendario', function () {
-    $events = Event::get();
-    return $events;
+Route::middleware('auth')->get('/calendario', function () {
+    return view('calendar');
 });
-
 
 
 Route::get('email', function () {

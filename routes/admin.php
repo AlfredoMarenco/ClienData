@@ -8,6 +8,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SystemController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use \UniSharp\LaravelFilemanager\Lfm;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ Route::get('documents', DocumentController::class)->name('documents.index');
 Route::get('reports', ReportController::class)->name('reports.index');
 
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    Lfm::routes();
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->get('/dashboard', function () {
     return view('dashboard');
