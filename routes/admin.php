@@ -30,13 +30,13 @@ Route::prefix('leads')->group(function () {
 Route::get('system', SystemController::class)->name('system.index');
 Route::get('tasks', TaskController::class)->name('tasks.index');
 Route::get('emails', EmailController::class)->name('emails.index');
-/* Route::get('documents', DocumentController::class)->name('documents.index'); */
+Route::get('documents', DocumentController::class)->name('documents.index');
 Route::get('reports', ReportController::class)->name('reports.index');
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     Lfm::routes();
-})->name('documents.index');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->get('/dashboard', function () {
     return view('dashboard');
