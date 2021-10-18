@@ -24,7 +24,7 @@
                     <x-jet-nav-link href="{{ route('emails.index') }}" :active="request()->routeIs('emails.*')">
                         {{ __('Emails') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/admin/laravel-filemanager" :active="request()->routeIs('documents.*')">
+                    <x-jet-nav-link href="/admin/laravel-filemanager" target="_blank" :active="request()->routeIs('documents.*')">
                         {{ __('Documents') }}
                     </x-jet-nav-link>
                     @role('SuperUser')
