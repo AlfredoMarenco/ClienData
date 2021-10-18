@@ -64,9 +64,9 @@ Route::get('queue', function () {
     Artisan::call('queue:work');
 });
 
-/* Route::middleware('auth')->get('/calendario', function () {
+Route::middleware('auth')->get('/calendario', function () {
     return view('calendar');
-}); */
+});
 
 
 Route::get('email', function () {
