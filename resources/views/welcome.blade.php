@@ -227,12 +227,18 @@
                     <div class="modal-body">
                         <div class="alert alert-succes">
 
-                            <form class="contact" name="contact-form" method="post" action="enviar.php">
+                            <form method="post" action="{{ route('form.leads') }}">
+                                @csrf
+                                <x-jet-input type="hidden" class="w-full" name="user_id" value="3">
+                                </x-jet-input>
+                                <x-jet-input type="hidden" class="w-full" name="status_id" value="1">
+                                </x-jet-input>
+                                <x-jet-input type="hidden" class="w-full" name="development_id" value="1">
+                                </x-jet-input>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Nombre & Apellido</label>
-                                    <input type="name" name="nombre" class="form-control"
-                                        id="exampleFormControlInput1" required="required"
-                                        placeholder="Escribe tu nombre">
+                                    <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
+                                        required="required" placeholder="Escribe tu nombre">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Email</label>
@@ -242,13 +248,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Teléfono</label>
-                                    <input type="tel" name="telefono" class="form-control" id="phone"
-                                        pattern="[0-9]{10}" required="required" placeholder="Escribe tu teléfono">
+                                    <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
+                                        required="required" placeholder="Escribe tu teléfono">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Mensaje</label>
-                                    <textarea class="form-control" name="mensaje" id="exampleFormControlTextarea1"
-                                        required="required" rows="3"
+                                    <textarea class="form-control" name="observations"
+                                        id="exampleFormControlTextarea1" required="required" rows="3"
                                         placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6LdBBc8ZAAAAACqRaUl6mmUgAfKhUXYmCUpq5nRK"
@@ -431,7 +437,8 @@
                             <hr>
                             <x-jet-input type="hidden" class="w-full" name="user_id" value="3"></x-jet-input>
                             <x-jet-input type="hidden" class="w-full" name="status_id" value="1"></x-jet-input>
-                            <x-jet-input type="hidden" class="w-full" name="development_id" value="1"></x-jet-input>
+                            <x-jet-input type="hidden" class="w-full" name="development_id" value="1">
+                            </x-jet-input>
                             <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
                                 required="required" placeholder="Nombre">
                         </div>
