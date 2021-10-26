@@ -53,8 +53,8 @@ Route::get('task-start', function () {
 });
 
 Route::post('leads', function (LeadsRequest $request) {
+    /* return $request->all(); */
     Lead::create($request->all());
-
     return redirect('/')->withSuccess('Informacion enviada con exito');
 })->name('form.leads');
 

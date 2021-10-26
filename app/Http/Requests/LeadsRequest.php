@@ -25,11 +25,8 @@ class LeadsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'last_name' => 'required',
             'email' => 'required|email|unique:leads,email',
             'phone' => 'required',
-            'policy' => 'required',
-            'marketing' => 'required'
         ];
     }
 }
