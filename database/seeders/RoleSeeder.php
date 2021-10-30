@@ -23,17 +23,21 @@ class RoleSeeder extends Seeder
             'name' => 'Vendedor'
         ]);
 
+        $role3 = Role::create([
+            'name' => 'SuperUser'
+        ]);
 
 
-        Permission::create(['name' => 'admin.leads.index'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'admin.leads.create'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'admin.leads.edit'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'admin.leads.destory'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'admin.statuses.index'])->syncRoles([$role1]);
-        Permission::create(['name' => 'admin.statuses.create'])->syncRoles([$role1]);
-        Permission::create(['name' => 'admin.statuses.edit'])->syncRoles([$role1]);
-        Permission::create(['name' => 'admin.statuses.destory'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.leads.index'])->syncRoles([$role1,$role2,$role3]);
+        Permission::create(['name' => 'admin.leads.create'])->syncRoles([$role1,$role2,$role3]);
+        Permission::create(['name' => 'admin.leads.edit'])->syncRoles([$role1,$role2,$role3]);
+        Permission::create(['name' => 'admin.leads.destory'])->syncRoles([$role3]);
+
+        Permission::create(['name' => 'admin.statuses.index'])->syncRoles([$role1,$role3]);
+        Permission::create(['name' => 'admin.statuses.create'])->syncRoles([$role1,$role3]);
+        Permission::create(['name' => 'admin.statuses.edit'])->syncRoles([$role1,$role3]);
+        Permission::create(['name' => 'admin.statuses.destory'])->syncRoles([$role1,$role3]);
 
 
     }

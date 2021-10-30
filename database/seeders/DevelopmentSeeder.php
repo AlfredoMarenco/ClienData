@@ -17,22 +17,8 @@ class DevelopmentSeeder extends Seeder
         /* Development::factory(5)->create(); */
 
         Development::create([
-            'name' => 'Ciudad Central'
+            'name' => 'Desarrollo Web'
         ]);
 
-        Development::create([
-            'name' => 'Alea'
-        ]);
-        Development::create([
-            'name' => 'Andarenas'
-        ]);
-
-        Development::create([
-            'name' => 'Palumar'
-        ]);
-
-        Development::create([
-            'name' => 'Costa linda'
-        ]);
     }
 }

@@ -16,22 +16,22 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Alfredo Gonzalez',
-            'email' => 'alfredogonzalez@terrenosmid.com',
+            'email' => 'dev@agenciavandu.com',
             'password' => bcrypt('marencos6359:D')
-        ])->assignRole('Administrador');
+        ])->assignRole('SuperUser');
 
         User::create([
-            'name' => 'Javier Gutierrez',
-            'email' => 'javiergutierrez@terrenosmid.com',
+            'name' => 'Alvar Buenfil',
+            'email' => 'ab@agenciavandu.com',
             'password' => bcrypt('password')
         ])->assignRole('Administrador');
 
         User::create([
-            'name' => 'Alfredo Gonzalez',
-            'email' => 'vendedor@terrenosmid.com',
+            'name' => 'SinAsignar',
+            'email' => 'info@agenciavandu.com',
             'password' => bcrypt('marencos6359:D')
         ])->assignRole('Vendedor');
 
-        User::factory(30)->create();
+        /* User::factory(30)->create(); */
     }
 }
