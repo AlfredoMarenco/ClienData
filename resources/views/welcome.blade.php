@@ -160,24 +160,24 @@
                 <div class="col-md-6 col-sm-12 col-lg-6">
                     <div class="row">
                         <div class="col-6 soluciones">
-                            <img src="/img/icon/Ticket-Star.svg" class="img-fluid" alt="iconografia agencia vandu">
+                            <img src="{{ asset('/img/icon/Ticket-Star.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
                             <h4 class="pt-3 titular-i">e-commerce</h4>
                             <p>Desarrollamos herramientas especiales para gestión de inventario y recuperación de
                                 carrito.</p>
                         </div>
                         <div class="col-6 soluciones">
-                            <img src="/img/icon/Calendar.svg" class="img-fluid" alt="iconografia agencia vandu">
+                            <img src="{{ asset('/img/icon/Calendar.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
                             <h4 class="pt-3 titular-i">Google Ads</h4>
                             <p>Utilizamos la red de búsqueda más grande a tu favor, impulsamos y multiplicamos los clics
                                 a tus promociones.</p>
                         </div>
                         <div class="col-6 soluciones">
-                            <img src="/img/icon/Activity.svg" class="img-fluid" alt="iconografia agencia vandu">
+                            <img src="{{ asset('/img/icon/Activity.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
                             <h4 class="pt-3 titular-i">Facebook Ads</h4>
                             <p>Gestionamos tus anuncios y agilizamos las coneversiones de tus redes sociales. </p>
                         </div>
                         <div class="col-6 soluciones">
-                            <img src="/img/icon/Image.svg" class="img-fluid" alt="iconografia agencia vandu">
+                            <img src="{{ asset('/img/icon/Image.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
                             <h4 class="pt-3 titular-i">Diseño web</h4>
                             <p>Creamos estructura y el diseño de tu sitio web desde cero. Ayudamos a configurar tus
                                 eventos de conversión.</p>
@@ -209,14 +209,10 @@
 
     </section>
     <main role="main" class="container">
-
         <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
             aria-hidden="true">
-
             <div class="modal-dialog" role="document">
-
                 <div class="modal-content">
-
                     <div class="modal-header">
                         <h5 id="tituloVentana">Solicita más información </h5>
                         <button class="close" data-dismiss="modal" aria-label="Cerrar">
@@ -226,7 +222,6 @@
 
                     <div class="modal-body">
                         <div class="alert alert-succes">
-
                             <form method="post" action="{{ route('form.leads') }}">
                                 @csrf
                                 <x-jet-input type="hidden" class="w-full" name="user_id" value="3">
@@ -259,23 +254,15 @@
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6LdBBc8ZAAAAACqRaUl6mmUgAfKhUXYmCUpq5nRK"
                                     style="margin-bottom: 10px;"></div>
-
                                 <button type="submit" class="btn btn-secondary">Enviar</button>
                             </form>
-
-
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
     </main>
 
