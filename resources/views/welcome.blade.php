@@ -66,8 +66,14 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=331856211230776&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
+    {!! htmlScriptTagJsApi() !!}
 
-    {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
+    <script type="text/javascript">
+        function callbackThen(
+            response
+        ) { // read HTTP status console.log(response.status); // read Promise object response.json().then(function(data){ console.log(data); }); } function callbackCatch(error){ console.error('Error:', error) }
+    </script>
+    {!! htmlScriptTagJsApi(['callback_then' => 'callbackThen', 'callback_catch' => 'callbackCatch']) !!}
 </head>
 
 <body>
@@ -258,8 +264,10 @@
                                         id="exampleFormControlTextarea1" required="required" rows="3"
                                         placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
                                 </div>
-                                {!! htmlFormSnippet() !!}
-                                <button type="submit" class="btn btn-secondary">Enviar</button>
+
+                                <button class="g-recaptcha btn btn-secondary"
+                                    data-sitekey="6Ld-6LcwJSodAAAAADMaBbnB_3TpsCZqbOyUIOHPPSHc" data-callback='onSubmit'
+                                    data-action='submit' type="submit">Enviar</button>
                             </form>
                         </div>
                     </div>
@@ -444,9 +452,9 @@
                             <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
                                 required="required" placeholder="Teléfono">
                         </div>
-                        {!! htmlFormSnippet() !!}
-
-                        <button type="submit" class="btn btn-secondary">Enviar</button>
+                        <button class="g-recaptcha btn btn-secondary"
+                            data-sitekey="6Ld-6LcwJSodAAAAADMaBbnB_3TpsCZqbOyUIOHPPSHc" data-callback='onSubmit'
+                            data-action='submit' type="submit">Enviar</button>
                     </form>
                 </div>
                 <div class="col-md-4 col-sm-6">
