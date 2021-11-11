@@ -14,6 +14,8 @@ class LeadsTable extends Component
 
     public $paginate = '10', $name, $email, $sortBy = 'created_at', $sortDirection = 'desc', $all = false, $user, $status = "";
 
+    protected $listeners = ['render'];
+
     public function updatingname()
     {
         $this->resetPage();
@@ -49,6 +51,12 @@ class LeadsTable extends Component
             'users' => $users,
             'statuses' => $statuses,
         ]);
+    }
+
+    public function delete(Lead $lead)
+    {
+        $lead->delete();
+        $this->emit('render');
     }
 
     public function sortBy($field)
