@@ -62,8 +62,6 @@
     @stack('modals')
 
     @livewireScripts
-    @livewireCalendarScripts
-
 
     @stack('js')
 </body>
