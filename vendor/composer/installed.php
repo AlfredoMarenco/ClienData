@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ea9549adeed75836b874383ca5b7bad1009bf87f',
+        'reference' => '438d7dc3c6e7f6b18e4aa33450327322c0c2d945',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -62,6 +62,15 @@
             'install_path' => __DIR__ . '/../bacon/bacon-qr-code',
             'aliases' => array(),
             'reference' => 'f73543ac4e1def05f1a70bcd1525c8a157a1ad09',
+            'dev_requirement' => false,
+        ),
+        'biscolab/laravel-recaptcha' => array(
+            'pretty_version' => '5.0.1',
+            'version' => '5.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../biscolab/laravel-recaptcha',
+            'aliases' => array(),
+            'reference' => '21018b259827e1446ea9d829ae423022a0e1025e',
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -562,7 +571,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ea9549adeed75836b874383ca5b7bad1009bf87f',
+            'reference' => '438d7dc3c6e7f6b18e4aa33450327322c0c2d945',
             'dev_requirement' => false,
         ),
         'laravel/legacy-factories' => array(

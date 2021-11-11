@@ -27,6 +27,7 @@ class LeadsRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:leads,email',
             'phone' => 'required',
+            'g-recaptcha-response' => 'recaptcha',
         ];
     }
 }

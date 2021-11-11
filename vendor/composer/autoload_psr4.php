@@ -119,6 +119,7 @@ return array(
     'CKSource\\CKFinder\\' => array($vendorDir . '/ckfinder/ckfinder-laravel-package/_connector'),
     'CKSource\\CKFinderBridge\\' => array($vendorDir . '/ckfinder/ckfinder-laravel-package/src'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    'Biscolab\\ReCaptcha\\' => array($vendorDir . '/biscolab/laravel-recaptcha/src'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
     'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
