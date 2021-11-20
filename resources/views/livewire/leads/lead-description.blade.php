@@ -1,13 +1,13 @@
 <div class="w-full mt-6 mb-4 px-6 sticky z-25">
-    <img class="h-20 w-20 mx-auto rounded-full object-cover shadow-lg"
-        src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&background=random" />
+    <img class="h-20 w-20 mx-auto rounded-full object-cover"
+        src="https://ui-avatars.com/api/?name={{ $lead->name }}+{{ $lead->last_name }}&color=FFF&background=4b0082" />
     <div class="mb-2 flex justify-center">
-        <p class="text-xl font-semibold text-gray-800 text-center my-2">
+        <p class="text-xl font-semibold text-gray-800 text-center mt-2">
             {{ $lead->fullName() }}
         </p>
     </div>
     <p class="text-center mb-1">
-        <span class="rounded-md px-1 text-white text-sm font-bold uppercase shadow-md"
+        <span class="rounded-md px-3 py-1 text-white text-sm font-bold uppercase"
             style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">{{ $lead->status->name }}</span>
     </p>
     <p class="text-center mb-6 text-gray-600 text-lg">
@@ -17,7 +17,7 @@
     @role('SuperUser')
     <div class="flex mb-2" x-data="{open:false}">
         <div wire:loading.remove wire:target="updateUser">
-            <p class="text-gray-800 underline" x-show="!open">{{ $lead->user->name }}</p>
+            <p class="text-gray-800" x-show="!open">{{ $lead->user->name }}</p>
         </div>
         <div wire:loading='updateUser' wire:target='updateUser'>
             <i class="animate-spin fas fa-spinner"></i>
@@ -40,13 +40,13 @@
         </div>
     </div>
 @else
-    <p class="text-gray-800 underline mb-2">{{ $lead->user->name }}</p>
+    <p class="text-gray-800  mb-2">{{ $lead->user->name }}</p>
 @endcan
 
 <label class="text-gray-400">Nombre:</label>
 <div class="flex mb-2" x-data="{open:false}">
     <div wire:loading.remove wire:target="updateName">
-        <p class="text-gray-800 underline" x-show="!open">{{ $lead->name }}</p>
+        <p class="text-gray-800" x-show="!open">{{ $lead->name }}</p>
     </div>
     <div wire:loading='updateName' wire:target='updateName'>
         <i class="animate-spin fas fa-spinner"></i>
@@ -69,7 +69,7 @@
 <label class="text-gray-400">Apellidos:</label>
 <div class="flex mb-2" x-data="{open:false}">
     <div wire:loading.remove wire:target="updateLastName">
-        <p class="text-gray-800 underline" x-show="!open">{{ $lead->last_name }}</p>
+        <p class="text-gray-800" x-show="!open">{{ $lead->last_name }}</p>
     </div>
     <div wire:loading='updateLastName' wire:target='updateLastName'>
         <i class="animate-spin fas fa-spinner"></i>
@@ -93,7 +93,7 @@
 @role('Administrador')
 <div class="flex mb-2" x-data="{open:false}">
     <div wire:loading.remove wire:target="updateEmail">
-        <p class="text-gray-800 underline" x-show="!open">{{ $lead->email }}</p>
+        <p class="text-gray-800" x-show="!open">{{ $lead->email }}</p>
     </div>
     <div wire:loading='updateEmail' wire:target='updateEmail'>
         <i class="animate-spin fas fa-spinner"></i>
@@ -114,14 +114,14 @@
 </div>
 @else
 <div>
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->email }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->email }}</p>
 </div>
 @endcan
 
 <label class="text-gray-400">Teléfonos:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updatePhone">
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->phone }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->phone }}</p>
 </div>
 <div wire:loading='updatePhone' wire:target='updatePhone'>
     <i class="animate-spin fas fa-spinner"></i>
@@ -144,7 +144,7 @@
 <label class="text-gray-400">Estatus del Lead:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updateStatus">
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->status->name }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->status->name }}</p>
 </div>
 <div wire:loading='updateStatus' wire:target='updateStatus'>
     <i class="animate-spin fas fa-spinner"></i>
@@ -170,7 +170,7 @@
 <label class="text-gray-400">Desarrollo:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updateDevelopment">
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->development->name }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->development->name }}</p>
 </div>
 <div wire:loading='updateDevelopment' wire:target='updateDevelopment'>
     <i class="animate-spin fas fa-spinner"></i>
@@ -196,7 +196,7 @@
 <label class="text-gray-400">Estado:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updateState">
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->state }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->state }}</p>
 </div>
 <div wire:loading='updateState' wire:target='updateState'>
     <i class="animate-spin fas fa-spinner"></i>
@@ -219,7 +219,7 @@
 <label class="text-gray-400">Ciudad:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updateCity">
-    <p class="text-gray-800 underline" x-show="!open">{{ $lead->city }}</p>
+    <p class="text-gray-800" x-show="!open">{{ $lead->city }}</p>
 </div>
 <div wire:loading='updateCity' wire:target='updateCity'>
     <i class="animate-spin fas fa-spinner"></i>
@@ -240,12 +240,12 @@
 </div>
 
 <label class="text-gray-400">Último contacto:</label>
-<p class="text-gray-800 underline mb-2">{{ $lead->updated_at->diffForHumans() }}</p>
+<p class="text-gray-800 mb-2">{{ $lead->updated_at->diffForHumans() }}</p>
 
 <label class="text-gray-400">Fecha de creación:</label>
-<p class="text-gray-800 underline mb-2">{{ $lead->created_at->diffForHumans() }}</p>
+<p class="text-gray-800 mb-2">{{ $lead->created_at->diffForHumans() }}</p>
 
-<label class="text-gray-400">Observations:</label>
+<label class="text-gray-400">Observaciones:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updateObservations">
     <p class="text-gray-800" x-show="!open">{{ $lead->observations }}</p>
