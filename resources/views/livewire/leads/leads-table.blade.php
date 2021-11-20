@@ -1,5 +1,5 @@
 <div>
-    <div class="flex justify-between mb-3 px-4 items-center text-sm">
+    <div class="flex justify-between mt-3 mb-5 px-4 items-center text-sm">
         <div class="flex justify-between items-center">
             <div class="mx-1">
                 <label>Mostrar:</label>
@@ -46,7 +46,7 @@
                 </select>
         </div>
     @endcan
-    <div class="mx-1">
+    <div class="mx-9">
         <label class="">Por estatus:</label>
             <select wire:model='status'
                 class="
@@ -73,7 +73,7 @@
 </div>
 
 
-<div class="flex flex-col ">
+<div class="flex flex-col">
 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class=" overflow-hidden  border-gray-200 sm:rounded-md">
