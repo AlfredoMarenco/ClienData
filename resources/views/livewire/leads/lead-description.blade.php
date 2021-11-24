@@ -7,7 +7,7 @@
         </p>
     </div>
     <p class="text-center mb-1">
-        <span class="rounded-md px-3 py-1 text-white text-sm font-bold uppercase"
+        <span class="rounded-md  px-3 py-1 text-white text-sm font-bold uppercase"
             style="background:{{ $lead->status->color_bg }}; color:{{ $lead->status->color_text }};">{{ $lead->status->name }}</span>
     </p>
     <p class="text-center mb-6 text-gray-600 text-lg">
@@ -108,7 +108,7 @@
         <div>
             <button wire:click="updateEmail" x-on:click="open=!open"><i
                     class="fas fa-check-circle text-green-600 ml-2 text-2xl"></i></button>
-            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i></button>
+            <button x-on:click="open=!open"><i class="fas fa-times-circle text-red-600 ml-2 text-2xl"></i> </button>
         </div>
     </div>
 </div>
@@ -118,13 +118,13 @@
 </div>
 @endcan
 
-<label class="text-gray-400">Teléfonos:</label>
+<label class="text-gray-400">Teléfono:</label>
 <div class="flex mb-2" x-data="{open:false}">
 <div wire:loading.remove wire:target="updatePhone">
     <p class="text-gray-800" x-show="!open">{{ $lead->phone }}</p>
 </div>
 <div wire:loading='updatePhone' wire:target='updatePhone'>
-    <i class="animate-spin fas fa-spinner"></i>
+    <i class="animate-spin fas fa-spinner"></i> 
 </div>
 <span x-on:click="open=!open" x-show="!open"><i x-show="!open"
         class="fas fa-pen ml-2 cursor-pointer hover:text-gray-500"></i></span>

@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-10 sm:-my-px sm:ml-10 sm:flex text-gray-400">
+                <div class="hidden space-x-10 sm:-my-px sm:ml-10 sm:flex text-gray-700">
                     <x-jet-nav-link href="{{ route('index') }}" :active="request()->routeIs('index')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
