@@ -88,6 +88,11 @@
                             Propietario
                             @include('partials._sort-icon',['field' => 'user_id'])
                         </th>
+                        <th wire:click="sortBy('development_id')" scope="col"
+                            class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
+                            Desarrollo
+                            @include('partials._sort-icon',['field' => 'development_id'])
+                        </th>
                         <th wire:click="sortBy('status_id')" scope="col"
                             class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                             Estado
@@ -162,6 +167,11 @@
                                 <img class="h-10 w-10 rounded-full object-cover ml-8"
                                     src="{{ $lead->user->profile_photo_url }}" alt="">
                                 <div class="text-sm text-gray-700">{{ $lead->user->name }}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-sm leading-5 rounded-full">
+                                    {{ $lead->development->name }}
+                                </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 inline-flex text-sm font-bold leading-5 rounded-full"
