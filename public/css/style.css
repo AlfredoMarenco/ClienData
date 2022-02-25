@@ -1,13 +1,43 @@
 * {
     font-family: 'Raleway';
 }
-
-.container-fluid {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
+.vandu-bold {
+    font-weight: 700;
+}
+.vandu-semibold {
+    font-weight: 600;
 }
 
-
+.bg__header h1 {
+    font-size: 4em;
+    color: #fff;
+}
+.bg__header p {
+    color: #fff;
+} @media (max-width:1000px) {
+    .bg__header {
+        padding-bottom: 2em;
+    }
+    .bg__header-top {
+        text-align: center;
+    } 
+    .bg__header h1 {
+        font-size: 4em;
+    }
+    .uno-o {
+        order: 2;
+    }
+    .dos-o {
+        order: 1;
+    }
+} @media (max-width:900px) {
+    .bg__header h1 {
+        font-size: 2.5em;
+    }
+}
+.bg__header-top {
+    padding-top: 5em;
+}
 
 .bg-dark {
     background-color: transparent !important;
@@ -22,16 +52,11 @@
     background: rgb(15, 36, 90) !important;
 } 
 
-.background-overlay {
-    background-color: #0F245A;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-
 .btn-secondary {
     background-color: #FE0000 !important;
     border: none;
+    padding: .7em 1em;
+    border-radius: .8em;
 }
 
 .btn-secondary:hover {
@@ -61,7 +86,6 @@
         font-size: 40px;
     }
 }
-
 @media (max-width: 500px) {
     .agencia, .intro {
         font-size: 26px;
@@ -88,42 +112,10 @@
 .p-agencia {
     font-size: 16px;
 }
-.bg-header {
-    background-image: url(/img/Fondod.svg);
-    min-height: 100vh;
-    background-repeat: no-repeat;
-}
-.over {
-    overflow: hidden;
-    min-height: 100vh;
-}
-.txt {
-    color: #fff;
-    padding-top: 210px;
-    padding-left: 80px;
-} @media (max-width:600px) {
-    .txt {
-        padding-top: 90px;
-        padding-left: 0;
-    }
-}
-
-.arbol {
-    position: relative;
-    right: 40px;
-    top: 205px;
-    animation: movimiento 2.5s linear infinite;
-
-}
-
-.sally {
-    position: absolute;
-    top: 50px;
-    left: 850px;
-}
-
-.sally {
-    animation: movimiento-1 3.5s linear infinite;
+.bg__header {
+    background: #0F245A;
+    min-height: 560px;
+    
 }
 
 .por-que {
@@ -237,7 +229,8 @@
     padding-top: 30px;
 }
 #reviews-2 {
-    padding-top: 120px;
+    padding-top: 4em;
+    padding-bottom: 3em;
 }
 
 .review {
@@ -365,11 +358,19 @@
 .vineta {
     padding-top: 20px;
     text-align: right;
+} @media (max-width:800px) {
+    .vineta {
+        padding-top: 20px;
+    }
 }
 
 .vineta-txt {
     padding-top: 15px;
-    font-size: 18px;
+    font-size: 1em;
+} @media (max-width:800px) {
+    .vineta-txt {
+        font-size: .75em;
+    }
 }
 
 .manito {

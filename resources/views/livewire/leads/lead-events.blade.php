@@ -1,4 +1,4 @@
-<div class="bg-gray-100 rounded-md pb-1">
+<div class="bg-white rounded-sm pb-1">
     <div class="flex justify-left mx-2 bg-white py-4">
         {{-- Boton crear nota --}}
         <div class="mx-1" x-data="{open:false}">

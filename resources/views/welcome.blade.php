@@ -78,7 +78,7 @@
 
 <body>
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand img-fluid" href="#"><img src="img/vandu.svg" alt="" width="100"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,337 +94,327 @@
                         <a class="nav-link ms-2" href="#como-funciona">Cómo funciona</a>
                     </li>
 
-                    <li class="nav-item">
+                   {{--  <li class="nav-item">
                         <a class="nav-link ms-2" href="#Por-que-nosotros">Por qué nosotros</a>
-                    </li>
-
-
-
+                    </li> --}}
                 </ul>
-
-
                 <button class="btn btn-secondary navb ms-2" data-toggle="modal" data-target="#ventanaModal"><i
-                        class="fas fa-rocket" style="padding-right: 5px;"></i><b> Digitaliza tu negocio</b></button>
+                    class="fas fa-rocket" style="padding-right: 5px;"></i><b> Digitaliza tu negocio</b>
+                </button>
+
+
+
             </div>
         </div>
     </nav>
-
-    <header>
-        <div class="bg-header">
-            <div class="container-fluid">
-                <div class="row over">
-                    <div class="col-md-6 col-sm-12 txt">
-                        <h1>La agencia de desarrollo web <br>
-                            que entiende tus objetivos.</h1>
-                        <p>
-                            El año 2020 lo cambió todo, el comercio electrónico y la presencia digital fueron cruciales
-                            para la supervivencia de los negocios. Este año no será la excepción, impulsaremos las
-                            posibilidades de éxito de tu empresa
-                        </p>
-                        <a data-toggle="modal" data-target="#ventanaModal" class="btn btn-secondary">Agendar una
-                            llamada</a>
-                    </div>
-                    <div class="col-md-6 col-sm-12 d-none d-md-block dm-lg-block">
-                        <div class="col arbol">
-                            <img src="/img/tree.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="col sally">
-                            <img src="/img/Sally.svg" class="img-fluid" loading="lazy" alt="">
-                        </div>
-                    </div>
-                    <div class="col-sm-12 d-block d-sm-block  d-md-none text-center">
-                        <img src="/img/Saly-19.png" class="img-fluid" loading="lazy" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section id="on-boarding">
-        <div class="container">
-            <div class="text-center">
-                <h2>Todos tienen el mismo objetivo, pero
-                    <br>
-                    <span class="orange">diferentes procesos para alcanzarlo</span>
-                </h2>
-                <p>Somos una agencia de desarrollo web especializada en la correcta detección de necesidades, lo que nos
-                    lleva a crear productos atractivos para el usuario y sistemas internos que reducen el estrés de
-                    gestionar los activos digitales.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios">
-        <div class="container unox">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-lg-6 txt-1 pb-5">
-                    <div class="line mb-3"></div>
-                    <h1>Trabajamos las <br>
-                        mejores soluciones
-                    </h1>
-                    <p>Ponemos atención a los puntos más importantes para <br> la generación de oportunidades de
-                        negocio.</p>
-                    <a data-toggle="modal" data-target="#ventanaModal" class="btn btn-secondary">Agendar una llamada</a>
-                </div>
-                <div class="col-md-6 col-sm-12 col-lg-6">
-                    <div class="row">
-                        <div class="col-6 soluciones">
-                            <img src="{{ asset('/img/icon/Ticket-Star.svg') }}" class="img-fluid"
-                                alt="iconografia agencia vandu">
-                            <h4 class="pt-3 titular-i">e-commerce</h4>
-                            <p>Desarrollamos herramientas especiales para gestión de inventario y recuperación de
-                                carrito.</p>
-                        </div>
-                        <div class="col-6 soluciones">
-                            <img src="{{ asset('/img/icon/Calendar.svg') }}" class="img-fluid"
-                                alt="iconografia agencia vandu">
-                            <h4 class="pt-3 titular-i">Google Ads</h4>
-                            <p>Utilizamos la red de búsqueda más grande a tu favor, impulsamos y multiplicamos los clics
-                                a tus promociones.</p>
-                        </div>
-                        <div class="col-6 soluciones">
-                            <img src="{{ asset('/img/icon/Activity.svg') }}" class="img-fluid"
-                                alt="iconografia agencia vandu">
-                            <h4 class="pt-3 titular-i">Facebook Ads</h4>
-                            <p>Gestionamos tus anuncios y agilizamos las coneversiones de tus redes sociales. </p>
-                        </div>
-                        <div class="col-6 soluciones">
-                            <img src="{{ asset('/img/icon/Image.svg') }}" class="img-fluid"
-                                alt="iconografia agencia vandu">
-                            <h4 class="pt-3 titular-i">Diseño web</h4>
-                            <p>Creamos estructura y el diseño de tu sitio web desde cero. Ayudamos a configurar tus
-                                eventos de conversión.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="onboarding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                    <div class="equipo-de-tres">
-                        <img src="/img/equipo-1.png" class="img-fluid" loading="lazy" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 por-que">
-                    <h3 class="onboard">POR QUÉ NOSOTROS</h3>
-                    <h1 class="titular">HAREMOS <B class="naranja"> TODO POR TI</B></h1>
-                    <p class="descripcion">La tecnología avanza a pasos agigantados y muchos negocios se están
-                        quedando atrás. Digitalizar tu negocio es la llave que necesitabas para abrir todas las puertas
-                        de tus clientes. Con nuestra ayuda, de lo único que tendrás que preocuparte es de atender tu
-                        negocio.</p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <main role="main" class="container">
-        <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="tituloVentana">Solicita más información </h5>
-                        <button class="close" data-dismiss="modal" aria-label="Cerrar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="alert alert-succes">
-                            <form method="post" action="{{ route('form.leads') }}">
-                                @csrf
-                                <x-jet-input type="hidden" class="w-full" name="user_id" value="3">
-                                </x-jet-input>
-                                <x-jet-input type="hidden" class="w-full" name="status_id" value="1">
-                                </x-jet-input>
-                                <x-jet-input type="hidden" class="w-full" name="development_id" value="1">
-                                </x-jet-input>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Nombre & Apellido</label>
-                                    <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
-                                        required="required" placeholder="Escribe tu nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email</label>
-                                    <input type="email" name="email" class="form-control"
-                                        id="exampleFormControlInput1" required="required"
-                                        placeholder="Escribe tu correo electrónico">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Teléfono</label>
-                                    <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
-                                        required="required" placeholder="Escribe tu teléfono">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Mensaje</label>
-                                    <textarea class="form-control" name="observations"
-                                        id="exampleFormControlTextarea1" required="required" rows="3"
-                                        placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
-                                </div>
-
-                                <button class="g-recaptcha btn btn-secondary"
-                                    data-sitekey="6Ld-6LcwJSodAAAAADMaBbnB_3TpsCZqbOyUIOHPPSHc" data-callback='onSubmit'
-                                    data-action='submit' type="submit">Enviar</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section id="reviews">
-        <div class="container">
-            <div class="corazon" style="text-align: center;">
-                <img src="/img/Beating-Heart.png" class="img-fluid" loading="lazy" alt="emoji corazón latiendo">
-                <h2 class="review">" se siente como si me leyeran la mente "</h2>
-                <p class="p-review">Doply Broker Finnancial</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="como-funciona">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="comofunciona">
-                    <h3 class="onboard-3">onboarding</h3>
-                    <h1 class="como-funciona-titulo">Cómo funciona</h1>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 pasos-esp">
-                    <div class="card">
-                        <div class="imagen-manito">
-                            <img src="/img/Mask-Group.png" loading="lazy" class="img-fluid" alt="manito apuntando">
-                        </div>
-                        <h1 class="pasos">primer paso</h1>
-                        <h2 class="paso-titulo">localizamos el problema</h2>
-                        <p class="p-pasos">
-                            Nuestra metodología de trabajo nos permite entender el proceso de venta, producción o
-                            logística de tu empresa con el objetivo de establecer las bases correctas para tu proyecto.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="card">
-                        <div class="imagen-manito">
-                            <img src="/img/Mask-Group-2.png" loading="lazy" class="img-fluid"
-                                alt="manito apuntando">
-                        </div>
-                        <h1 class="pasos">segundo paso</h1>
-                        <h2 class="paso-titulo">CREAMOS LA SOLUCIÓN</h2>
-                        <p class="p-pasos">
-                            Nos enfocamos en crear una solución a la medida de tu empresa, nuestra visión a futuro
-                            plantea los cimientos de un sistema completamente escalable y sin problemas.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 pasos-esp">
-                    <div class="card">
-                        <div class="imagen-manito">
-                            <img src="/img/Mask-Group-3.png" loading="lazy" class="img-fluid"
-                                alt="manito apuntando">
-                        </div>
-                        <h1 class="pasos">tercer paso</h1>
-                        <h2 class="paso-titulo">CLIENTES FELICES</h2>
-                        <p class="p-pasos">
-                            Nuestro proceso y enfoque de trabajo se apoya en 5 años de trabajo, dedicación y
-                            optimización. Garantizamos tu satisfacción en cada etapa de este ciclo.
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews-2">
-        <div class="container">
-            <div class="corazon" style="text-align: center;">
-                <img src="/img/Beating-Heart.png" loading="lazy" class="img-fluid" alt="emoji corazón latiendo">
-                <h2 class="review">" Súper atentos, escucharon todas mis peticiones, me guiaron en el camino,
-                    realmente me encantó la página, estoy muy contenta 😊"</h2>
-                <p class="p-review">Lovely Dress Bridal Boutique</p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="Por-que-nosotros">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-12 por-que-2">
-                    <h3 class="onboard-2">ON BOARDING</h3>
-                    <h1 class="titular-2">Por qué nosotros</h1>
-                    <div class="interno">
+    <main>
+        <header>
+            <div class="bg__header">
+                <div class="bg__header-top">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-2 vineta">
-                                <img src="/img/Group-9.png" alt="viñeta ">
+                            <div class="col-lg-6 col-md-12 col-sm-12 m-auto uno-o">
+                                <h1 class="vandu-bold">
+                                    Transformación <br class="d-none d-sm-none d-md-block d-lg-block">
+                                    digital asistida.
+                                </h1>
+                                <p>Somos una agencia de desarrollo web especializada en la correcta detección de necesidades, lo que nos
+                                    lleva a crear productos atractivos para el usuario y sistemas internos que reducen el estrés de
+                                    gestionar los activos digitales.</p>
+                                <a  class="btn btn-secondary vandu-bold" data-toggle="modal" data-target="#ventanaModal">Agendar una llamada</a>
                             </div>
-                            <div class="col-10 vineta-txt">
-                                <p>Conoce el estatus de tu proyecto desde
-                                    tu celular o computadora en cada actualización.</p>
-                            </div>
-                            <div class="col-2 vineta">
-                                <img src="/img/Group-9.png" alt="viñeta">
-                            </div>
-                            <div class="col-10 vineta-txt">
-                                <p>Recibe atención personalizada vía correo
-                                    electrónico y Whatsapp cada que haya avances en tu proyecto.</p>
-                            </div>
-                            <div class="col-2 vineta">
-                                <img src="/img/Group-9.png" alt="viñeta">
-                            </div>
-                            <div class="col-10 vineta-txt">
-                                <p>Descarga los manuales y guías de uso
-                                    de tu proyecto exclusivo en tu panel de usuario <b>(Próximamente)</b>.</p>
-                            </div>
-                            <div class="col-2 vineta">
-                                <img src="/img/Group-9.png" alt="viñeta">
-                            </div>
-                            <div class="col-10 vineta-txt">
-                                <p>Obtén un respaldo de la identidad de tu marca,
-                                    brief e imágenes. Después de esto jamás perderás esos documentos.</p>
+                            <div class="col-lg-6 col-md-12 col-sm-12 pt-3 dos-o">
+                                <figure class="text-center">
+                                    <img src="{{ asset( '/img/header.png' )}}" alt="" class="img-fluid">
+                                </figure>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-12 manito">
-                    <img src="/img/29_Hand-with-phone-03-1.png" loading="lazy" class="img-fluid" alt="">
+            </div>
+        </header>
+        {{-- <section id="on-boarding">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Todos tienen el mismo objetivo, pero
+                        <br>
+                        <span class="orange">diferentes procesos para alcanzarlo</span>
+                    </h2>
+                    <p>Somos una agencia de desarrollo web especializada en la correcta detección de necesidades, lo que nos
+                        lleva a crear productos atractivos para el usuario y sistemas internos que reducen el estrés de
+                        gestionar los activos digitales.</p>
+                </div>
+            </div>
+        </section> --}}
+
+        <section id="servicios">
+            <div class="container unox">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-6 txt-1 pb-5">
+                        <div class="line mb-3"></div>
+                        <h1>Trabajamos las <br>
+                            mejores soluciones
+                        </h1>
+                        <p>Ponemos atención a los puntos más importantes para <br> la generación de oportunidades de
+                            negocio.</p>
+                        <a data-toggle="modal" data-target="#ventanaModal" class="btn btn-secondary">Agendar una llamada</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-6 soluciones">
+                                <img src="{{ asset('/img/icon/Ticket-Star.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <h4 class="pt-3 titular-i">e-commerce</h4>
+                                <p>Desarrollamos herramientas especiales para gestión de inventario y recuperación de
+                                    carrito.</p>
+                            </div>
+                            <div class="col-6 soluciones">
+                                <img src="{{ asset('/img/icon/Calendar.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <h4 class="pt-3 titular-i">Google Ads</h4>
+                                <p>Utilizamos la red de búsqueda más grande a tu favor, impulsamos y multiplicamos los clics
+                                    a tus promociones.</p>
+                            </div>
+                            <div class="col-6 soluciones">
+                                <img src="{{ asset('/img/icon/Activity.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <h4 class="pt-3 titular-i">Facebook Ads</h4>
+                                <p>Gestionamos tus anuncios y agilizamos las coneversiones de tus redes sociales. </p>
+                            </div>
+                            <div class="col-6 soluciones">
+                                <img src="{{ asset('/img/icon/Image.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <h4 class="pt-3 titular-i">Diseño web</h4>
+                                <p>Creamos estructura y el diseño de tu sitio web desde cero. Ayudamos a configurar tus
+                                    eventos de conversión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- <section id="onboarding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="equipo-de-tres">
+                            <img src="/img/equipo-1.png" class="img-fluid" loading="lazy" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                        <h3 class="onboard">POR QUÉ NOSOTROS</h3>
+                        <h1 class="vandu-semibold">HAREMOS <B class="naranja"> TODO POR TI</B></h1>
+                        <p>La tecnología avanza a pasos agigantados y muchos negocios se están
+                            quedando atrás. Digitalizar tu negocio es la llave que necesitabas para abrir todas las puertas
+                            de tus clientes. Con nuestra ayuda, de lo único que tendrás que preocuparte es de atender tu
+                            negocio.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section> --}}
+        <div class="container">
+            <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="tituloVentana">Solicita más información </h5>
+                            <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="alert alert-succes">
+                                <form method="post" action="{{ route('form.leads') }}">
+                                    @csrf
+                                    <x-jet-input type="hidden" class="w-full" name="user_id" value="3">
+                                    </x-jet-input>
+                                    <x-jet-input type="hidden" class="w-full" name="status_id" value="1">
+                                    </x-jet-input>
+                                    <x-jet-input type="hidden" class="w-full" name="development_id" value="1">
+                                    </x-jet-input>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Nombre & Apellido</label>
+                                        <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
+                                            required="required" placeholder="Escribe tu nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Email</label>
+                                        <input type="email" name="email" class="form-control"
+                                            id="exampleFormControlInput1" required="required"
+                                            placeholder="Escribe tu correo electrónico">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Teléfono</label>
+                                        <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
+                                            required="required" placeholder="Escribe tu teléfono">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Mensaje</label>
+                                        <textarea class="form-control" name="observations"
+                                            id="exampleFormControlTextarea1" required="required" rows="3"
+                                            placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
+                                    </div>
+                                    <div class="g-recaptcha" data-sitekey="6LdBBc8ZAAAAACqRaUl6mmUgAfKhUXYmCUpq5nRK"
+                                        style="margin-bottom: 10px;"></div>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </section>
+        <section id="reviews">
+            <div class="container">
+                <div class="corazon" style="text-align: center;">
+                    <img src="/img/Beating-Heart.png" class="img-fluid" loading="lazy" alt="emoji corazón latiendo">
+                    <h2 class="review">" se siente como si me leyeran la mente "</h2>
+                    <p class="p-review">Doply Broker Finnancial</p>
+                </div>
 
-    <section id="tecnologias">
-        <div class="comofunciona">
-            <h3 class="onboard-3">onboarding</h3>
-            <h1 class="como-funciona-titulo">Tecnologías que dominamos</h1>
-            <img src="/img/Group-4.png" loading="lazy" class="img-fluid" alt="">
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="reviews-2" class="review-sp">
-        <div class="container">
-            <div class="corazon" style="text-align: center;">
-                <img src="/img/Beating-Heart.png" loading="lazy" class="img-fluid" alt="emoji corazón latiendo">
-                <h2 class="review-2">" Estamos muy contentos con el servicio que nos brindaron, entendieron a la
-                    perfección lo que necesitábamos y cumplieron en el tiempo acordado sin errores "</h2>
-                <p class="p-review">Divisas Sureste Centro Cambiario</p>
+        <section id="como-funciona">
+            <div class="container">
+                <div class="row ">
+                    <div class="comofunciona">
+                        <h3 class="onboard-3">onboarding</h3>
+                        <h1 class="como-funciona-titulo">Cómo funciona</h1>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 pasos-esp">
+                        <div class="card">
+                            <div class="imagen-manito">
+                                <img src="/img/Mask-Group.png" loading="lazy" class="img-fluid" alt="manito apuntando">
+                            </div>
+                            <h1 class="pasos">primer paso</h1>
+                            <h2 class="paso-titulo">localizamos el problema</h2>
+                            <p class="p-pasos">
+                                Nuestra metodología de trabajo nos permite entender el proceso de venta, producción o
+                                logística de tu empresa con el objetivo de establecer las bases correctas para tu proyecto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="card">
+                            <div class="imagen-manito">
+                                <img src="/img/Mask-Group-2.png" loading="lazy" class="img-fluid"
+                                    alt="manito apuntando">
+                            </div>
+                            <h1 class="pasos">segundo paso</h1>
+                            <h2 class="paso-titulo">CREAMOS LA SOLUCIÓN</h2>
+                            <p class="p-pasos">
+                                Nos enfocamos en crear una solución a la medida de tu empresa, nuestra visión a futuro
+                                plantea los cimientos de un sistema completamente escalable y sin problemas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 pasos-esp">
+                        <div class="card">
+                            <div class="imagen-manito">
+                                <img src="/img/Mask-Group-3.png" loading="lazy" class="img-fluid"
+                                    alt="manito apuntando">
+                            </div>
+                            <h1 class="pasos">tercer paso</h1>
+                            <h2 class="paso-titulo">CLIENTES FELICES</h2>
+                            <p class="p-pasos">
+                                Nuestro proceso y enfoque de trabajo se apoya en 5 años de trabajo, dedicación y
+                                optimización. Garantizamos tu satisfacción en cada etapa de este ciclo.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews-2">
+            <div class="container">
+                <div class="corazon" style="text-align: center;">
+                    <img src="/img/Beating-Heart.png" loading="lazy" class="img-fluid" alt="emoji corazón latiendo">
+                    <h2 class="review">" Súper atentos, escucharon todas mis peticiones, me guiaron en el camino,
+                        realmente me encantó la página, estoy muy contenta 😊"</h2>
+                    <p class="p-review">Lovely Dress Bridal Boutique</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        {{-- <section id="Por-que-nosotro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-12 por-que-2">
+                        <h3 class="onboard-2">ON BOARDING</h3>
+                        <h1 class="titular-2">Por qué nosotros</h1>
+                        <div class="interno">
+                            <div class="row">
+                                <div class="col-2 vineta">
+                                    <img src="/img/Group-9.png" alt="viñeta ">
+                                </div>
+                                <div class="col-10 vineta-txt">
+                                    <p>Conoce el estatus de tu proyecto desde
+                                        tu celular o computadora en cada actualización.</p>
+                                </div>
+                                <div class="col-2 vineta">
+                                    <img src="/img/Group-9.png" alt="viñeta">
+                                </div>
+                                <div class="col-10 vineta-txt">
+                                    <p>Recibe atención personalizada vía correo
+                                        electrónico y Whatsapp cada que haya avances en tu proyecto.</p>
+                                </div>
+                                <div class="col-2 vineta">
+                                    <img src="/img/Group-9.png" alt="viñeta">
+                                </div>
+                                <div class="col-10 vineta-txt">
+                                    <p>Descarga los manuales y guías de uso
+                                        de tu proyecto exclusivo en tu panel de usuario <b>(Próximamente)</b>.</p>
+                                </div>
+                                <div class="col-2 vineta">
+                                    <img src="/img/Group-9.png" alt="viñeta">
+                                </div>
+                                <div class="col-10 vineta-txt">
+                                    <p>Obtén un respaldo de la identidad de tu marca,
+                                        brief e imágenes. Después de esto jamás perderás esos documentos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 manito">
+                        <img src="/img/29_Hand-with-phone-03-1.png" loading="lazy" class="img-fluid" alt="">
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </section>
+        </section> --}}
+
+        <section id="tecnologias">
+            <div class="comofunciona">
+                <h3 class="onboard-3">onboarding</h3>
+                <h1 class="como-funciona-titulo">Tecnologías que dominamos</h1>
+                <img src="/img/Group-4.png" loading="lazy" class="img-fluid" alt="">
+            </div>
+        </section>
+
+        <section id="reviews-2" class="review-sp">
+            <div class="container">
+                <div class="corazon" style="text-align: center;">
+                    <img src="/img/Beating-Heart.png" loading="lazy" class="img-fluid" alt="emoji corazón latiendo">
+                    <h2 class="review-2">" Estamos muy contentos con el servicio que nos brindaron, entendieron a la
+                        perfección lo que necesitábamos y cumplieron en el tiempo acordado sin errores "</h2>
+                    <p class="p-review">Divisas Sureste Centro Cambiario</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
     <footer id="footer-section" class="bgfooter pt-5">
         <div class="container">

@@ -6,8 +6,8 @@
     </x-slot>
 
     <div class="py-2">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-2">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden  sm:rounded-sm">
                 <div class="grid grid-cols-2">
                     <div class="p-10">
                         <h2 class="font-bold text-xl">Leads</h2>
