@@ -70,7 +70,7 @@ Route::post('leads', function (LeadsRequest $request) {
     $SimplePublicObjectInput = new SimplePublicObjectInput(['properties' => $properties]);
     try {
         $apiResponse = $client->crm()->contacts()->basicApi()->create($SimplePublicObjectInput);
-        var_dump($apiResponse);
+        /* var_dump($apiResponse); */
     } catch (ApiException $e) {
         echo "Exception when calling basic_api->create: ", $e->getMessage();
     }
