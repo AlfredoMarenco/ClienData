@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\GoogleCalendar\Event;
 use UniSharp\LaravelFilemanager\Lfm;
+use HubSpot\Factory;
+use HubSpot\Client\Crm\Contacts\ApiException;
+use HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectInput;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +56,24 @@ Route::get('task-start', function () {
 });
 
 Route::post('leads', function (LeadsRequest $request) {
+    /* return $request->all(); */
     Lead::create($request->all());
+
+    $client = Factory::createWithApiKey("582bd6fe-66b6-4b33-8c0d-37df9a221ba8");
+
+    $properties = [
+        "email" => $request->email,
+        "firstname" => $request->name,
+        "lastname" => $request->last_name,
+        "phone" => $request->phone,
+    ];
+    $SimplePublicObjectInput = new SimplePublicObjectInput(['properties' => $properties]);
+    try {
+        $apiResponse = $client->crm()->contacts()->basicApi()->create($SimplePublicObjectInput);
+        var_dump($apiResponse);
+    } catch (ApiException $e) {
+        echo "Exception when calling basic_api->create: ", $e->getMessage();
+    }
 
     return redirect('/')->withSuccess('Informacion enviada con exito');
 })->name('form.leads');
@@ -77,4 +97,25 @@ Route::get('email', function () {
     }
     /* Artisan::call('queue:work'); */
     return $tasks;
+});
+
+Route::get('hubspot',function(){
+
+    $client = Factory::createWithApiKey("582bd6fe-66b6-4b33-8c0d-37df9a221ba8");
+
+    $properties = [
+        "company" => "Biglytics",
+        "email" => "alfredo@biglytics.net",
+        "firstname" => "Bryan",
+        "lastname" => "Cooper",
+        "phone" => "(877) 929-0687",
+        "website" => "biglytics.net"
+    ];
+    $SimplePublicObjectInput = new SimplePublicObjectInput(['properties' => $properties]);
+    try {
+        $apiResponse = $client->crm()->contacts()->basicApi()->create($SimplePublicObjectInput);
+        var_dump($apiResponse);
+    } catch (ApiException $e) {
+        echo "Exception when calling basic_api->create: ", $e->getMessage();
+    }
 });
