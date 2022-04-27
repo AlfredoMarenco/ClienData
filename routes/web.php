@@ -34,6 +34,11 @@ Route::get('/', function () {
     return view('welcome', compact('developments'));
 })->name('home');
 
+Route::get('/ciudad-central-merida',function(){
+    $developments = Development::all();
+    return view('desarrollos.ciudadcentralmerida',compact('developments'));
+})->name('cdm');
+
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
