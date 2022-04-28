@@ -76,6 +76,9 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
                     <p class="mt-2 lg:ml-16 text-base text-black">Llena el siguente formulario y uno de nuestros
                         asesores se pondra en contacto a la brevedad para
                         brindarte toda la informacion sobre nuestros desarrollos.</p>
+                    <div class="mt-4">
+                        <a href="https://1drv.ms/b/s!Avcr9MtsU8DjhVhJHNlna_OLbHBX?e=X2bfyP" target="_blank" class="px-3 py-2 bg-verde text-white font-bold">Descarga Brochure</a>
+                    </div>
                 </div>
             </div>
             <div class="p-12 bg-verde">

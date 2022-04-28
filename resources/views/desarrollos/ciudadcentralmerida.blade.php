@@ -3,8 +3,8 @@
 @section('header1')
     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div class="sm:text-center text-center lg:text-left">
-            <img src="{{ asset('img/logoCiudadCentral.svg') }}" class="mx-auto w-2/3 lg:w-full object-center object-cover lg:object-contain"
-                alt="">
+            <img src="{{ asset('img/logoCiudadCentral.svg') }}"
+                class="mx-auto w-2/3 lg:w-full object-center object-cover lg:object-contain" alt="">
         </div>
     </main>
 @endsection
@@ -27,7 +27,8 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
 @section('content')
     <section class="border-t-4 border-b-4 border-verde">
         <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-            <div><img src="{{ asset('img/renders/merida/Render1.jpg') }}" class="w-full object-cover headline" alt=""></div>
+            <div><img src="{{ asset('img/renders/merida/Render1.jpg') }}" class="w-full object-cover headline" alt="">
+            </div>
             <div class="bg-verde p-8">
                 <h2 class="text-2xl lg:text-5xl font-bold text-white text-center headline">
                     AMENIDADES DEL PROYECTO
@@ -55,7 +56,8 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
                 </h2>
             </div>
             <div class="bg-black">
-                <img src="{{ asset('img/masterplanes/ccmerida/masterplan.jpg') }}" class="w-full lg:w-2/3 object-cover mx-auto headline mb-6" alt="">
+                <img src="{{ asset('img/masterplanes/ccmerida/masterplan.jpg') }}"
+                    class="w-full lg:w-2/3 object-cover mx-auto headline mb-6" alt="">
             </div>
         </div>
     </section>
@@ -63,7 +65,8 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
         <div class="text-center pt-10">
             <h1 class="font-bold text-2xl lg:text-5xl mb-2">RECORRIDO VIRTUAL</h1>
         </div>
-        <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/ciudad-central/index.htm" class="w-full object-contain lg:p-20 h-screen p-8"></iframe>
+        <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/ciudad-central/index.htm"
+            class="w-full object-contain lg:p-20 h-screen p-8"></iframe>
     </section>
 
     <section id="contacto">
@@ -75,6 +78,10 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
                     <p class="mt-2 lg:ml-16 text-base text-black">Llena el siguente formulario y uno de nuestros
                         asesores se pondra en contacto a la brevedad para
                         brindarte toda la informacion sobre nuestros desarrollos.</p>
+                    <div class="mt-4">
+                        <a href="https://1drv.ms/b/s!Avcr9MtsU8DjhV_Durnc2s1HBIVm?e=21CK9O" target="_blank"
+                            class="px-3 py-2 bg-verde text-white font-bold">Descarga Brochure</a>
+                    </div>
                 </div>
             </div>
             <div class="p-12 bg-verde">
