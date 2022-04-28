@@ -26,7 +26,7 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
 
 @section('content')
     <section class="border-t-4 border-b-4 border-verde">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
             <div><img src="{{ asset('img/renders/merida/Render1.jpg') }}" class="w-full object-cover headline" alt=""></div>
             <div class="bg-verde p-8">
                 <h2 class="text-5xl font-bold text-white text-center headline">
