@@ -151,7 +151,9 @@
                 </a>
             </div>
             <div class="w-full text-center px-32 py-16 hover:bg-verde hover:shadow-lg cursor-pointer">
-                <img src="{{ asset('img/logoCiudadCentralProgreso.svg') }}" class="w-full mx-auto headline" alt="">
+                <a href="{{ route('cdp') }}">
+                    <img src="{{ asset('img/logoCiudadCentralProgreso.svg') }}" class="w-full mx-auto headline" alt="">
+                </a>
             </div>
         </div>
     </section>

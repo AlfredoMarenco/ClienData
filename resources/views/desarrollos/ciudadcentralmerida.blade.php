@@ -60,7 +60,10 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
         </div>
     </section>
     <section>
-        <iframe src="https://eva3d.com/recorridos-virtuales-3d/grupo-orve/casa-club-2/index.htm" class="w-full object-contain h-screen"></iframe>
+        <div class="text-center pt-10">
+            <h1 class="font-bold text-5xl">RECORRIDO VIRTUAL</h1>
+        </div>
+        <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/ciudad-central/index.htm" class="w-full object-contain p-20 h-screen"></iframe>
     </section>
 
     <section id="contacto">

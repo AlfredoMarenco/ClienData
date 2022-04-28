@@ -38,6 +38,10 @@ Route::get('/ciudad-central-merida',function(){
     $developments = Development::all();
     return view('desarrollos.ciudadcentralmerida',compact('developments'));
 })->name('cdm');
+Route::get('/ciudad-central-progreso',function(){
+    $developments = Development::all();
+    return view('desarrollos.ciudadcentralprogreso',compact('developments'));
+})->name('cdp');
 
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');

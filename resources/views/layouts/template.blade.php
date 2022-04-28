@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                                    <a href="#inicio" class="font-medium text-white hover:text-gray-100">Inicio</a>
+                                    <a href="{{ route('home') }}" class="font-medium text-white hover:text-gray-100">Inicio</a>
                                     <a href="#desarrollos"
                                         class="font-medium text-white hover:text-gray-100">Desarrollos</a>
                                     <a href="#contacto" class="font-medium text-white hover:text-gray-100">Contacto</a>
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <div class="px-2 pt-2 pb-3 space-y-1">
-                                    <a href="#inicio"
+                                    <a href="{{ route('home') }}"
                                         class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-900 hover:bg-gray-50">Inicio</a>
                                     <a href="#desarrollos"
                                         class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-900 hover:bg-gray-50">Desarrollos</a>
@@ -148,7 +148,7 @@
         </div>
     </header>
     @yield('content')
-    
+
     <footer class="text-gray-600 body-font bg-black">
         <div
             class="container px-5 py-14 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
