@@ -63,7 +63,7 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
         <div class="text-center pt-10">
             <h1 class="font-bold text-2xl lg:text-5xl mb-2">RECORRIDO VIRTUAL</h1>
         </div>
-        <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/ciudad-central/index.htm" class="w-full object-contain lg:p-20 h-screen"></iframe>
+        <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/ciudad-central/index.htm" class="w-full object-contain lg:p-20 h-screen p-8"></iframe>
     </section>
 
     <section id="contacto">
