@@ -2,9 +2,9 @@
 
 @section('header1')
     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <div class="sm:text-center lg:text-left">
-            <img src="{{ asset('img/logoCiudadCentralProgreso.svg') }}" class="w-full object-center object-cover lg:object-contain"
-                alt="">
+        <div class="sm:text-center text-center lg:text-left">
+            <img src="{{ asset('img/logoCiudadCentralProgreso.svg') }}"
+                class="mx-auto w-2/3 lg:w-full object-center object-cover lg:object-contain" alt="">
         </div>
     </main>
 @endsection
@@ -31,10 +31,10 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
             <div><img src="{{ asset('img/CCP1.png') }}" class="w-full object-containt headline" alt="">
             </div>
             <div class="bg-verde p-8">
-                <h2 class="text-5xl font-bold text-white text-center headline">
+                <h2 class="text-2xl lg:text-5xl font-bold text-white text-center headline">
                     AMENIDADES DEL PROYECTO
                 </h2>
-                <ol class="list-decimal p-8 mt-6 ml-4 text-2xl text-white font-semibold headline">
+                <ol class="list-decimal  p-2 lg:p-8 mt-6 ml-4 text-lg text-white font-semibold headline">
                     <li>Casa Club.</li>
                     <li>Alumbrado público.</li>
                     <li>Agua potable.</li>
@@ -50,22 +50,21 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
     <section class="border-t-4 border-b-4 border-verde">
         <div class="grid grid-cols-1">
             <div class="bg-black p-8">
-                <h2 class="text-5xl font-bold text-white text-center headline">
+                <h2 class="text-2xl lg:text-5xl font-bold text-white text-center headline">
                     CONOCE NUESTRO MASTER PLAN
                 </h2>
             </div>
             <div class="bg-black">
-                <img src="{{ asset('img/CCP4.jpg') }}"
-                    class="w-full object-cover mx-auto headline mb-6 px-6" alt="">
+                <img src="{{ asset('img/CCP4.jpg') }}" class="w-full object-cover mx-auto headline mb-6 px-6" alt="">
             </div>
         </div>
     </section>
     <section>
         <div class="text-center pt-10">
-            <h1 class="font-bold text-5xl">RECORRIDO VIRTUAL - CLUB DE PLAYA</h1>
+            <h1 class="font-bold text-2xl lg:text-5xl mb-2">RECORRIDO VIRTUAL - CLUB DE PLAYA</h1>
         </div>
         <iframe src="https://eva3d.com/realidad-virtual/recorridos-virtuales/club-de-playa-orve/index.htm"
-            class="w-full object-contain p-20 h-screen"></iframe>
+            class="w-full object-contain p-8 lg:p-20 h-screen"></iframe>
     </section>
 
     <section id="contacto">
@@ -74,7 +73,7 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
                 <div>
                     <h2 class="text-4xl tracking-tight font-extrabold text-black sm:text-5xl md:text-6xl headline mb-4">
                         Contacto</h2>
-                    <p class="mt-2 ml-16 text-base text-black">Llena el siguente formulario y uno de nuestros
+                    <p class="mt-2 lg:ml-16 text-base text-black">Llena el siguente formulario y uno de nuestros
                         asesores se pondra en contacto a la brevedad para
                         brindarte toda la informacion sobre nuestros desarrollos.</p>
                 </div>
