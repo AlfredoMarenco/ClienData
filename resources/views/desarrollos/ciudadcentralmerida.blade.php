@@ -132,7 +132,7 @@ src="{{ asset('img/header-2.jpg') }}" alt=""> --}}
                     <div class="flex items-start my-3">
                         <label class="text-white font-semibold">
                             <x-jet-input type="checkbox" class="mr-2" name="policy"></x-jet-input>
-                            He leido <a href="" class="text-gray-700">aviso de privacidad.</a> y estor de
+                            He leido <a href="" class="text-gray-700">aviso de privacidad.</a> y estoy de
                             acuerdo
                         </label>
                     </div>
