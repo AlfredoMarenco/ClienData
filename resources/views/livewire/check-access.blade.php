@@ -5,8 +5,8 @@
         {{ $time }}
     </div>
 
-    {{ $access_type }}
-    {{ $accesses }}
+    {{-- {{ $access_type }}
+    {{ $accesses }} --}}
 
     <div class="flex justify-center mt-6 w-full">
         <div class="grid grid-cols-1 justify-items-center">
