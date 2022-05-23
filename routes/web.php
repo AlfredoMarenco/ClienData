@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LeadController;
+use App\Http\Livewire\CheckAccess;
 use App\Http\Requests\LeadsRequest;
 use App\Mail\RemindTask;
 use App\Models\Development;
@@ -107,6 +108,8 @@ Route::get('email', function () {
     /* Artisan::call('queue:work'); */
     return $tasks;
 });
+
+Route::get('/checkaccess',CheckAccess::class)->name('checkaccess');
 
 Route::get('hubspot',function(){
 
