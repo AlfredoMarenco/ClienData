@@ -11,7 +11,7 @@
     <div class="flex justify-center mt-6 w-full">
         <div class="grid grid-cols-1 justify-items-center">
             <x-jet-label value="Imgresa tu codigo de asesor" />
-            <x-jet-input type="text" class="w-full font-bold text-center" wire:model="code" placeholder="codigo de asesor"
+            <x-jet-input type="number" class="w-full font-bold text-center" wire:model="code" placeholder="codigo de asesor"
                 wire:keydown.enter='check()' maxlength="4" />
         </div>
     </div>
