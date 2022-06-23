@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+.nav-link {
+    color: #fff !important;
+}
+.bg-nav {
+    background: transparent;
+    transition: 0.5s ease;
+}
+.bg-nav.scrolled {
+    background: black;
+}
+.btn-primary {
+    background-color: #00A126;
+    border: none;
+    padding: .6em 3em .6em 3em;
+    border-radius: .6em;
+    font-weight: 600;
+}
+.btn-primary:hover {
+    background-color: #14782b;
+}
+/* Fondos */
+.bg-cc {
+    background-color: #F5ED00;
+}
+.bg-cc_master {
+    background-image: url(/img/amarillo-bco.png);
+    background-size: cover;
+    background-position: center;
+}
+.inicio {
+    background-image: url(/img/head-1.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 498px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicio-1 {
+    background-image: url(/img/head-2.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 498px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicio-2 {
+    background-image: url(/img/casa-club-ciudad-central-2-2021.jpeg);
+    background-size: cover;
+    background-position: center;
+    min-height: 498px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Fin fondos */
+
+.inicio__titular {
+    color: #fff;
+}
+.inicio__titular h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.tipos-de-desarrollos {
+    padding: 3em 1em 3em 1em;
+}
+.tipos-de-desarrollos__titular {
+    padding-bottom: 2em;
+    text-transform: uppercase;
+}
+.tipos-de-desarrollos__titular h5 {
+    color: #00A126;
+}
+.tipos-de-desarrollos__titular h3{
+    font-weight: 700;
+}
+.desarrollos__merida {
+    padding: 3em;
+    text-align: justify;
+}
+.desarrollos__descripcion h3 {
+    font-weight: 700;
+}
+.certeza {
+    padding: 3em 2em 3em 2em;
+}
+.certeza__titular h5 {
+    color: #00A126;
+    text-transform: uppercase;
+}
+.certeza__titular h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.amenidades__opciones h5{
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+.amenidades__opciones p {
+    font-size: .9em;
+}
+.mapa-desarrollo__master {
+    padding: 3em;
+}
+.recorrido {
+    height: 30em;
+}
+footer {
+    background-color: #1E1E1E;
+    padding: 3em;
+    color: #fff;
+}
+footer h3 {
+    font-weight: 700;
+}
+footer p {
+    font-weight: 300;
+    padding-bottom: 1em;
+}
+footer strong {
+    font-weight: 600;
+}

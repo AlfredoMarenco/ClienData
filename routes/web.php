@@ -26,11 +26,13 @@ use UniSharp\LaravelFilemanager\Lfm;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     $developments = Development::all();
     return view('welcome', compact('developments'));
-})->name('home');
-
+})->name('home'); */
+Route::get('/', function () {
+    return view('index');
+});
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
