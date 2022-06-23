@@ -35,7 +35,7 @@
           <a href="" class="btn btn-primary" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">CONTACTAR A UN ASESOR</a>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/QHSyfDcYXVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/QHSyfDcYXVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
