@@ -113,6 +113,7 @@
                                     <a href="#contacto"
                                         class="font-medium text-gray-500 hover:text-gray-900">Contacto</a>
                                 </div>
+                                <h1>HOLAWEESTOESDEPRUEBA</h1>
                             </nav>
                         </div>
                         <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
