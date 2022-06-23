@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="/index.html">
+          <a class="navbar-brand" href="/">
             <img src="/img/terrenos-logo.svg" alt="Logo: Terrenos mid" width="150"/>
           </a>
           <button
@@ -29,7 +29,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active mr-4">
-                <a class="nav-link" href="/index.html"
+                <a class="nav-link" href="/"
                   >Inicio <span class="sr-only">(current)</span></a
                 >
               </li>
@@ -38,17 +38,17 @@
                   Desarrollos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/ciudad-central-merida.html">Ciudad Central Mérida</a>
-                  <a class="dropdown-item" href="/ciudad-central-progreso.html">Ciudad Central Progreso</a>
+                  <a class="dropdown-item" href="/ciudad-central-merida">Ciudad Central Mérida</a>
+                  <a class="dropdown-item" href="/ciudad-central-progreso">Ciudad Central Progreso</a>
                 </div>
               </li>
               
               <li class="nav-item mr-4">
-                <a class="nav-link disabled">Contacto</a>
+                <a href="#" class="nav-link disabled">Contacto</a>
               </li>
             </ul>
             <div class="my-2 my-lg-0">
-              <button class="btn btn-primary my-2 my-sm-0">
+              <button class="btn btn-primary my-2 my-sm-0" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Hablar con un asesor
               </button>
             </div>
@@ -56,6 +56,61 @@
         </div>
       </nav>
       <main>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                              Check me out
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
         @yield('content')
       </main>
     <footer>
@@ -122,7 +177,7 @@
                           </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign in</button>
-                      </form>
+                    </form>
                 </div>
             </div>
         </div>

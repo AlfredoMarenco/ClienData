@@ -33,6 +33,12 @@ use UniSharp\LaravelFilemanager\Lfm;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/ciudad-central-merida', function () {
+    return view('cc-m');
+});
+Route::get('/ciudad-central-progreso', function () {
+    return view('cc-p');
+});
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
