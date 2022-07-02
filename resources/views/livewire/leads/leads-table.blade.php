@@ -76,36 +76,36 @@
                                 <th wire:click="sortBy('name')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Nombre
-                                    @include('partials._sort-icon',['field' => 'name'])
+                                    @include('partials._sort-icon', ['field' => 'name'])
                                 </th>
                                 <th wire:click="sortBy('user_id')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Propietario
-                                    @include('partials._sort-icon',['field' => 'user_id'])
+                                    @include('partials._sort-icon', ['field' => 'user_id'])
                                 </th>
                                 <th wire:click="sortBy('development_id')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Desarrollo
-                                    @include('partials._sort-icon',['field' => 'development_id'])
+                                    @include('partials._sort-icon', ['field' => 'development_id'])
                                 </th>
                                 <th wire:click="sortBy('status_id')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Estado
-                                    @include('partials._sort-icon',['field' => 'status_id'])
+                                    @include('partials._sort-icon', ['field' => 'status_id'])
                                 </th>
                                 <th wire:click="sortBy('created_at')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Fecha de creacion
-                                    @include('partials._sort-icon',['field' => 'created_at'])
+                                    @include('partials._sort-icon', ['field' => 'created_at'])
                                 </th>
                                 <th wire:click="sortBy('updated_at')" scope="col"
                                     class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Ultimo contacto
-                                    @include('partials._sort-icon',['field' => 'updated_at'])
+                                    @include('partials._sort-icon', ['field' => 'updated_at'])
                                 </th>
-                                {{-- <th scope="col" class="relative px-6 py-3">
-            <span class="sr-only">Edit</span>
-        </th> --}}
+                                <th scope="col" class="relative px-6 py-3">
+                                    <span class="sr-only">Edit</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -126,7 +126,7 @@
                                                             target="_blank">{{ $lead->fullName() }}</a>
                                                     </div>
                                                     <div class="relative inline-block text-left ml-2"
-                                                        x-data="{open:false}">
+                                                        x-data="{ open: false }">
                                                         <div>
                                                             <i class="fas fa-info-circle text-gray-600 hover:text-gray-700"
                                                                 x-on:click="open=!open"
@@ -180,9 +180,9 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                                         {{ $lead->updated_at->diffForHumans() }}
                                     </td>
-                                    {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                </td> --}}
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a wire:click="delete({{ $lead }})" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
