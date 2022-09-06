@@ -29,7 +29,6 @@ class LeadsRequest extends FormRequest
             'email' => 'required|email|unique:leads,email',
             'phone' => 'required',
             'policy' => 'required',
-            'marketing' => 'required'
         ];
     }
 }

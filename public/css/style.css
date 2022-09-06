@@ -4,26 +4,47 @@
     font-family: 'Inter', sans-serif;
 }
 .nav-link {
-    color: #fff !important;
+    color: black !important;
 }
+
+.nav-link:hover {
+    color: #FF0000;
+}
+
 .bg-nav {
-    background: transparent;
+    background: rgba(165, 165, 165, 0.285);
     transition: 0.5s ease;
 }
 .bg-nav.scrolled {
-    background: black;
+    background: #ffffff;
 }
+
+.nav-link.scrolled {
+    color: black !important;
+}
+
 .btn-primary {
-    background-color: #00A126;
+    background-color: #ff0000;
     border: none;
     padding: .6em 3em .6em 3em;
     border-radius: .6em;
     font-weight: 600;
 }
+.btn-secondary {
+    background-color: #696969;
+    border: none;
+    padding: .6em 3em .6em 3em;
+    border-radius: .6em;
+    font-weight: 600;
+}
+
 .btn-primary:hover {
-    background-color: #14782b;
+    background-color: #ff0000;
 }
 /* Fondos */
+.bg-w {
+    background-color: #ffffff;
+}
 .bg-cc {
     background-color: #F5ED00;
 }
@@ -33,7 +54,7 @@
     background-position: center;
 }
 .inicio {
-    background-image: url(/img/head-1.png);
+    background-image: url(/img/domen/principal.jpg);
     background-size: cover;
     background-position: center;
     min-height: 498px;
@@ -79,7 +100,7 @@
     text-transform: uppercase;
 }
 .tipos-de-desarrollos__titular h5 {
-    color: #00A126;
+    color: #ff0000;
 }
 .tipos-de-desarrollos__titular h3{
     font-weight: 700;

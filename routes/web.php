@@ -36,9 +36,11 @@ Route::get('/', function () {
 Route::get('/ciudad-central-merida', function () {
     return view('cc-m');
 });
+
 Route::get('/ciudad-central-progreso', function () {
     return view('cc-p');
 });
+
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
@@ -46,7 +48,8 @@ Route::get('/terminos-y-condiciones', function () {
 Route::get('/avisodeprivadidad', function () {
     return view('policy');
 });
-Route::get('storage-link', function () {
+
+/* Route::get('storage-link', function () {
     Artisan::call('storage:link');
 });
 Route::get('route-clear', function () {
@@ -58,12 +61,11 @@ Route::get('config-clear', function () {
 
 Route::get('task-start', function () {
     Artisan::call('schedule:work');
-});
+}); */
 
 Route::post('leads', function (LeadsRequest $request) {
     Lead::create($request->all());
-
-    return redirect('/')->withSuccess('Informacion enviada con exito');
+    return redirect('/#footer')->withSuccess('Informacion enviada con exito');
 })->name('form.leads');
 
 Route::get('migrates', function () {
