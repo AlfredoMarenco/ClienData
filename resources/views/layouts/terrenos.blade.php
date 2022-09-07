@@ -70,7 +70,7 @@
             </div>
         </div>
         @yield('content')
-        <a href="https://api.whatsapp.com/send?phone=529994998813" class="btn-wsp" target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=529995440167" class="btn-wsp" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 2rem;fill:white;">
                 <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
                 <path
