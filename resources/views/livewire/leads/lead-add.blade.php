@@ -132,7 +132,7 @@
                                                                 </div>
 
                                                                 <div class="col-span-6 sm:col-span-3">
-                                                                    @role('SuperUser')
+                                                                    @role('Administrador')
                                                                     <label for="user_id"
                                                                         class="block text-sm font-medium text-gray-700">Asignado
                                                                         a</label>

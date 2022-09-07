@@ -27,7 +27,7 @@
                     <x-jet-nav-link href="/admin/laravel-filemanager" target="_blank" :active="request()->routeIs('documents.*')">
                         {{ __('Documents') }}
                     </x-jet-nav-link>
-                    @role('SuperUser')
+                @role('Administrador')
                     <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.*')">
                         {{ __('Reports') }}
                     </x-jet-nav-link>

@@ -16,22 +16,22 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Alfredo Gonzalez',
-            'email' => 'alfredogonzalez@terrenosmid.com',
+            'email' => 'marencocode@gmail.com',
             'password' => bcrypt('marencos6359:D')
         ])->assignRole('Administrador');
 
         User::create([
             'name' => 'Javier Gutierrez',
-            'email' => 'javiergutierrez@terrenosmid.com',
+            'email' => 'jgutierrez@grupodomen.com',
             'password' => bcrypt('password')
         ])->assignRole('Administrador');
 
         User::create([
-            'name' => 'Alfredo Gonzalez',
-            'email' => 'vendedor@terrenosmid.com',
-            'password' => bcrypt('marencos6359:D')
+            'name' => 'Sin Asignar',
+            'email' => 'sinasignar@grupodomen.com',
+            'password' => bcrypt('cjaf0322:$')
         ])->assignRole('Vendedor');
 
-        User::factory(30)->create();
+        /* User::factory(30)->create(); */
     }
 }

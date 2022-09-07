@@ -14,7 +14,7 @@
         {{ $lead->development->name }}
     </p>
     <label class="text-gray-400">Asignado a:</label>
-    @role('SuperUser')
+    @role('Administrador')
     <div class="flex mb-2" x-data="{open:false}">
         <div wire:loading.remove wire:target="updateUser">
             <p class="text-gray-800 underline" x-show="!open">{{ $lead->user->name }}</p>

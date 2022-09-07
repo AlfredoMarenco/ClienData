@@ -10,25 +10,7 @@
                     <option value="20">20</option>
                 </select>
             </div>
-            @role('Administrador')
-            <div class="mx-1">
-                <label>Mostrar todos:</label>
-                <input wire:model="all" type="checkbox"
-                    class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
-            </div>
-            <div class="mx-1">
-                <label
-                    class="">Mostrar solo de:</label>
-                <select wire:model='user'
-                    class="
-                    py-0.5 rounded-md text-xs">
-                    @foreach ($users->except(3) as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                    @endforeach
-                    </select>
-            </div>
-        @endcan
-        @role('SuperUser')
+        @role('Administrador')
         <div class="mx-1">
             <label>Mostrar todos:</label>
             <input wire:model="all" type="checkbox"

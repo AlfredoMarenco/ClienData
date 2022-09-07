@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Development;
 use App\Models\Lead;
 use Livewire\Component;
 use HubSpot\Factory;
@@ -16,7 +17,8 @@ class FormLeads extends Component
     public $phone;
     public $policy;
     public $user_id=3;
-    public $status_id=3;
+    public $status_id=1;
+    public $development_id='';
 
     protected $rules = [
         'name' => 'required',
@@ -33,7 +35,7 @@ class FormLeads extends Component
     public function submit(){
         $this->validate();
 
-        $client = Factory::createWithApiKey(config('services.hubspot.key'));
+        $hubspot = Factory::createWithAccessToken(config('services.hubspot.key'));
 
         $properties = [
             "email" => $this->email,
@@ -41,21 +43,20 @@ class FormLeads extends Component
             "lastname" => $this->last_name,
             "phone" => $this->phone,
         ];
-        $SimplePublicObjectInput = new SimplePublicObjectInput(['properties' => $properties]);
-        try {
-            $apiResponse = $client->crm()->contacts()->basicApi()->create($SimplePublicObjectInput);
-            /* var_dump($apiResponse); */
-        } catch (ApiException $e) {
-            echo "Exception when calling basic_api->create: ", $e->getMessage();
-        }
-        
+
+        $contactInput = new \HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectInput();
+        $contactInput->setProperties($properties);
+
+        $contact = $hubspot->crm()->contacts()->basicApi()->create($contactInput);
+
         Lead::create([
             'name' => $this->name,
             'last_name' => $this->last_name,
             'email' => $this->email,
             'phone' => $this->phone,
             'user_id' => $this->user_id,
-            'status_id' => $this->status_id
+            'status_id' => $this->status_id,
+            'development_id' => $this->development_id,
         ]);
 
         session()->flash("message", "Tus datos han sido enviados correctamente.");
@@ -64,6 +65,8 @@ class FormLeads extends Component
 
     public function render()
     {
-        return view('livewire.form-leads');
+        return view('livewire.form-leads',[
+            'developments' => Development::all(),
+        ]);
     }
 }

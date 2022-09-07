@@ -30,7 +30,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'hubspot' => [
-        'key' => env('API_KEY')
+        'key' => env('API_KEY_HUBSPOT')
     ],
 
 ];

@@ -17,22 +17,14 @@ class DevelopmentSeeder extends Seeder
         /* Development::factory(5)->create(); */
 
         Development::create([
-            'name' => 'Ciudad Central'
+            'name' => 'Ciudad Central Mérida'
         ]);
 
         Development::create([
-            'name' => 'Alea'
+            'name' => 'Ciudad Central Progreso'
         ]);
         Development::create([
-            'name' => 'Andarenas'
-        ]);
-
-        Development::create([
-            'name' => 'Palumar'
-        ]);
-
-        Development::create([
-            'name' => 'Costa linda'
+            'name' => 'Imperio Maya'
         ]);
     }
 }

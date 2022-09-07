@@ -39,6 +39,18 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="inputAddress">Desarrollo de interes</label>
+            <select wire:model="development_id" class="form-control">
+                <option value="" disabled selected>Selecciona un desarrollo</option>
+                @foreach ($developments as $development)
+                    <option value="{{ $development->id }}">{{ $development->name }}</option>
+                @endforeach
+            </select>
+            @error('development_id')
+                <span class="error text-danger text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label" for="gridCheck">
                     <input class="form-check-input" type="checkbox" wire:model="policy">
