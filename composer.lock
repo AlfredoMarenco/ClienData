@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "328a1c7ad83aaacfd2cfa0a2bdeee703",
+    "content-hash": "e76545b5e51abe96c17223e2d3625987",
     "packages": [
         {
             "name": "arielmejiadev/larapex-charts",
@@ -1701,16 +1701,16 @@
         },
         {
             "name": "hubspot/api-client",
-            "version": "7.0.0",
+            "version": "8.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HubSpot/hubspot-api-php.git",
-                "reference": "5bc1ec8b128fb59897d3d747fbf7f7b69ace4daf"
+                "reference": "3d9fd4a367be5e80bb307090a429ed53af0dc852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HubSpot/hubspot-api-php/zipball/5bc1ec8b128fb59897d3d747fbf7f7b69ace4daf",
-                "reference": "5bc1ec8b128fb59897d3d747fbf7f7b69ace4daf",
+                "url": "https://api.github.com/repos/HubSpot/hubspot-api-php/zipball/3d9fd4a367be5e80bb307090a429ed53af0dc852",
+                "reference": "3d9fd4a367be5e80bb307090a429ed53af0dc852",
                 "shasum": ""
             },
             "require": {
@@ -1755,9 +1755,9 @@
             ],
             "support": {
                 "issues": "https://github.com/HubSpot/hubspot-api-php/issues",
-                "source": "https://github.com/HubSpot/hubspot-api-php/tree/7.0.0"
+                "source": "https://github.com/HubSpot/hubspot-api-php/tree/8.3.1"
             },
-            "time": "2022-03-29T15:41:10+00:00"
+            "time": "2022-09-01T14:41:04+00:00"
         },
         {
             "name": "intervention/image",
@@ -10507,5 +10507,5 @@
         "php": "^7.4|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

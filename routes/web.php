@@ -35,11 +35,11 @@ Route::get('/', function () {
 });
 Route::get('/ciudad-central-merida', function () {
     return view('cc-m');
-});
+})->name('desarrollo.ccm');
 
 Route::get('/ciudad-central-progreso', function () {
     return view('cc-p');
-});
+})->name('desarrollo.ccp');
 
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');

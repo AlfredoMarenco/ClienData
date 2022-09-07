@@ -4,6 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Lead;
 use Livewire\Component;
+use HubSpot\Factory;
+use HubSpot\Client\Crm\Contacts\ApiException;
+use HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectInput;
 
 class FormLeads extends Component
 {
@@ -29,6 +32,23 @@ class FormLeads extends Component
 
     public function submit(){
         $this->validate();
+
+        $client = Factory::createWithApiKey(config('services.hubspot.key'));
+
+        $properties = [
+            "email" => $this->email,
+            "firstname" => $this->name,
+            "lastname" => $this->last_name,
+            "phone" => $this->phone,
+        ];
+        $SimplePublicObjectInput = new SimplePublicObjectInput(['properties' => $properties]);
+        try {
+            $apiResponse = $client->crm()->contacts()->basicApi()->create($SimplePublicObjectInput);
+            /* var_dump($apiResponse); */
+        } catch (ApiException $e) {
+            echo "Exception when calling basic_api->create: ", $e->getMessage();
+        }
+        
         Lead::create([
             'name' => $this->name,
             'last_name' => $this->last_name,
@@ -36,8 +56,8 @@ class FormLeads extends Component
             'phone' => $this->phone,
             'user_id' => $this->user_id,
             'status_id' => $this->status_id
-
         ]);
+
         session()->flash("message", "Tus datos han sido enviados correctamente.");
         $this->reset('name','last_name','email','phone','policy');
     }

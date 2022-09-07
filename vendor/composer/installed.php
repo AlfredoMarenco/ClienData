@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '174a08053a4e957d17a986d6195f50e400011df5',
+        'reference' => 'bcf074178b1892c252e1c2de9c911d74ff674cc1',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -310,6 +310,15 @@
             'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
             'dev_requirement' => true,
         ),
+        'hubspot/api-client' => array(
+            'pretty_version' => '8.3.1',
+            'version' => '8.3.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hubspot/api-client',
+            'aliases' => array(),
+            'reference' => '3d9fd4a367be5e80bb307090a429ed53af0dc852',
+            'dev_requirement' => false,
+        ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -562,7 +571,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '174a08053a4e957d17a986d6195f50e400011df5',
+            'reference' => 'bcf074178b1892c252e1c2de9c911d74ff674cc1',
             'dev_requirement' => false,
         ),
         'laravel/legacy-factories' => array(
