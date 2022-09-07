@@ -46,7 +46,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
                         <figure>
-                            <img src="/img/cc-m-logo.svg" class="img-fluid" alt="Logo Ciudad Central Mérida">
+                            <img src="/img/cc-m-logo.svg" class="img-fluid mb-sm-5" alt="Logo Ciudad Central Mérida">
                         </figure>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-left border-danger text-left">
