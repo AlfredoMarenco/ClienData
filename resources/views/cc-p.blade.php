@@ -1,4 +1,5 @@
 @extends('layouts.terrenos')
+@section('subtitle', 'Ciudad Central Progreso')
 @section('content')
     <header class="inicio-1">
         <div class="container">

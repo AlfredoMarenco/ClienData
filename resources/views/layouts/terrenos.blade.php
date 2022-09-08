@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Grupo Domen</title>
+    <title>Grupo Domen | @yield('subtitle')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/fontello.css') }}"> --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/favico.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/domen-logo.png') }}">
     @livewireStyles
 </head>
 
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('img/domen/grupos-domen-logo.png') }}" style="width:4rem;" alt="Logo: Grupo Domen" />
+                <img src="{{ asset('img/domen/domen-logo.png') }}" style="width:4rem;" alt="Logo: Grupo Domen" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

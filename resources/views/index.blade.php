@@ -1,4 +1,5 @@
 @extends('layouts.terrenos')
+@section('subtitle', 'Bienes Raíces')
 @section('content')
     <header class="inicio">
         <div class="container">
@@ -67,7 +68,7 @@
         <div class="bg-w">
             <div class="container desarrollos__merida">
                 <div class="row d-flex align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-right border-danger text-right">
+                    <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-right border-bottom border-danger text-right">
                         <h6>Lo mejor de dos mundos</h6>
                         <h3>Ciudad Central Progreso</h3>
                         <p>Ubicado al norte de Mérida, Ciudad Central tiene para ti los terrenos residenciales ideales
