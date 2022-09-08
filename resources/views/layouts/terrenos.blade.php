@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('img/domen/logo-grupodomen.png') }}" alt="Logo: Grupo Domen" />
+                <img src="{{ asset('img/domen/grupos-domen-logo.png') }}" style="width:4rem;" alt="Logo: Grupo Domen" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,18 +39,23 @@
                             Desarrollos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/ciudad-central-merida">Ciudad Central Mérida</a>
-                            <a class="dropdown-item" href="/ciudad-central-progreso">Ciudad Central Progreso</a>
+                            <a class="dropdown-item" href="{{route('desarrollo.ccm')}}">Ciudad Central Mérida</a>
+                            <a class="dropdown-item" href="{{route('desarrollo.ccp')}}">Ciudad Central Progreso</a>
                             <a class="dropdown-item" href="#">Imperio Maya</a>
                         </div>
                     </li>
-
-                    <li class="nav-item mr-4">
-                        <a href="#" class="nav-link disabled">Contacto</a>
+                    <li class="nav-item dropdown mr-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Acerca de
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('nosotros') }}">Nosotros</a>
+                        </div>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    <button class="btn btn-danger my-2 my-sm-0" type="button" class="btn btn-danger"
+                    <button class="btn btn-success my-2 my-sm-0" type="button" class="btn btn-success"
                         data-toggle="modal" data-target="#exampleModal">
                         Hablar con un asesor
                     </button>
@@ -89,7 +94,7 @@
                     </p>
                     <div class="row">
                         <div class="col text-center">
-                            <img src="{{ asset('img/domen/logo-grupodomen-negro.png') }}" style="width: 10rem;"
+                            <img src="{{ asset('img/domen/GrupoDomenLogo-black.png') }}" style="width: 10rem;"
                                 alt="Logo terrenos mid">
                         </div>
                         <div class="col">

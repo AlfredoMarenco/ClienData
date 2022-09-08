@@ -8,8 +8,8 @@
                   Terrenos residenciales con el respaldo de años y años de
                   experiencia.
                 </p> -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
-                    class="btn btn-danger my-2 my-sm-0" style="text-transform: uppercase">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
+                    class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase">
                     <span class="pl-2 m-auto">Hablar con un asesor</span>
                 </button>
             </div>
@@ -29,7 +29,7 @@
                         amenidades exclusivas para que construyas tu casa estilo TownHouse en un mediano plazo y disfrutes
                         de la privacidad y seguridad que siempre has soñado en la ciudad más segura de México.
                     </p>
-                    <a href="" class="btn btn-danger" type="button" class="btn btn-danger" data-toggle="modal"
+                    <a href="" class="btn btn-success" type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#exampleModal">CONTACTAR A UN ASESOR</a>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
@@ -96,7 +96,7 @@
                             </p>
                         </div>
                         <div class="col-12 amenidades__opciones">
-                            <a href="" class="btn btn-danger btn-block" type="button" data-toggle="modal"
+                            <a href="" class="btn btn-success btn-block" type="button" data-toggle="modal"
                             data-target="#exampleModal">DESCARGAR BROCHURE</a>
                         </div>
                     </div>

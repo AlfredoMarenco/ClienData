@@ -1,15 +1,14 @@
 @extends('layouts.terrenos')
 @section('content')
-    <header class="inicio">
+    <header class="nosotros">
         <div class="container">
             <div class="inicio__titular text-center">
                 <h1>
-                    Grupo Domen inversión inteligente
+                    Grupo Domen
                 </h1>
-                <p>Queremos ofrecerte los mejores terrenos residenciales a precios accesibles para poner a trabajar tu
-                    capital.</p>
+                <p>Los mejores asesores inmobiliario en la peninsula, con mas de 5 años de experiencia.</p>
                 <a class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase;"  data-toggle="modal" data-target="#exampleModal">
-                    <span class="pl-2 m-auto">Hablar con un asesor</span>
+                    <span class="pl-2 m-auto">Agenda una cita</span>
                 </a>
             </div>
         </div>
@@ -28,7 +27,7 @@
                 <div class="row text-center">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <figure>
-                            <img src="{{ asset('img/domen/grupos-domen-logo.png') }}" style="width:12rem;" alt="">
+                            <img src="{{ asset('img/domen/domen-bienesraices.png') }}" alt="">
                         </figure>
                         {{-- <h5>Lorem Ipsum</h5> --}}
                         <p>Proyectos de inversión inmobiliaria en Yucatán. Queremos ofrecerte los mejores terrenos

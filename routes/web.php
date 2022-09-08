@@ -41,6 +41,10 @@ Route::get('/ciudad-central-progreso', function () {
     return view('cc-p');
 })->name('desarrollo.ccp');
 
+Route::get('/nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
+
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });

@@ -54,7 +54,7 @@
             <div class="form-check">
                 <label class="form-check-label" for="gridCheck">
                     <input class="form-check-input" type="checkbox" wire:model="policy">
-                    He leido <a href="" class="text-danger">aviso de privacidad.</a> y
+                    He leido <a href="" class="text-verde">aviso de privacidad.</a> y
                     estor de
                     acuerdo
                 </label>
@@ -63,6 +63,6 @@
                 <span class="error text-danger text-sm">{{ $message }}</span>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Contactar</button>
+        <button type="submit" class="btn btn-success btn-block">Contactar</button>
     </form>
 </div>

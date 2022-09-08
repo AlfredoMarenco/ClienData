@@ -8,7 +8,7 @@
                     Terrenos residenciales con el respaldo de años y años de
                     experiencia.
                 </p>
-                <button class="btn btn-danger my-2 my-sm-0" type="button" class="btn btn-danger" data-toggle="modal"
+                <button class="btn btn-success my-2 my-sm-0" type="button" class="btn btn-success" data-toggle="modal"
                     data-target="#exampleModal" style="text-transform: uppercase">
                     <span class="pl-2 m-auto">Hablar con un asesor</span>
                 </button>
@@ -29,7 +29,7 @@
                         Cada espacio del mismo invita a despejar tu mente y desacelerar
                         tu ritmo de vida para el bienestar máximo.
                     </p>
-                    <button href="" class="btn btn-danger" type="button" class="btn btn-danger" data-toggle="modal"
+                    <button href="" class="btn btn-success" type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#exampleModal">CONTACTAR A UN ASESOR</button>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
@@ -95,7 +95,7 @@
                             </p>
                         </div>
                         <div class="col-12 amenidades__opciones">
-                            <a href="" class="btn btn-danger btn-block" type="button" data-toggle="modal"
+                            <a href="" class="btn btn-success btn-block" type="button" data-toggle="modal"
                                 data-target="#exampleModal">DESCARGAR BROCHURE</a>
                         </div>
                     </div>
