@@ -47,7 +47,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
                         <figure>
-                            <img src="/img/cc-m-logo.svg" class="img-fluid mb-sm-5" alt="Logo Ciudad Central Mérida">
+                            <img src="/img/cc-m-logo.svg" class="img-fluid mb-sm-5 sm-display" alt="Logo Ciudad Central Mérida">
                         </figure>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-left border-danger text-left">
@@ -68,7 +68,7 @@
         <div class="bg-w">
             <div class="container desarrollos__merida">
                 <div class="row d-flex align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-right border-bottom border-danger text-right">
+                    <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-right border-danger text-right">
                         <h6>Lo mejor de dos mundos</h6>
                         <h3>Ciudad Central Progreso</h3>
                         <p>Ubicado al norte de Mérida, Ciudad Central tiene para ti los terrenos residenciales ideales
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
                         <figure>
-                            <img src="/img/logo-ccp.svg" class="img-fluid mt-sm-5" alt="Logo Ciudad Central Mérida">
+                            <img src="/img/logo-ccp.svg" class="img-fluid mt-sm-5 sm-display" alt="Logo Ciudad Central Mérida">
                         </figure>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
                         <figure>
-                            <img src="{{ asset('img/domen/logo-imperio-maya.jpg') }}" class="img-fluid" alt="Logo Ciudad Central Mérida">
+                            <img src="{{ asset('img/domen/logo-imperio-maya.jpg') }}" class="img-fluid sm-display" alt="Logo Ciudad Central Mérida">
                         </figure>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 desarrollos__descripcion border-left border-danger text-left">

@@ -271,6 +271,12 @@ footer strong {
         height:63px;
         line-height: 57px;
 	}
+    .mt-sm-5{
+        margin-top:2.5rem;
+    }
+    .sm-display{
+        display: none;
+    }
 }
 
 .text-verde{
@@ -280,3 +286,4 @@ footer strong {
 .border-danger{
  border-color:#80CC28 !important;
 }
+
