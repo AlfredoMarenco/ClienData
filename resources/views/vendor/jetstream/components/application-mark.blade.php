@@ -1,1 +1,1 @@
-    <img class="w-28 p-2" src="{{ asset('img/domen/domen-logo.png') }}" alt="">
+    <img class="w-20 p-2" src="{{ asset('img/domen/domen-logo.png') }}" alt="">
