@@ -287,3 +287,7 @@ footer strong {
  border-color:#80CC28 !important;
 }
 
+.shadow{
+    color: #80cc28;
+    text-shadow: 5px 5px #0e2e3d;
+}
