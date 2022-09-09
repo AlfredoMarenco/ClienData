@@ -13,7 +13,7 @@
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/fontello.css') }}"> --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/domen-logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/logo-domen.png') }}">
     @livewireStyles
 </head>
 
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('img/domen/domen-logo.png') }}" style="width:4rem;" alt="Logo: Grupo Domen" />
+                <img src="{{ asset('img/domen/logo-domen-nav.png') }}" style="width:2.5rem;" alt="Logo: Grupo Domen" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
                     </p>
                     <div class="row">
                         <div class="col text-center">
-                            <img src="{{ asset('img/domen/GrupoDomenLogo-black.png') }}" style="width: 10rem;"
+                            <img src="{{ asset('img/domen/logo-domen-gris.png') }}" style="width: 10rem;"
                                 alt="Logo terrenos mid">
                         </div>
                         <div class="col">
