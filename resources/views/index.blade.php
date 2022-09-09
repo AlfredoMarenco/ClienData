@@ -4,14 +4,13 @@
     <header class="inicio">
         <div class="container">
             <div class="inicio__titular text-center">
-                <h1 class="shadow">
+                <h1 class="shadow d-inline px-2">
                     Domen Inmobiliaria
                 </h1>
-                <h2>
+                <h2 class="mt-2">
                     INVERSIÓN INTELIGENTE
                 </h2>
-                <p>Queremos ofrecerte los mejores terrenos residenciales a precios accesibles para poner a trabajar tu
-                    capital.</p>
+
                 <a class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase;"  data-toggle="modal" data-target="#exampleModal">
                     <span class="pl-2 m-auto">Hablar con un asesor</span>
                 </a>

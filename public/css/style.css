@@ -110,7 +110,7 @@
     background-image: url(/img/domen/principal.jpg);
     background-size: cover;
     background-position: center;
-    min-height: 498px;
+    min-height: 665px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -288,6 +288,5 @@ footer strong {
 }
 
 .shadow{
-    color: #80cc28;
-    text-shadow: 5px 5px #0e2e3d;
+    background-color: #0e2e3d9c;
 }
