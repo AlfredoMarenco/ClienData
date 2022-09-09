@@ -29,7 +29,7 @@
                 <div class="row text-center">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <figure>
-                            <img src="{{ asset('img/domen/grupos-domen-logo.png') }}" style="width:12rem;" alt="">
+                            <img src="{{ asset('img/domen/logo-domen.png') }}" style="width:12rem;" alt="">
                         </figure>
                         {{-- <h5>Lorem Ipsum</h5> --}}
                         <p>Proyectos de inversión inmobiliaria en Yucatán. Queremos ofrecerte los mejores terrenos
