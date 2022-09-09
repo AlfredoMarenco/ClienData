@@ -8,7 +8,7 @@
                     Domen Inombiliaria
                 </h1>
                 <h2>
-                    inversión inteligente
+                    INVERSIÓN INTELIGENTE
                 </h2>
                 <p>Queremos ofrecerte los mejores terrenos residenciales a precios accesibles para poner a trabajar tu
                     capital.</p>
