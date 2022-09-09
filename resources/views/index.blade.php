@@ -7,13 +7,15 @@
                 <h1 class="shadow d-inline px-2 display-3">
                     Domen Inmobiliaria
                 </h1>
-                <h2 class="mt-2">
+                <h2 class="mt-2 mb-4">
                     INVERSIÓN INTELIGENTE
                 </h2>
 
-                <a class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase;"  data-toggle="modal" data-target="#exampleModal">
-                    <span class="pl-2 m-auto">Hablar con un asesor</span>
-                </a>
+                <div class="mt-5 pt-5">
+                    <a class="btn btn-success my-4 my-sm-0" style="text-transform: uppercase;"  data-toggle="modal" data-target="#exampleModal">
+                        <span class="pl-2 m-auto">Hablar con un asesor</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
