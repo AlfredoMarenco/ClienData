@@ -5,8 +5,11 @@
         <div class="container">
             <div class="inicio__titular text-center">
                 <h1>
-                    Grupo Domen inversión inteligente
+                    Domen Inombiliaria
                 </h1>
+                <h2>
+                    inversión inteligente
+                </h2>
                 <p>Queremos ofrecerte los mejores terrenos residenciales a precios accesibles para poner a trabajar tu
                     capital.</p>
                 <a class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase;"  data-toggle="modal" data-target="#exampleModal">
