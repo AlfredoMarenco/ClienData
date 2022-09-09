@@ -5,7 +5,7 @@
         <div class="container">
             <div class="inicio__titular text-center">
                 <h1>
-                    Domen Inombiliaria
+                    Domen Inmobiliaria
                 </h1>
                 <h2>
                     INVERSIÓN INTELIGENTE
