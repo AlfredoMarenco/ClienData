@@ -26,7 +26,7 @@ class LeadsTable extends Component
 
     public function render()
     {
-        if (auth()->user()->hasRole('SuperUser')) {
+        if (auth()->user()->hasRole('Administrador')) {
             if ($this->all) {
                 $leads = Lead::orderBy($this->sortBy, $this->sortDirection)->where('name', 'like', '%' . $this->name . '%')->where('email', 'like', '%' . $this->email . '%')->where('status_id', 'LIKE', '%' . $this->status . '%')->paginate($this->paginate);
             } else {

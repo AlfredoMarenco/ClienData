@@ -87,7 +87,7 @@
                 <label class="form-check-label" for="gridCheck">
                     <input class="form-check-input" type="checkbox" wire:model="policy">
                     He leido <a href="" class="text-verde">aviso de privacidad.</a> y
-                    estor de
+                    estoy de
                     acuerdo
                 </label>
             </div>
