@@ -4,7 +4,7 @@
     <header class="inicio">
         <div class="container">
             <div class="inicio__titular text-center">
-                <h1 class="shadow d-inline px-2 display-3">
+                <h1 class="d-inline px-2 display-3">
                     Domen Inmobiliaria
                 </h1>
                 <h2 class="mt-2 mb-4">
