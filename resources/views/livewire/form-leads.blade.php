@@ -63,8 +63,8 @@
                 <option value="" disabled selected>Selecciona una opción</option>
                 <option value="$250,000 - $500,000">De $250,000 a $500,000</option>
                 <option value="$500,000 - $1,000,000">De $500,000 a $1,000,000</option>
-                <option value="$2,000,000">$2,000,000</option>
-                <option value="$3,000,000">$3,000,000</option>
+                <option value="$2,000,000">Hasta $2,000,000</option>
+                <option value="$3,000,000">Hasta $3,000,000</option>
             </select>
             @error('amount')
                 <span class="error text-danger text-sm">{{ $message }}</span>
