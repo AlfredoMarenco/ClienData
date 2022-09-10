@@ -51,6 +51,38 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="inputAddress">¿En qué horario te gustaría que te contactemos?</label>
+            <input type="text" class="form-control" wire:model="time">
+            @error('time')
+                <span class="error text-danger text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">¿Cuánto deseas invertir?</label>
+            <select wire:model="amount" class="form-control">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="$250,000 - $500,000">De $250,000 a $500,000</option>
+                <option value="$500,000 - $1,000,000">De $500,000 a $1,000,000</option>
+                <option value="$2,000,000">$2,000,000</option>
+                <option value="$3,000,000">$3,000,000</option>
+            </select>
+            @error('amount')
+                <span class="error text-danger text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="inputAddress">¿Es tu primera inversión? (Opcional)</label>
+            <select wire:model="first_time" class="form-control">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+            @error('first_time')
+                <span class="error text-danger text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label" for="gridCheck">
                     <input class="form-check-input" type="checkbox" wire:model="policy">

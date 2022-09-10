@@ -44,7 +44,7 @@
                             <a class="dropdown-item" href="#">Imperio Maya</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown mr-2">
+                    {{-- <li class="nav-item dropdown mr-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-expanded="false">
                             Acerca de
@@ -52,7 +52,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('nosotros') }}">Nosotros</a>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="my-2 my-lg-0">
                     <button class="btn btn-success my-2 my-sm-0" type="button" class="btn btn-success"

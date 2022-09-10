@@ -36,7 +36,7 @@
                             <img src="{{ asset('img/domen/logo-domen.png') }}" style="width:12rem;" alt="">
                         </figure>
                         {{-- <h5>Lorem Ipsum</h5> --}}
-                        <p>Proyectos de inversión inmobiliaria en Yucatán. Queremos ofrecerte los mejores terrenos
+                        <p class="px-5">Proyectos de inversión inmobiliaria en Yucatán. Queremos ofrecerte los mejores terrenos
                             residenciales a precios accesibles para poner a trabajar tu capital, protegerlo, diversificar tu
                             portafolio o adquirir un patrimonio a medida de tus planes.</p>
                     </div>

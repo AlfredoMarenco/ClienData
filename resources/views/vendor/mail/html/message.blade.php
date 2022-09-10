@@ -2,7 +2,7 @@
 {{-- Header --}}
 @slot('header')
 @component('mail::header', ['url' => config('app.url')])
-{{ config('app.name') }}
+<img src="{{ asset('img/domen/logo-domen-nav.png')}}" style="width: 3rem;" class="logo" alt="Domen Logo">
 @endcomponent
 @endslot
 

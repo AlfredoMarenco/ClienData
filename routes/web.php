@@ -1,19 +1,13 @@
 <?php
 
-use App\Http\Controllers\LeadController;
 use App\Http\Requests\LeadsRequest;
+use App\Mail\LeadNew;
 use App\Mail\RemindTask;
-use App\Models\Development;
 use App\Models\Lead;
 use App\Models\Task;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use RealRashid\SweetAlert\Facades\Alert;
-use Spatie\GoogleCalendar\Event;
-use UniSharp\LaravelFilemanager\Lfm;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,11 +61,6 @@ Route::get('task-start', function () {
     Artisan::call('schedule:work');
 }); */
 
-Route::post('leads', function (LeadsRequest $request) {
-    Lead::create($request->all());
-    return redirect('/#footer')->withSuccess('Informacion enviada con exito');
-})->name('form.leads');
-
 Route::get('migrates', function () {
     Artisan::call('migrate');
 });
@@ -92,3 +81,10 @@ Route::get('email', function () {
     /* Artisan::call('queue:work'); */
     return $tasks;
 });
+
+
+/* Route::get('/mailable', function () {
+
+        Mail::to(['marencocode@gmail.com','test@example.com'])->send(new LeadNew(Lead::find(1)));
+        return new LeadNew(Lead::find(1));
+}); */
