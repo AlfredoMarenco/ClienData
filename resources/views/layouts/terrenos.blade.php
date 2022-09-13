@@ -16,7 +16,15 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/logo-domen.png') }}">
     @livewireStyles
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z4BSWNZW1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-7Z4BSWNZW1');
+</script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
