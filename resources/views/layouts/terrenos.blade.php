@@ -5,11 +5,14 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z4BSWNZW1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-7Z4BSWNZW1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7Z4BSWNZW1');
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,8 +51,8 @@
                             Desarrollos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('desarrollo.ccm')}}">Ciudad Central Mérida</a>
-                            <a class="dropdown-item" href="{{route('desarrollo.ccp')}}">Ciudad Central Progreso</a>
+                            <a class="dropdown-item" href="{{ route('desarrollo.ccm') }}">Ciudad Central Mérida</a>
+                            <a class="dropdown-item" href="{{ route('desarrollo.ccp') }}">Ciudad Central Progreso</a>
                             <a class="dropdown-item" href="#">Imperio Maya</a>
                         </div>
                     </li>
@@ -97,9 +100,8 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                     <h3>¿Te interesa saber más?</h3>
-                    <p>Dejanos tus datos si te interesa cotizar alguno de nuestros desarrallos
-                        y uno de nuestros asesores se comunicará contigo para ayudarte
-                        a descubrir cual es la mejor opción para ti.
+                    <p>Déjanos tus datos si te interesa cotizar alguno de nuestros desarrollos y uno de nuestros
+                        asesores se comunicará contigo para ayudarte a descubrir cuál es la mejor opción para ti.
                     </p>
                     <div class="row">
                         <div class="col text-center">
@@ -116,7 +118,8 @@
                                             d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
                                     </svg>
                                 </a>
-                                <a class="redes" href="https://api.whatsapp.com/send?phone=529995440167" target="_blank">
+                                <a class="redes" href="https://api.whatsapp.com/send?phone=529995440167"
+                                    target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                                         style="fill:white;width:2.2rem;">
                                         <path
