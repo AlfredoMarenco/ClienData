@@ -97,7 +97,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                     <h3>¿Te interesa saber más?</h3>
-                    <p>Dejanos tus datos si te interesa coitzar alguno de nuestros desarrllos
+                    <p>Dejanos tus datos si te interesa cotizar alguno de nuestros desarrallos
                         y uno de nuestros asesores se comunicará contigo para ayudarte
                         a descubrir cual es la mejor opción para ti.
                     </p>
