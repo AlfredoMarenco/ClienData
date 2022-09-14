@@ -109,8 +109,8 @@
     <section class="amenidades mt-5">
         <div class="container">
             <div class="certeza__titular text-center pb-4">
-                <h3>ASÍ ES CIUDAD CENTRAL MÉRIDA</h3>
-                <p>Cuenta con Casas Club distribuidas dentro del proyecto para uso y beneficio exclusivo de sus habitantes.
+                <h3>Cautiva tus sentidos con cada espacio de Ciudad Central Progreso​</h3>
+                <p>Disfruta de todo lo que Ciudad Central Progreso te ofrece y mejora tu calidad de vida.
                 </p>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
