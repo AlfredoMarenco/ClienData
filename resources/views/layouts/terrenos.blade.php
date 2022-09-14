@@ -15,16 +15,17 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/fontello.css') }}"> --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/logo-domen.png') }}">
     @livewireStyles
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z4BSWNZW1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z4BSWNZW1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-7Z4BSWNZW1');
-</script>
+    gtag('config', 'G-7Z4BSWNZW1');
+    </script>
+</head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
         <div class="container">
