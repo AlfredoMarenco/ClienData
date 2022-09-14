@@ -158,6 +158,7 @@
 .inicio__titular h1 {
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 80px;
 }
 
 .tipos-de-desarrollos {
@@ -277,6 +278,11 @@ footer strong {
     .sm-display{
         display: none;
     }
+    .inicio__titular h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 30px;
+}
 }
 
 .text-verde{
