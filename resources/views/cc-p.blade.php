@@ -30,8 +30,8 @@
                         Cada espacio del mismo invita a despejar tu mente y desacelerar
                         tu ritmo de vida para el bienestar máximo.
                     </p>
-                    <button href="" class="btn btn-success" type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#exampleModal">CONTACTAR A UN ASESOR</button>
+                    <button href="" class="btn btn-success" type="button" class="btn btn-success"
+                        data-toggle="modal" data-target="#exampleModal">CONTACTAR A UN ASESOR</button>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
                     <figure>
@@ -101,6 +101,50 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenidades mt-5">
+        <div class="container">
+            <div class="certeza__titular text-center pb-4">
+                <h3>ASÍ ES CIUDAD CENTRAL PROGRESO</h3>
+                <p>Cuenta con Casas Club distribuidas dentro del proyecto para uso y beneficio exclusivo de sus habitantes.
+                </p>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccp-1.png') }}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccp-2.jpg') }}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccp-3.jpg') }}" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccp-4.jpg') }}" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccp-5.png') }}" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </section>
