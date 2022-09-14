@@ -45,7 +45,7 @@
         <div class="container">
             <div class="certeza__titular text-center pb-4">
                 <h5>INVERTIR EN YUCATÁN ES ADELANTARSE AL FUTURO</h5>
-                <h3>Un desarrollo con multiples amenidades</h3>
+                <h3>Un desarrollo con múltiples amenidades</h3>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
@@ -72,7 +72,7 @@
                             </figure>
                             <h5>Aguas Residuales</h5>
                             <p>
-                                Tratamiendo individual de aguas residuales.
+                                Tratamiento individual de aguas residuales.
                             </p>
                         </div>
                         <div class="col-6 amenidades__opciones">
@@ -80,7 +80,7 @@
                                 <img src="{{ asset('img/domen/icon-energia-electrica-1.png') }}" width="50"
                                     height="50" alt="" />
                             </figure>
-                            <h5>Energia Eléctrica</h5>
+                            <h5>Energía Eléctrica</h5>
                             <p>
                                 Servicio de electricidad a pie de tu lote.
                             </p>
@@ -92,7 +92,7 @@
                             </figure>
                             <h5>Mojoneras</h5>
                             <p>
-                                Delimitacion fisica con mojoneras frontales.
+                                Delimitación física con mojoneras frontales.
                             </p>
                         </div>
                         <div class="col-12 amenidades__opciones">

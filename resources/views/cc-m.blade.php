@@ -6,9 +6,9 @@
             <div class="inicio__titular text-center text-black">
                 <h1>ciudad central mérida</h1>
                 <!--  <p>
-                  Terrenos residenciales con el respaldo de años y años de
-                  experiencia.
-                </p> -->
+                          Terrenos residenciales con el respaldo de años y años de
+                          experiencia.
+                        </p> -->
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
                     class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase">
                     <span class="pl-2 m-auto">Mensualidades desde $2,193 MXN</span>
@@ -46,7 +46,7 @@
         <div class="container">
             <div class="certeza__titular text-center pb-4">
                 <h5>INVERTIR EN YUCATÁN ES ADELANTARSE AL FUTURO</h5>
-                <h3>Un desarrollo con multiples amenidades</h3>
+                <h3>Un desarrollo con múltiples amenidades</h3>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
@@ -98,10 +98,50 @@
                         </div>
                         <div class="col-12 amenidades__opciones">
                             <a href="" class="btn btn-success btn-block" type="button" data-toggle="modal"
-                            data-target="#exampleModal">DESCARGAR BROCHURE</a>
+                                data-target="#exampleModal">DESCARGAR BROCHURE</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenidades mt-5">
+        <div class="container">
+            <div class="certeza__titular text-center pb-4">
+                <h3>ASÍ ES CIUDAD CENTRAL MÉRIDA</h3>
+                <p>Cuenta con Casas Club distribuidas dentro del proyecto para uso y beneficio exclusivo de sus habitantes.
+                </p>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccm-1.png') }}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccm-2.jpg') }}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccm-3.jpg') }}" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/domen/ccm-4.jpg') }}" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </section>
