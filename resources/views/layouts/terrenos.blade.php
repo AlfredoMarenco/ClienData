@@ -109,7 +109,7 @@
                         <div class="col">
                             <p class="text-center"><strong>Siguenos en redes sociales</strong></p>
                             <div class="d-flex justify-content-around text-light align-items-center">
-                                <a class="redes" href="https://www.facebook.com" target="_blank">
+                                <a class="redes" href="https://www.facebook.com/domeninmobiliaria" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                                         style="fill:white;width:2.2rem;">
                                         <path
