@@ -11,7 +11,7 @@
                 </p>
                 <button class="btn btn-success my-2 my-sm-0" type="button" class="btn btn-success" data-toggle="modal"
                     data-target="#exampleModal" style="text-transform: uppercase">
-                    <span class="pl-2 m-auto">Hablar con un asesor</span>
+                    <span class="pl-2 m-auto">Mensualidades desde $2,162 MXN</span>
                 </button>
             </div>
         </div>
