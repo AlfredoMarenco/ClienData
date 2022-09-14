@@ -23,7 +23,7 @@
         <div class="container border-bottom border-danger">
             <div class="tipos-de-desarrollos__titular text-center">
                 <h5>
-                    Nuestra experiencia nos reespalda
+                    Nuestra experiencia nos respalda
                 </h5>
                 {{-- <h3>
                     Nuestros servicios
