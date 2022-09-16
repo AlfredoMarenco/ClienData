@@ -7,6 +7,7 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SystemController;
 use App\Http\Controllers\TaskController;
+use App\Models\Lot;
 use Illuminate\Support\Facades\Route;
 use \UniSharp\LaravelFilemanager\Lfm;
 
@@ -32,7 +33,10 @@ Route::get('tasks', TaskController::class)->name('tasks.index');
 Route::get('emails', EmailController::class)->name('emails.index');
 Route::get('documents', DocumentController::class)->name('documents.index');
 Route::get('reports', ReportController::class)->name('reports.index');
-
+Route::get('/lotes',function(){
+    $lots = Lot::all();
+    return view('master-plan',compact('lots'));
+})->name('projects.index');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     Lfm::routes();

@@ -4,6 +4,7 @@ use App\Http\Requests\LeadsRequest;
 use App\Mail\LeadNew;
 use App\Mail\RemindTask;
 use App\Models\Lead;
+use App\Models\Lot;
 use App\Models\Task;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
@@ -88,3 +89,5 @@ Route::get('email', function () {
         Mail::to(['marencocode@gmail.com','test@example.com'])->send(new LeadNew(Lead::find(1)));
         return new LeadNew(Lead::find(1));
 }); */
+
+

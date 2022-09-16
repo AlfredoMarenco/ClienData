@@ -21,16 +21,16 @@
                     <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
                         {{ __('Tasks') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('emails.index') }}" :active="request()->routeIs('emails.*')">
-                        {{ __('Emails') }}
+                    <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('pojects.*')">
+                        {{ __('Projects') }}
                     </x-jet-nav-link>
+                    {{-- <x-jet-nav-link href="{{ route('emails.index') }}" :active="request()->routeIs('emails.*')">
+                        {{ __('Emails') }}
+                    </x-jet-nav-link> --}}
                     <x-jet-nav-link href="/admin/laravel-filemanager" target="_blank" :active="request()->routeIs('documents.*')">
                         {{ __('Documents') }}
                     </x-jet-nav-link>
                 @role('Administrador')
-                    <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.*')">
-                        {{ __('Reports') }}
-                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('system.index') }}" :active="request()->routeIs('system.*')">
                         {{ __('System config') }}
                     </x-jet-nav-link>
