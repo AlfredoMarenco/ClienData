@@ -14,7 +14,7 @@
    version="1.1"
    id="svg9"
    width="w-full"
-   {{-- height="489.60001" --}}
+   height="489.60001"
    viewBox="0 0 945.28003 489.60001"
    sodipodi:docname="MasterPlanCrm.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
