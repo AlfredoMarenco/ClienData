@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 
     @livewireStyles
     @stack('css')
@@ -62,9 +61,9 @@
     </div>
 
     @stack('modals')
-
+    
     @livewireScripts
-
+    
     @stack('js')
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>

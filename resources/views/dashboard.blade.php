@@ -25,7 +25,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     <script src="{{ $leads->cdn() }}"></script>
     {{ $leads->script() }}

@@ -21,6 +21,7 @@
         "tailwindcss": "^2.2.2"
     },
     "dependencies": {
-        "ckeditor4": "^4.16.2"
+        "ckeditor4": "^4.16.2",
+        "flowbite": "^1.5.3"
     }
 }
