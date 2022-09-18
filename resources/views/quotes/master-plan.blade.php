@@ -8,8 +8,6 @@
         <div class="mx-auto sm:px-6 lg:px-2">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center p-10">
                 <h1 class="text-3xl mb-4">{{ $development->name }}</h1>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    version="1.0"
    id="svg9"
