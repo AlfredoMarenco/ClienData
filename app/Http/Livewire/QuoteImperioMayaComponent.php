@@ -12,6 +12,10 @@ class QuoteImperioMayaComponent extends Component
     public $development;
     public $lead;
     public $lot;
+    public $price_list_per_meter = 310;
+    public $discount = 0;
+    public $hitch=0;
+    public $financing=60;
 
     public function mount(Development $development,Lead $lead,Lot $lot){
         $this->development = $development;
