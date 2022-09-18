@@ -1,10 +1,19 @@
 <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Master Plan') }}
+        </h2>
+    </x-slot>
+    <div class="py-2">
+        <div class="mx-auto sm:px-6 lg:px-2">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center p-10">
+                <h1 class="text-3xl mb-4">{{ $development->name }}</h1>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    version="1.1"
    id="svg9"
-   width="945.28003"
+   width="w-full"
    height="489.60001"
    viewBox="0 0 945.28003 489.60001"
    sodipodi:docname="MasterPlanCrm.svg"
@@ -15887,16 +15896,20 @@ AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==
 "
        id="image17" />
     @foreach ($lots as $lot)
-    <rect
-       style="fill:{{ ($lot->status == 1 ? '#00B83B' : ($lot->status == 2 ? '#1FB6F7' : ($lot->status == 3 ? '#DB0202':''))) }};fill-opacity:0.7;stroke-width:0.984638"
-       id="{{$lot->number}}"
-       width="{{ $lot->width }}"
-       height="{{ $lot->height }}"
-       x="{{$lot->x}}"
-       y="{{$lot->y}}"
-       inkscape:label="{{$lot->clave}}"
-       data-popover-target="{{$lot->clave}}"
-       />
+    <a  @if ($lot->status == 1)
+        href="{{route('quote.lot',[$development,$lead,$lot])}}"
+        @endif>
+        <rect
+        style="fill:{{ ($lot->status == 1 ? '#00B83B' : ($lot->status == 2 ? '#1FB6F7' : ($lot->status == 3 ? '#DB0202':''))) }};fill-opacity:0.7;stroke-width:0.984638"
+        id="{{$lot->number}}"
+        width="{{ $lot->width }}"
+        height="{{ $lot->height }}"
+        x="{{$lot->x}}"
+        y="{{$lot->y}}"
+        inkscape:label="{{$lot->clave}}"
+        data-popover-target="{{$lot->clave}}"
+        />
+    </a>
 
     @endforeach
   </g>
@@ -15928,5 +15941,7 @@ AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==
         <div data-popper-arrow="" style="position: absolute; left: 0px; transform: translate(0px, 0px);"></div>
     </div>
     @endforeach
-
+</div>
+</div>
+</div>
 </x-app-layout>

@@ -39,6 +39,9 @@ Route::get('/reports', ReportController::class)->name('reports.index');
 
 Route::prefix('/quote')->group(function(){
     Route::get('/',[QuoteController::class, 'index'])->name('quote.index');
+    Route::get('/{development}/leads',[QuoteController::class,'leads'])->name('quote.leads');
+    Route::get('/{development}/{lead}/master-plan',[QuoteController::class,'master'])->name('quote.master');
+    Route::get('/{development}/{lead}/{lot}/lot/',[QuoteController::class,'lot'])->name('quote.lot');
 });
 
 /* Route::get('projects',QuoterComponent::class)->name('projects.index'); */
