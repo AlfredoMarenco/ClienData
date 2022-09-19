@@ -16,6 +16,8 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
         Lead::class => LeadPolicy::class,
+        Lot::class => LotSoldPolicy::class,
+
     ];
 
     /**

@@ -25,6 +25,11 @@ class QuoteController extends Controller
     }
 
     public function lot(Development $development,Lead $lead,Lot $lot){
+
+        if ($lot->status != 1) {
+            $lots = Lot::where('development_id', $development->id)->get();
+            return view('quotes.master-plan',compact('lots','development','lead'));
+        }
         return view('quotes.lot',compact('development', 'lead', 'lot'));
     }
 }

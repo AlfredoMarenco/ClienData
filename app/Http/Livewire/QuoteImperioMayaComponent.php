@@ -16,6 +16,7 @@ class QuoteImperioMayaComponent extends Component
     public $discount = 0;
     public $hitch=0;
     public $financing=60;
+    public $hitch_method=1;
 
     public function mount(Development $development,Lead $lead,Lot $lot){
         $this->development = $development;

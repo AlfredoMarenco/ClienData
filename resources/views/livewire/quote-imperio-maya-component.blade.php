@@ -33,23 +33,52 @@
         </div>
         <div class="text-xl">
             <form class="text-xl space-y-2">
-                <label class="block">
-                    Enganche:
-                </label>
-                <x-jet-input class="w-full text-2xl" type="number" wire:model="hitch" />
+                {{-- <div>
+                    <label class="block">
+                        Método de calculo de enganche:
+                    </label>
+
+                    <select wire:model="hitch_method"
+                        class="w-full text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        <option value="1">Monto</option>
+                        <option value="2">Porcentaje</option>
+                    </select>
+                </div> --}}
+                <div>
+                    <label class="block">
+                        Enganche:
+                    </label>
+                    <div class="flex">
+                        <span
+                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                            $
+                        </span>
+                        <x-jet-input class="w-full text-2xl" type="number" wire:model="hitch" />
+                    </div>
+                </div>
                 <label class="block">
                     Plan de financiamiento:
                 </label>
-                <select wire:model="financing"
-                    class="w-full text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    @for ($i = 1; $i <= 60; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-                <label class="block">
-                    Descuento por m<sup>2</sup>:
-                </label>
-                <x-jet-input class="w-full text-2xl" type="number" wire:model="discount" />
+                <div>
+                    <select wire:model="financing"
+                        class="w-full text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        @for ($i = 1; $i <= 60; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div>
+                    <label class="block">
+                        Descuento por m<sup>2</sup>:
+                    </label>
+                    <div class="flex">
+                        <span
+                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                            $
+                        </span>
+                        <x-jet-input class="w-full text-2xl" type="number" wire:model="discount" />
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -144,7 +173,7 @@
                     @php
                         $capital = $lot->area * ($price_list_per_meter - $discount) - $hitch;
                         $mensualidad = $capital / $financing;
-                        $date = now()->format('Y-m-d');
+                        $date = now()->addDay(5);
                         $saldo_capital = $capital - $mensualidad;
                         for ($i = 1; $i <= $financing; $i++) {
                             echo '
@@ -159,7 +188,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 ' .
-                                $date .
+                                $date->format('d-m-Y') .
                                 '
                             </td>
                             <td class="py-4 px-6">
@@ -182,6 +211,7 @@
                             </td>
                         </tr>';
                             $saldo_capital = $saldo_capital - $mensualidad;
+                            $date = $date->addMonth();
                         }
                     @endphp
                 </tbody>
