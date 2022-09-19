@@ -39,7 +39,7 @@
                     </label>
 
                     <select wire:model="hitch_method"
-                        class="w-full text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        class="w-full text-xl lg:text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                         <option value="1">Monto</option>
                         <option value="2">Porcentaje</option>
                     </select>
@@ -53,7 +53,7 @@
                             class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                             $
                         </span>
-                        <x-jet-input class="w-full text-2xl" type="number" wire:model="hitch" />
+                        <x-jet-input class="w-full text-xl lg:text-2xl" type="number" wire:model="hitch" />
                     </div>
                 </div>
                 <label class="block">
@@ -61,7 +61,7 @@
                 </label>
                 <div>
                     <select wire:model="financing"
-                        class="w-full text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        class="w-full text-xl lg:text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                         @for ($i = 1; $i <= 60; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
@@ -76,7 +76,7 @@
                             class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                             $
                         </span>
-                        <x-jet-input class="w-full text-2xl" type="number" wire:model="discount" />
+                        <x-jet-input class="w-full text-xl lg:text-2xl" type="number" wire:model="discount" />
                     </div>
                 </div>
             </form>
