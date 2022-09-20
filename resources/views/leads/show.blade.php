@@ -8,7 +8,7 @@
     <div class="py-8">
         <div class="w-full mx-auto sm:px-6 lg:px-3">
             <div class="bg-gray-100  shadow-xl sm:rounded-lg">
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div class="bg-white rounded-md shadow-lg">
                         @livewire('leads.lead-description', ['lead' => $lead], key('description'.$lead->id))
                     </div>
