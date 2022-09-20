@@ -50,10 +50,10 @@
     <div class="flex flex-col">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden pb-8 sm:rounded-lg">
+                <div class="container overflow-hidden pb-8 sm:rounded-lg">
                     @if ($tasks_today->count() > 0)
                         <div
-                            class="grid grid-cols-1 md:grid-cols-7 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
+                            class="flex lg:grid lg:grid-cols-7 justify-items-center items-start mx-2 mt-2 bg-gray-500 text-white font-bold rounded-t-lg mb-4">
                             <div>Actividad</div>
                             <div>Prioridad</div>
                             <div>Cliente</div>
@@ -63,7 +63,7 @@
                         </div>
                         @foreach ($tasks_today as $task)
                             <div
-                                class="grid grid-cols-1 md:grid-cols-7 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
+                                class="flex lg:grid lg:grid-cols-7 justify-items-center items-center mx-2 mt-2 bg-white shadow-lg rounded-lg mb-4">
                                 <div class="px-1">
                                     @switch($task->type)
                                         @case('whatsapp')
