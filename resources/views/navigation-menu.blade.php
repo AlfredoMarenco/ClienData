@@ -179,10 +179,12 @@
         <x-jet-responsive-nav-link href="{{ route('leads.index') }}" :active="request()->routeIs('leads.*')">
             {{ __('Leads') }}
         </x-jet-responsive-nav-link>
-
-        <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
-            {{ __('Tasks') }}
+        <x-jet-responsive-nav-link href="{{ route('quote.index') }}" :active="request()->routeIs('quote.*')">
+            {{ __('Projects') }}
         </x-jet-responsive-nav-link>
+        {{-- <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
+            {{ __('Tasks') }}
+        </x-jet-responsive-nav-link> --}}
 
         <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
             {{ __('Emails') }}
