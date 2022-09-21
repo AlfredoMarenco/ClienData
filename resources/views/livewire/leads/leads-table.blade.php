@@ -71,18 +71,18 @@
                                     @include('partials._sort-icon', ['field' => 'status_id'])
                                 </th>
                                 <th wire:click="sortBy('development_id')" scope="col"
-                                    class="hidden md:block px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Desarrollo
                                     @include('partials._sort-icon', ['field' => 'development_id'])
                                 </th>
 
                                 <th wire:click="sortBy('created_at')" scope="col"
-                                    class="hidden md:block px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Fecha de creacion
                                     @include('partials._sort-icon', ['field' => 'created_at'])
                                 </th>
                                 <th wire:click="sortBy('updated_at')" scope="col"
-                                    class="hidden md:block px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
+                                    class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer">
                                     Ultimo contacto
                                     @include('partials._sort-icon', ['field' => 'updated_at'])
                                 </th>
@@ -108,7 +108,7 @@
                                                         <a href="{{ route('leads.show', $lead) }}"
                                                             target="_blank">{{ $lead->fullName() }}</a>
                                                     </div>
-                                                    <div class="relative inline-block text-left ml-2"
+                                                    <div class="relatitext-left ml-2"
                                                         x-data="{ open: false }">
                                                         <div>
                                                             <i class="fas fa-info-circle text-gray-600 hover:text-gray-700"
@@ -152,15 +152,15 @@
                                             {{ $lead->status->name }}
                                         </span>
                                     </td>
-                                    <td class="hidden md:block px-6 py-4 whitespace-nowrap">
+                                    <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="px-2 inline-flex text-sm leading-5 rounded-full">
                                             {{ $lead->development->name }}
                                         </span>
                                     </td>
-                                    <td class=" hidden md:blockpx-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                                         {{ $lead->created_at->diffForHumans() }}
                                     </td>
-                                    <td class="hidden md:block px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                                         {{ $lead->updated_at->diffForHumans() }}
                                     </td>
                                     {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
