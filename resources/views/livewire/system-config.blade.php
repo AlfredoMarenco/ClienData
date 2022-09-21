@@ -22,7 +22,7 @@
     <div class="p-10">
         @if ($nav_dev)
             <div>
-                <div class="flex justify-end" x-data="{open:false}">
+                <div class="flex justify-end" x-data="{ open: false }">
                     <button x-on:click="open=!open" wire:click="$set('development_name','')"
                         class="bg-gray-800 py-2 px-3 rounded-md text-white">Agregar
                         desarrollo</button>
@@ -132,7 +132,7 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                     {{-- Boton registrar llamadas --}}
-                                                    <div class="mx-1" x-data="{open:false}">
+                                                    <div class="mx-1" x-data="{ open: false }">
                                                         <button x-on:click="open=!open"
                                                             wire:click="setDevelopment({{ $development }})"
                                                             class="text-blue-900 hover:text-blue-800">Editar</button>
@@ -248,7 +248,7 @@
 
         @if ($nav_status)
             <div>
-                <div class="flex justify-end" x-data="{open:false}">
+                <div class="flex justify-end" x-data="{ open: false }">
                     <button x-on:click="open=!open" class="bg-gray-800 py-2 px-3 rounded-md text-white">Agregar
                         estado</button>
 
@@ -307,20 +307,26 @@
                                                 <div class="grid sm:grid-col-1 lg:grid-cols-3">
                                                     <div class="w-full mt-4 px-4 col-span-3">
                                                         <label for="" class="block mb-2 ml-1">Nombre</label>
-                                                        <input type="text" wire:model="status_name" class="form-input"
-                                                            placeholder="Nombre">
+                                                        <input type="text" wire:model="status_name"
+                                                            class="form-input" placeholder="Nombre">
                                                     </div>
                                                     <div class="w-full mt-4 px-4">
                                                         <label for="" class="block mb-2 ml-1">Colo
                                                             de fondo:</label>
                                                         <input wire:model="status_colorbg" class="w-full rounded-md "
                                                             type="color">
+                                                        @error('status_colorbg')
+                                                            <span class="error">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="w-full mt-4 px-4">
                                                         <label for="" class="block mb-2 ml-1">Colo
                                                             de texto:</label>
-                                                        <input wire:model="status_colortext" class="w-full rounded-md "
-                                                            type="color">
+                                                        <input wire:model="status_colortext"
+                                                            class="w-full rounded-md " type="color">
+                                                        @error('status_colortext')
+                                                            <span class="error">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
 
                                                     <div class="w-full text-left col-span-3 mt-10 px-2">
@@ -391,7 +397,7 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                     {{-- Boton registrar llamadas --}}
-                                                    <div class="mx-1" x-data="{open:false}">
+                                                    <div class="mx-1" x-data="{ open: false }">
                                                         <button x-on:click="open=!open"
                                                             wire:click="setStatus({{ $status }})"
                                                             class="text-blue-900 hover:text-blue-800">Editar</button>

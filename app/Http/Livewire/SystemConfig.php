@@ -10,6 +10,10 @@ class SystemConfig extends Component
 {
     public $status_name, $status_colorbg, $status_colortext, $development_name, $nav_dev = true, $nav_status = false, $success = false;
 
+    public $rules = [
+        'status_colorbg' => 'required',
+        'status_colortext' => 'required'
+    ];
     public function render()
     {
         return view('livewire.system-config', [
@@ -51,6 +55,7 @@ class SystemConfig extends Component
 
     public function storeStatus()
     {
+        $this->validate();
         Status::create([
             'name' => $this->status_name,
             'color_bg' => $this->status_colorbg,
