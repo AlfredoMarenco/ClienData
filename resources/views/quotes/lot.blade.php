@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-    <div class="p-10">
-        <div class="max-w-full mx-auto sm:px-6 lg:px-2">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-16">
+    <div class="p-4 md:p-10">
+        <div class="max-w-full mx-auto px-2 lg:px-2">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-2 md:px-16">
                 @livewire('quote-imperio-maya-component', ['development'=> $development,'lead' => $lead,'lot' => $lot])
             </div>
         </div>

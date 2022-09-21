@@ -7,8 +7,8 @@
             $discount = 0;
         }
     @endphp
-    <div class="grid grid-cols-2 gap-6 p-20 shadow-lg mt-4 mb-4">
-        <div class="grid grid-cols-2 gap-4 text-xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4 md:p-20 shadow-lg mt-4 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-2 text-sm md:text-xl">
             {{-- <img src="" alt=""> --}}
             <div class="space-y-2">
                 <p><span class="font-bold">Plan de pago: Financiamiento</p>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="text-xl">
-            <form class="text-xl space-y-2">
+            <form class="text-sm md:text-xl space-y-2">
                 {{-- <div>
                     <label class="block">
                         Método de calculo de enganche:
@@ -53,7 +53,7 @@
                             class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                             $
                         </span>
-                        <x-jet-input class="w-full text-xl lg:text-2xl" type="number" wire:model="hitch" />
+                        <x-jet-input class="w-full text-sm lg:text-2xl" type="number" wire:model="hitch" />
                     </div>
                 </div>
                 <label class="block">
@@ -61,7 +61,7 @@
                 </label>
                 <div>
                     <select wire:model="financing"
-                        class="w-full text-xl lg:text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        class="w-full text-sm lg:text-2xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                         @for ($i = 1; $i <= 60; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
@@ -76,7 +76,7 @@
                             class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                             $
                         </span>
-                        <x-jet-input class="w-full text-xl lg:text-2xl" type="number" wire:model="discount" />
+                        <x-jet-input class="w-full text-sm lg:text-2xl" type="number" wire:model="discount" />
                     </div>
                 </div>
             </form>
@@ -85,8 +85,8 @@
     @if ($hitch > 0)
         <div class="mt-6 mb-6">
             <div class="overflow-x-auto relative shadow-lg sm:rounded-lg">
-                <table class="w-full text-left text-gray-500 dark:text-gray-400 text-lg">
-                    <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <table class="w-full text-left text-gray-500 dark:text-gray-400 text-xs md:text-lg">
+                    <thead class="text-xs md:text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="py-3 px-6">
                                 #
@@ -143,8 +143,8 @@
     @endif
     <div>
         <div class="overflow-x-auto relative shadow-lg sm:rounded-lg">
-            <table class="w-full text-left text-gray-500 dark:text-gray-400 text-lg">
-                <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-left text-gray-500 dark:text-gray-400 text-xs md:text-lg">
+                <thead class="text-sm md:text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="py-3 px-6">
                             #
@@ -186,7 +186,7 @@
                             <td class="py-4 px-6">
                                 Mensualidad
                             </td>
-                            <td class="py-4 px-6">
+                            <td class="py-4 px-8">
                                 ' .
                                 $date->format('d-m-Y') .
                                 '

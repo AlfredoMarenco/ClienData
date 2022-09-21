@@ -6,13 +6,13 @@
     </x-slot>
     <div class="py-2">
         <div class="mx-auto sm:px-6 lg:px-2">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center p-10">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center md:p-10">
                 <h1 class="text-3xl mb-4">{{ $development->name }}</h1>
 <svg
    version="1.0"
    id="svg9"
    width="w-full"
-   height="489.60001"
+   height="h-auto"
    viewBox="0 0 945.28003 489.60001"
    sodipodi:docname="MasterPlanCrm.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
