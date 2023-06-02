@@ -11,7 +11,7 @@
                         </p> -->
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
                     class="btn btn-success my-2 my-sm-0" style="text-transform: uppercase">
-                    <span class="pl-2 m-auto">Mensualidades desde $2,193 MXN</span>
+                    <span class="pl-2 m-auto">Mensualidades desde $2,227 MXN</span>
                 </button>
             </div>
         </div>
