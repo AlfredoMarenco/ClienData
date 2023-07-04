@@ -34,6 +34,9 @@ Route::get('/', function () {
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
+Route::get('/mantenimiento', function () {
+    return view('mantenimiento');
+});
 
 Route::get('/avisodeprivadidad', function () {
     return view('policy');

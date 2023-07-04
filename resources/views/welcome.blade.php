@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia de Marketing digital en México y Mérida - Vandu</title>
     <meta property="og:title"
-        content="Agencia de diseño web y digitalización de procesos en México y Mérida &mdash; Vandu">
+        content="Agencia de Marketing digital en México y Mérida &mdash; Vandu">
     <meta property="og:type" content="website" />
     <meta name="description"
         content="Nuestra metodología de trabajo prioriza la planeación logrando así el éxito de cada etapa integrada en el proyecto." />
