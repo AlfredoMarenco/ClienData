@@ -12,27 +12,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Servicios</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                Soluciones
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item">Muy pronto</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Aliados</a>
-                        </li>
+                        <a href="/" class="btn btn-primary">Regresar al inicio</a>
                     </ul>
                 </div>
             </div>
