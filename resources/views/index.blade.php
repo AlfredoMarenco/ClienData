@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 dos">
                     <div class="text-center">
-                        <img src="{{ asset('img/2023/logos-1.svg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('img/2023/logos-1.svg') }}" class="img-fluid" alt="Manychat logo">
                     </div>
                 </div>
             </div>
@@ -112,11 +112,11 @@
                     <h2>Una agencia validada por</h2>
                     <div class="d-none d-sm-none d-md-block d-lg-block">
                         <img src="{{ asset('img/2023/aliados.svg') }}" class="img-fluid"
-                            alt="Portal de pagos por agenciavandu.com">
+                            alt="Aliados de agenciavandu.com">
                     </div>
                     <div class="d-block d-sm-block d-md-none d-lg-none">
                         <img src="{{ asset('img/2023/m-aliados.svg') }}" class="img-fluid"
-                            alt="Portal de pagos por agenciavandu.com">
+                            alt="aliados agenciavandu.com">
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
         </div>
     </section>
     <section>
-        <div class="titular-seis">
+        <div class="titular-seis mb-5">
             <div class="container">
                 <div class="text-center">
                     <h2>Ellos confían en nosotros</h2>
@@ -149,11 +149,11 @@
     </section>
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 m-auto">
+            <div class="row mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-6 pt-5 m-auto">
                     <img src="{{ asset('img/2023/icono.svg') }}" class="10" alt="Logo Agencia Vandu">
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 p-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
                     <h4>Síguenos</h4>
                     <p>
                         <a href="https://www.facebook.com/vandumx"
@@ -175,7 +175,7 @@
                         </span>
                     </p>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 p-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
                     <h4>Contáctanos</h4>
                     <p>ventas@agenciavandu.com</p>
                     <p><a href="tel:9993893710">999 389 3710</a></p>

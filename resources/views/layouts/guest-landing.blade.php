@@ -15,6 +15,8 @@
         content="Nuestro enfoque es simple pero revolucionario: ofrecemos soluciones digitales que cautivan, inspiran y generan resultados extraordinarios. Si buscas una agencia que eleve tu presencia en línea a niveles insuperables, te invitamos a unirte a nosotros en el viaje hacia el éxito digital." />
     <meta name="og:url" content="https://www.agenciavandu.com" />
     <meta name="og:site_name" content="Vandu" />
+    <meta name="og:image" content="https://agenciavandu.com/img/1.jpg" />
+    <meta name="facebook-domain-verification" content="f1h8rt3r949cfydn9bzpxdwgx9a4ah" />
     <!-- Styles -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
