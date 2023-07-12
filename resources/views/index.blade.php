@@ -12,10 +12,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#header">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
+                        <a class="nav-link" href="#servicios">Servicios</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -27,13 +27,16 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clientes</a>
+                        <a class="nav-link" href="#clientes">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aliados">Aliados</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="titular-uno">
                 <div class="text-center">
@@ -48,7 +51,7 @@
             </div>
         </div>
     </header>
-    <section>
+    <section id="servicios">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12 col-sm-12 m-auto uno">
@@ -84,7 +87,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="soluciones">
         <div class="container">
             <div class="titular-tres">
                 <div class="row">
@@ -105,7 +108,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="aliados">
         <div class="aliados">
             <div class="container">
                 <div class="titular-cuatro text-center">
@@ -122,7 +125,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="clientes">
         <div class="titular-cinco">
             <div class="container">
                 <div class="text-center">
