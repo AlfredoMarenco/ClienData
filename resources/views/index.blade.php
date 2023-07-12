@@ -2,7 +2,7 @@
 @section('content')
     <nav class="navbar navbar-expand-lg navbar-light bg-vandu fixed-top">
         <div class="container">
-            <a class="navbar-brand img-fluid" href="#"><img src="img/2023/vandu-black.svg" alt=""
+            <a class="navbar-brand img-fluid" href="/"><img src="img/2023/vandu-black.svg" alt=""
                     width="100"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
                             class="d-none d-sm-none d-md-block d-lg-block"> favor para elevar la
                         experiencia de atención a clientes y obtener leads <br
                             class="d-none d-sm-none d-md-block d-lg-block"> de manera sostenida y eficiente</p>
-                    <button class="btn btn-primary">Cotiza con nosotros</button>
+                    <a href="/contactar-a-un-asesor" class="btn btn-primary">Cotiza con nosotros</a>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
                             class="d-none d-sm-none d-md-block d-lg-block">Para tener éxito en esta competencia, necesitas
                         una estrategia bien <br class="d-none d-sm-none d-md-block d-lg-block"> planificada que se asemeje a
                         la forma en que un conductor hábil aborda la pista.</p>
-                    <button class="btn btn-primary">Platica con nosotros</button>
+                    <a href="/contactar-a-un-asesor" class="btn btn-primary">Platica con nosotros</a>
                 </div>
             </div>
         </div>
