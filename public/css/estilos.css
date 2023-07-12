@@ -1,0 +1,105 @@
+body {
+    font-family: 'Saira';
+    background: #F9FAFC;
+}
+
+h1, h2, h3, h4, h5 {
+ font-weight: 700;
+}
+
+.btn-primary {
+    background-color: black !important;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #9AF229 !important;
+    color: #000;
+    border: none;
+}
+
+.nav-item a{
+    color: black !important;
+}
+.bg-vandu {
+    background: #F9FAFC;
+}
+@media (max-width:1000px) {
+    header {
+        background-color: #000;
+        color: #fff;
+        margin-bottom: 4em;
+    }
+    header .btn-primary {
+        background: #9AF229 !important;
+        color: #000 !important;
+    }
+}
+.titular-uno {
+    padding-top: 6em;
+}@media(max-width:1000px) {
+    .titular-uno {
+        padding-bottom: 4em;
+    }
+    .uno h2 {
+        text-align: center;
+    }
+    .uno p {
+        text-align: center;
+    }
+}
+
+.titular-dos {
+    padding-top: 4em;
+}
+.titular-tres {
+    padding-top: 4em;
+}@media(max-width:1000px){
+    .titular-tres h2, .titular-tres p{
+        text-align: center;
+    }
+}
+
+.aliados {
+    background: #000;
+    margin-top: 4em;
+}
+.aliados h2 {
+    color: #fff;
+    padding-bottom: .5em;
+}
+
+.aliados .titular-cuatro {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+.titular-cinco {
+    padding-top: 4em;
+}
+.titular-seis {
+    padding-top: 4em;
+}
+.titular-seis h2 {
+    padding-bottom: 1em;
+}
+footer {
+    background: #000;
+    margin-top: 5em;
+    padding-bottom: 1.5em;
+}
+footer h4, footer a {
+    color: #fff;
+}
+footer a:hover {
+    color: #9AF229;
+}
+footer p {
+    list-style: none;
+    color: #fff;
+}
+footer a {
+    text-decoration: none;
+}
+
+footer small {
+    color: #dddddd;
+}

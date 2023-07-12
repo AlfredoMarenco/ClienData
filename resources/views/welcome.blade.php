@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia de Marketing digital en México y Mérida - Vandu</title>
-    <meta property="og:title"
-        content="Agencia de Marketing digital en México y Mérida &mdash; Vandu">
+    <meta property="og:title" content="Agencia de Marketing digital en México y Mérida &mdash; Vandu">
     <meta property="og:type" content="website" />
     <meta name="description"
         content="Nuestra metodología de trabajo prioriza la planeación logrando así el éxito de cada etapa integrada en el proyecto." />
@@ -31,11 +30,10 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/d63ca50714.js" crossorigin="anonymous"></script>
@@ -85,7 +83,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav m-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link ms-2" href="#cabecera">Inicio <span class="sr-only"></span></a>
                     </li>
@@ -94,13 +92,10 @@
                         <a class="nav-link ms-2" href="#como-funciona">Cómo funciona</a>
                     </li>
 
-                   {{--  <li class="nav-item">
+                    {{--  <li class="nav-item">
                         <a class="nav-link ms-2" href="#Por-que-nosotros">Por qué nosotros</a>
                     </li> --}}
                 </ul>
-                <button class="btn btn-secondary navb ms-2" data-toggle="modal" data-target="#ventanaModal"><i
-                    class="fas fa-rocket" style="padding-right: 5px;"></i><b> Digitaliza tu negocio</b>
-                </button>
 
 
 
@@ -118,14 +113,17 @@
                                     Transformación <br class="d-none d-sm-none d-md-block d-lg-block">
                                     digital asistida.
                                 </h1>
-                                <p>Somos una agencia de desarrollo web especializada en la correcta detección de necesidades, lo que nos
-                                    lleva a crear productos atractivos para el usuario y sistemas internos que reducen el estrés de
+                                <p>Somos una agencia de desarrollo web especializada en la correcta detección de
+                                    necesidades, lo que nos
+                                    lleva a crear productos atractivos para el usuario y sistemas internos que reducen
+                                    el estrés de
                                     gestionar los activos digitales.</p>
-                                <a  class="btn btn-secondary vandu-bold" data-toggle="modal" data-target="#ventanaModal">Agendar una llamada</a>
+                                <a class="btn btn-secondary vandu-bold" data-toggle="modal"
+                                    data-target="#ventanaModal">Agendar una llamada</a>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 pt-3 dos-o">
                                 <figure class="text-center">
-                                    <img src="{{ asset( '/img/header.png' )}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('/img/header.png') }}" alt="" class="img-fluid">
                                 </figure>
                             </div>
                         </div>
@@ -157,29 +155,35 @@
                         </h1>
                         <p>Ponemos atención a los puntos más importantes para <br> la generación de oportunidades de
                             negocio.</p>
-                        <a data-toggle="modal" data-target="#ventanaModal" class="btn btn-secondary">Agendar una llamada</a>
+                        <a data-toggle="modal" data-target="#ventanaModal" class="btn btn-secondary">Agendar una
+                            llamada</a>
                     </div>
                     <div class="col-md-6 col-sm-12 col-lg-6">
                         <div class="row">
                             <div class="col-6 soluciones">
-                                <img src="{{ asset('/img/icon/Ticket-Star.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <img src="{{ asset('/img/icon/Ticket-Star.svg') }}" class="img-fluid"
+                                    alt="iconografia agencia vandu">
                                 <h4 class="pt-3 titular-i">e-commerce</h4>
                                 <p>Desarrollamos herramientas especiales para gestión de inventario y recuperación de
                                     carrito.</p>
                             </div>
                             <div class="col-6 soluciones">
-                                <img src="{{ asset('/img/icon/Calendar.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <img src="{{ asset('/img/icon/Calendar.svg') }}" class="img-fluid"
+                                    alt="iconografia agencia vandu">
                                 <h4 class="pt-3 titular-i">Google Ads</h4>
-                                <p>Utilizamos la red de búsqueda más grande a tu favor, impulsamos y multiplicamos los clics
+                                <p>Utilizamos la red de búsqueda más grande a tu favor, impulsamos y multiplicamos los
+                                    clics
                                     a tus promociones.</p>
                             </div>
                             <div class="col-6 soluciones">
-                                <img src="{{ asset('/img/icon/Activity.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <img src="{{ asset('/img/icon/Activity.svg') }}" class="img-fluid"
+                                    alt="iconografia agencia vandu">
                                 <h4 class="pt-3 titular-i">Facebook Ads</h4>
                                 <p>Gestionamos tus anuncios y agilizamos las coneversiones de tus redes sociales. </p>
                             </div>
                             <div class="col-6 soluciones">
-                                <img src="{{ asset('/img/icon/Image.svg') }}" class="img-fluid" alt="iconografia agencia vandu">
+                                <img src="{{ asset('/img/icon/Image.svg') }}" class="img-fluid"
+                                    alt="iconografia agencia vandu">
                                 <h4 class="pt-3 titular-i">Diseño web</h4>
                                 <p>Creamos estructura y el diseño de tu sitio web desde cero. Ayudamos a configurar tus
                                     eventos de conversión.</p>
@@ -234,8 +238,9 @@
                                     </x-jet-input>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Nombre & Apellido</label>
-                                        <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
-                                            required="required" placeholder="Escribe tu nombre">
+                                        <input type="name" name="name" class="form-control"
+                                            id="exampleFormControlInput1" required="required"
+                                            placeholder="Escribe tu nombre">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Email</label>
@@ -245,14 +250,14 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Teléfono</label>
-                                        <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
-                                            required="required" placeholder="Escribe tu teléfono">
+                                        <input type="tel" name="phone" class="form-control" id="phone"
+                                            pattern="[0-9]{10}" required="required"
+                                            placeholder="Escribe tu teléfono">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Mensaje</label>
-                                        <textarea class="form-control" name="observations"
-                                            id="exampleFormControlTextarea1" required="required" rows="3"
-                                            placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
+                                        <textarea class="form-control" name="observations" id="exampleFormControlTextarea1" required="required"
+                                            rows="3" placeholder="Ejemplo: Hola, me gustaría saber un poco más..."></textarea>
                                     </div>
                                     <div class="g-recaptcha" data-sitekey="6LdBBc8ZAAAAACqRaUl6mmUgAfKhUXYmCUpq5nRK"
                                         style="margin-bottom: 10px;"></div>
@@ -289,13 +294,15 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 pasos-esp">
                         <div class="card">
                             <div class="imagen-manito">
-                                <img src="/img/Mask-Group.png" loading="lazy" class="img-fluid" alt="manito apuntando">
+                                <img src="/img/Mask-Group.png" loading="lazy" class="img-fluid"
+                                    alt="manito apuntando">
                             </div>
                             <h1 class="pasos">primer paso</h1>
                             <h2 class="paso-titulo">localizamos el problema</h2>
                             <p class="p-pasos">
                                 Nuestra metodología de trabajo nos permite entender el proceso de venta, producción o
-                                logística de tu empresa con el objetivo de establecer las bases correctas para tu proyecto.
+                                logística de tu empresa con el objetivo de establecer las bases correctas para tu
+                                proyecto.
                             </p>
                         </div>
                     </div>
@@ -426,7 +433,8 @@
                             <h1>Escríbenos</h1>
                             <hr>
                             <x-jet-input type="hidden" class="w-full" name="user_id" value="3"></x-jet-input>
-                            <x-jet-input type="hidden" class="w-full" name="status_id" value="1"></x-jet-input>
+                            <x-jet-input type="hidden" class="w-full" name="status_id" value="1">
+                            </x-jet-input>
                             <x-jet-input type="hidden" class="w-full" name="development_id" value="1">
                             </x-jet-input>
                             <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
@@ -439,8 +447,8 @@
                         </div>
                         <div class="form-group">
 
-                            <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}"
-                                required="required" placeholder="Teléfono">
+                            <input type="tel" name="phone" class="form-control" id="phone"
+                                pattern="[0-9]{10}" required="required" placeholder="Teléfono">
                         </div>
                         <button class="g-recaptcha btn btn-secondary"
                             data-sitekey="6Ld-6LcwJSodAAAAADMaBbnB_3TpsCZqbOyUIOHPPSHc" data-callback='onSubmit'
@@ -452,10 +460,12 @@
                     <hr>
                     <p>contacto@agenciavandu.com</p>
                     <h2 style="color: white; font-size: 14px; ">Mérida</h2>
-                    <p><a href="tel:9999552316" style="text-transform: none; text-decoration: none; color: #fff;">(999)
+                    <p><a href="tel:9999552316"
+                            style="text-transform: none; text-decoration: none; color: #fff;">(999)
                             955 2316</a></p>
-                    <p style="text-align: center; "><span><a href="https://www.facebook.com/vandumx" target="_blank"><i
-                                    class="fab fa-facebook-square" style="font-size: 19px;"></i></a></span></i>
+                    <p style="text-align: center; "><span><a href="https://www.facebook.com/vandumx"
+                                target="_blank"><i class="fab fa-facebook-square"
+                                    style="font-size: 19px;"></i></a></span></i>
                         <a href="https://www.instagram.com/vandumx" target="_blank" style="padding-left: 20px;"><i
                                 class="fab fa-instagram" style="font-size: 19px;"></i></a></i>
                         <a href="https://www.behance.net/vandumx" target="_blank" style="padding-left: 20px;"><i

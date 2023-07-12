@@ -28,7 +28,7 @@ use UniSharp\LaravelFilemanager\Lfm;
 
 Route::get('/', function () {
     $developments = Development::all();
-    return view('welcome', compact('developments'));
+    return view('index', compact('developments'));
 })->name('home');
 
 Route::get('/terminos-y-condiciones', function () {
@@ -37,6 +37,7 @@ Route::get('/terminos-y-condiciones', function () {
 Route::get('/mantenimiento', function () {
     return view('mantenimiento');
 });
+
 
 Route::get('/avisodeprivadidad', function () {
     return view('policy');
