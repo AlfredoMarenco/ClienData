@@ -15,7 +15,11 @@
         content="Nuestro enfoque es simple pero revolucionario: ofrecemos soluciones digitales que cautivan, inspiran y generan resultados extraordinarios. Si buscas una agencia que eleve tu presencia en línea a niveles insuperables, te invitamos a unirte a nosotros en el viaje hacia el éxito digital." />
     <meta name="og:url" content="https://www.agenciavandu.com" />
     <meta name="og:site_name" content="Vandu" />
+    <!-- Styles -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
 
     <!-- Fonts -->
     <!--Fonts-->
@@ -28,10 +32,6 @@
     <script src="https://kit.fontawesome.com/d63ca50714.js" crossorigin="anonymous"></script>
 
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
     <!-- Scripts -->
