@@ -129,3 +129,31 @@ footer a {
 footer small {
     color: #dddddd;
 }
+.titular-contacto {
+    padding: 8em;
+} @media (max-width:1000px) {
+    .titular-contacto {
+        padding: 2em;
+    }
+}
+
+.enfasis-contacto {
+    position: relative;
+}
+.enfasis-contacto::before {
+    content: '';
+    border-bottom: 7px solid #9AF229;
+    position: absolute;
+    bottom: -5px;
+    width: 30%;
+    left: 0;
+    transition: 0.5s;
+    
+}
+.enfasis-contacto:hover::before {
+    width: 100%;
+    
+}
+.formulario {
+    padding-top: 4em;
+}

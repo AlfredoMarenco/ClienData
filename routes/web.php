@@ -34,8 +34,9 @@ Route::get('/', function () {
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 });
-Route::get('/mantenimiento', function () {
-    return view('mantenimiento');
+
+Route::get('/contactar-a-un-asesor', function () {
+    return view('contacto');
 });
 
 
