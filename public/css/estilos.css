@@ -52,6 +52,24 @@ h1, h2, h3, h4, h5 {
     }
 }
 
+.enfasis {
+    position: relative;
+}
+.enfasis::before {
+    content: '';
+    border-bottom: 10px solid #9AF229;
+    position: absolute;
+    bottom: 3.4px;
+    width: 30%;
+    left: 0;
+    transition: 0.5s;
+    
+}
+.enfasis:hover::before {
+    width: 100%;
+    
+}
+
 .titular-dos {
     padding-top: 4em;
 }

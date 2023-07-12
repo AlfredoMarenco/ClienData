@@ -41,7 +41,7 @@
             <div class="titular-uno">
                 <div class="text-center">
                     <h1>Conectamos tecnología y estrategia <br class="d-none d-sm-none d-md-block d-lg-block"> para generar
-                        leads de alto impacto</h1>
+                        leads de <span class="enfasis"> alto impacto</span></h1>
                     <p>Somos una agencia de marketing digital que utiliza la tecnología a tu <br
                             class="d-none d-sm-none d-md-block d-lg-block"> favor para elevar la
                         experiencia de atención a clientes y obtener leads <br
