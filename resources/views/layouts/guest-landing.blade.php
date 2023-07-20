@@ -2,11 +2,24 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157530522-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-157530522-1');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Agencia de Marketing digital y desarrollo web en Mérida - Vandu</title>
+    <title>Agencia de Marketing digital y desarrollo web en Mérida &mdash; Vandu</title>
     <meta property="og:title" content="Agencia de Marketing digital y desarrollo web en Mérida &mdash; Vandu">
     <meta property="og:type" content="website" />
     <meta name="description"
@@ -117,22 +130,7 @@
             });
         });
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141381231-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-141381231-2');
-    </script>
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/40223801.js"></script>
-    <!-- End of HubSpot Embed Code -->
-
+  
 </body>
 
 </html>
