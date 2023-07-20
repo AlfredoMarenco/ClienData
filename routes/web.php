@@ -38,6 +38,9 @@ Route::get('/terminos-y-condiciones', function () {
 Route::get('/contactar-a-un-asesor', function () {
     return view('contacto');
 });
+Route::get('/que-elementos-componen-el-marketing-gastronomico', function () {
+    return view('entradas.marketing');
+});
 
 
 Route::get('/avisodeprivadidad', function () {

@@ -1,0 +1,20 @@
+body {
+    padding: 5em 16em 0 16em;
+} @media (max-width:1000px) {
+    body {
+        padding: 2em;
+    } 
+}
+.cabecera-marketing p, .cabecera-marketing a{
+    color: gray;
+} .cabecera-marketing a:hover {
+    color: black;
+    text-decoration: none;
+}
+/* .cabecera-marketing {
+    padding: 8em 0 2em 0;
+} @media (max-width:1000px) {
+    .cabecera-marketing {
+        padding: 8em 0 4em 0;
+    }
+} */

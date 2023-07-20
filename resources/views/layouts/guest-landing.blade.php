@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
-
+    @stack('css')
     <!-- Fonts -->
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +89,42 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-vandu fixed-top">
+        <div class="container">
+            <a class="navbar-brand img-fluid" href="/"><img src="img/2023/vandu-black.svg" alt=""
+                    width="100"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#header">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Soluciones
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Muy pronto</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clientes">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aliados">Aliados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <main>
         @yield('content')
     </main>
