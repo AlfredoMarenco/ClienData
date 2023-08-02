@@ -95,7 +95,7 @@
                     <img src="{{ asset('img/2023/icono.svg') }}" class="10" alt="Logo Agencia Vandu">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
-                    <h4>Síguenos</h4>
+                    <h5 style="color: #fff">Síguenos</h5>
                     <p>
                         <a href="https://www.facebook.com/vandumx" aria-label="Síguenos en Facebook"
                                 target="_blank"><i class="fab fa-facebook-square"
@@ -117,7 +117,7 @@
                     </p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
-                    <h4>Contáctanos</h4>
+                    <h5 style="color: #fff">Contáctanos</h5>
                     <p>ventas@agenciavandu.com</p>
                     <p><a href="tel:9993893710">999 389 3710</a></p>
                    
