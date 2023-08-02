@@ -3,12 +3,15 @@
 
 <head>
     {{-- styles --}}
-    <link rel="preload" href="css/estilos.css" as="styles">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" as="styles">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preload" href="css/estilos.css" as="styles">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preload" href="" as="styles">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {{-- end styles --}}
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -26,10 +29,6 @@
     <meta name="facebook-domain-verification" content="f1h8rt3r949cfydn9bzpxdwgx9a4ah" />
     <meta name="robots" content="index" />
     <!-- Styles -->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
     @stack('css')
     <!-- Fonts -->
     <!--Fonts-->
@@ -38,7 +37,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/d63ca50714.js" crossorigin="anonymous"></script>
 
 
