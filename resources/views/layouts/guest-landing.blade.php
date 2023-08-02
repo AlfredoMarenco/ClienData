@@ -2,6 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    {{-- styles --}}
+    <link rel="preload" href="css/estilos.css" as="styles">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" as="styles">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    {{-- end styles --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,7 +42,7 @@
     <script src="https://kit.fontawesome.com/d63ca50714.js" crossorigin="anonymous"></script>
 
 
-{{-- 
+    {{-- 
     {!! htmlScriptTagJsApi() !!}
 
     <script type="text/javascript">
@@ -49,9 +56,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-vandu fixed-top">
         <div class="container">
-            <a class="navbar-brand img-fluid"  href="/" aria-label="Ir al inicio">
-                <img src="img/2023/vandu-black.svg"  alt=""
-                    width="100"></a>
+            <a class="navbar-brand img-fluid" href="/" aria-label="Ir al inicio">
+                <img src="img/2023/vandu-black.svg" alt="" width="100"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -97,30 +103,32 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
                     <p style="color: #fff; font-weight:600;">Síguenos</p>
                     <p>
-                        <a href="https://www.facebook.com/vandumx" aria-label="Síguenos en Facebook"
-                                target="_blank"><i class="fab fa-facebook-square"
+                        <a href="https://www.facebook.com/vandumx" aria-label="Síguenos en Facebook" target="_blank"><i
+                                class="fab fa-facebook-square" style="font-size: 19px;"></i></a>
+
+                        <span>
+                            <a href="https://www.instagram.com/vandumx" aria-label="Síguenos en instagram"
+                                target="_blank" style="padding-left: 20px;"><i class="fab fa-instagram"
                                     style="font-size: 19px;"></i></a>
-                        
-                        <span>
-                            <a href="https://www.instagram.com/vandumx" aria-label="Síguenos en instagram"  target="_blank" style="padding-left: 20px;"><i
-                                class="fab fa-instagram" style="font-size: 19px;"></i></a>
                         </span>
                         <span>
-                            <a href="https://www.behance.net/vandumx" aria-label="Conoce más de nuestros proyectos en behance" target="_blank" style="padding-left: 20px;"><i
-                                class="fab fa-behance-square" style="font-size: 19px;"></i></a>
+                            <a href="https://www.behance.net/vandumx"
+                                aria-label="Conoce más de nuestros proyectos en behance" target="_blank"
+                                style="padding-left: 20px;"><i class="fab fa-behance-square"
+                                    style="font-size: 19px;"></i></a>
                         </span>
                         <span>
-                            <a href="https://www.linkedin.com/company/vandu-mx" aria-label="Síguenos en Linkedin" target="_blank"
-                            style="padding-left: 20px;"><i class="fab fa-linkedin"
-                                style="font-size: 19px;"></i></a>
+                            <a href="https://www.linkedin.com/company/vandu-mx" aria-label="Síguenos en Linkedin"
+                                target="_blank" style="padding-left: 20px;"><i class="fab fa-linkedin"
+                                    style="font-size: 19px;"></i></a>
                         </span>
                     </p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
-                    <p style="color: #fff; font-weight:600;" >Contáctanos</p>
+                    <p style="color: #fff; font-weight:600;">Contáctanos</p>
                     <p>ventas@agenciavandu.com</p>
                     <p><a href="tel:9993893710">999 389 3710</a></p>
-                   
+
                 </div>
             </div>
             <div class="text-center">
@@ -138,7 +146,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
     </script>
-{{--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    {{--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <script>
         $(document).ready(function() {
             // Add smooth scrolling to all links
@@ -165,7 +173,7 @@
             });
         });
     </script>
-  
+
 </body>
 
 </html>
