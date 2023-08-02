@@ -46,7 +46,7 @@
                         ventaja de estar disponibles las 24 horas y recopilar datos valiosos <br
                             class="d-none d-sm-none d-md-block d-lg-block">para mejorar la estrategia de marketing de tu
                         empresa.</p>
-                    <img src="{{ asset('img/2023/secuencias.png') }}" class="img-fluid"
+                    <img src="{{ asset('img/2023/secuencias.webp') }}" class="img-fluid"
                         alt="Ejemplo de secuencia manychat por agenciavandu.com">
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="text-center">
-                            <img src="{{ asset('img/2023/web.png') }}" width="auto" height="100%"
+                            <img src="{{ asset('img/2023/web.webp') }}" width="auto" height="100%"
                                 alt="Portal de pagos por agenciavandu.com">
                         </div>
                     </div>
