@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 dos">
                     <div class="text-center">
-                        <img src="{{ asset('img/2023/logos-1.svg') }}" class="img-fluid" alt="Manychat logo">
+                        <img src="{{ asset('img/2023/logos-1.svg') }}" width="100%" height="auto" alt="Manychat logo">
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="text-center">
-                            <img src="{{ asset('img/2023/web.png') }}" class="img-fluid"
+                            <img src="{{ asset('img/2023/web.png') }}" width="auto" height="100%"
                                 alt="Portal de pagos por agenciavandu.com">
                         </div>
                     </div>
@@ -79,11 +79,11 @@
                 <div class="titular-cuatro text-center">
                     <h2>Una agencia validada por</h2>
                     <div class="d-none d-sm-none d-md-block d-lg-block">
-                        <img src="{{ asset('img/2023/aliados.svg') }}" class="img-fluid"
+                        <img src="{{ asset('img/2023/aliados.svg') }}" width="100%" height="auto"
                             alt="Aliados de agenciavandu.com">
                     </div>
                     <div class="d-block d-sm-block d-md-none d-lg-none">
-                        <img src="{{ asset('img/2023/m-aliados.svg') }}" class="img-fluid"
+                        <img src="{{ asset('img/2023/m-aliados.svg') }}" width="100%" height="auto"
                             alt="aliados agenciavandu.com">
                     </div>
                 </div>
@@ -109,7 +109,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2>Ellos confían en nosotros</h2>
-                    <img src="{{ asset('img/2023/clientes.svg') }}" class="img-fluid" alt="Logos clientes | tokio 07, Kananfleet, Burger king, Pizza Hut">
+                    <img src="{{ asset('img/2023/clientes.svg') }}" width="100%" height="auto" alt="Logos clientes | tokio 07, Kananfleet, Burger king, Pizza Hut">
 
                 </div>
             </div>
