@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 dos">
                     <div class="text-center">
-                        <img src="{{ asset('img/2023/entradas/') }}" class="img-fluid" alt="Manychat logo">
+                        <img src="{{ asset('img/2023/logos-1.svg') }}" class="img-fluid" alt="Manychat logo">
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2>Ellos confían en nosotros</h2>
-                    <img src="{{ asset('img/2023/clientes.svg') }}" class="img-fluid" alt="Clientes agenciavandu.com">
+                    <img src="{{ asset('img/2023/clientes.svg') }}" class="img-fluid" alt="Logos clientes | tokio 07, Kananfleet, Burger king, Pizza Hut">
 
                 </div>
             </div>
