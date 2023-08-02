@@ -21,7 +21,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Agencia de Marketing digital y desarrollo web en Mérida &mdash; Vandu</title>
+    <title>Agencia de Marketing digital y desarrollo web en Mérida - Vandu</title>
     <link rel=»canonical» href=»http://www.agenciavandu.com» />
     <meta property="og:title" content="Agencia de Marketing digital y desarrollo web en Mérida &mdash; Vandu">
     <meta property="og:type" content="website" />
