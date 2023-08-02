@@ -46,10 +46,8 @@
                         ventaja de estar disponibles las 24 horas y recopilar datos valiosos <br
                             class="d-none d-sm-none d-md-block d-lg-block">para mejorar la estrategia de marketing de tu
                         empresa.</p>
-                    <div class="p-3">
-                        <img src="{{ asset('img/2023/secuencias.webp') }}" width="100%" height="auto"
+                    <img src="{{ asset('img/2023/secuencias.webp') }}" class="img-fluid"
                         alt="Ejemplo de secuencia manychat por agenciavandu.com">
-                    </div>
                 </div>
             </div>
         </div>
