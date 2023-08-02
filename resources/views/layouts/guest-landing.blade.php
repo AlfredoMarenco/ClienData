@@ -10,8 +10,14 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="preload" href="" as="styles">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        as="font" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     {{-- end styles --}}
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -34,9 +40,7 @@
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/d63ca50714.js" crossorigin="anonymous"></script>
 
 
@@ -101,8 +105,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-5">
                     <p style="color: #fff; font-weight:600;">Síguenos</p>
                     <p>
-                        <a href="https://www.facebook.com/vandumx" aria-label="Síguenos en Facebook" target="_blank"><i
-                                class="fab fa-facebook-square" style="font-size: 19px;"></i></a>
+                        <a href="https://www.facebook.com/vandumx" aria-label="Síguenos en Facebook"
+                            target="_blank"><i class="fab fa-facebook-square" style="font-size: 19px;"></i></a>
 
                         <span>
                             <a href="https://www.instagram.com/vandumx" aria-label="Síguenos en instagram"
