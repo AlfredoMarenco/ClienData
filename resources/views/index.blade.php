@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="text-center">
-                            <img src="{{ asset('img/2023/web.webp') }}" width="auto" height="100%"
+                            <img src="{{ asset('img/2023/web.webp') }}" width="auto" height="428"
                                 alt="Portal de pagos por agenciavandu.com">
                         </div>
                     </div>
