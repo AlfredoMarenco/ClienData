@@ -70,7 +70,7 @@
                             Soluciones
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item">Muy pronto</a>
+                            <a href="#" class="dropdown-item">Muy pronto</a>
                         </div>
                     </li>
                     <li class="nav-item">
