@@ -1,7 +1,7 @@
 <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-vandu fixed-top">
             <div class="container">
-                <a class="navbar-brand img-fluid" href="/"><img src="img/2023/vandu-black.svg" alt=""
+                <a class="navbar-brand img-fluid" href="/" aria-label="ir a página principal"><img src="img/2023/vandu-black.svg" alt="logotipo agencia vandu"
                         width="100"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
