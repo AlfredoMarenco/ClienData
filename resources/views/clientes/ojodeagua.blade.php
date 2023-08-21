@@ -39,7 +39,7 @@
             <div class="text-center">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <a href="https://drive.google.com/drive/folders/14PTJsxV1HoTjfnlDwqQdZnmEkq--HQaq?usp=sharing" target="_blank" class="btn btn-primary">Descargar en Alta Definición</a>
+                        <a href="http://bit.ly/ojodeaguamerida" target="_blank" class="btn btn-primary">Descargar en Alta Definición</a>
                     </div>
                 </div>
             </div>
