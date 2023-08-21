@@ -42,6 +42,7 @@ Route::get('/que-elementos-componen-el-marketing-gastronomico', function () {
     return view('entradas.marketing');
 });
 
+Route::view('/ojo-de-agua-merida', 'clientes.ojodeagua') -> name('ojo-de-agua-merida');
 
 Route::get('/avisodeprivadidad', function () {
     return view('policy');
@@ -76,6 +77,7 @@ Route::get('queue', function () {
 Route::middleware('auth')->get('/calendario', function () {
     return view('calendar');
 });
+
 
 
 Route::get('email', function () {

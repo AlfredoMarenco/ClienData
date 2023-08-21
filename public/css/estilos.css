@@ -112,6 +112,30 @@ footer {
         padding-top: 4em;
     }
 }
+.titulo-cliente {
+    min-height: 300px;
+}
+.titulo-cliente {
+    padding-top: 8em;
+    padding-bottom: 3em;
+    text-align: center;
+} @media (max-width:1000px) {
+    .titulo-cliente {
+        padding-top: 5em;
+    }
+}
+.mapas {
+    margin-top: 5em;
+}
+.btn-secondary {
+    background-color: #9AF229 ;
+    border: none;
+    color: #000;
+}.btn-secondary:hover {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
 footer h4, footer a {
     color: #fff;
 }
