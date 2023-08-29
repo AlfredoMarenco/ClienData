@@ -44,6 +44,7 @@ Route::get('/que-elementos-componen-el-marketing-gastronomico', function () {
 
 Route::view('/ojo-de-agua-merida', 'clientes.ojodeagua') ->name('ojo-de-agua-merida');
 Route::view('/volta-cafe', 'clientes.volta')->name('volta-cafe');
+Route::view('/hanaichi-merida', 'clientes.hanaichi')->name('hanaichi-merida');
 
 Route::get('/avisodeprivadidad', function () {
     return view('policy');

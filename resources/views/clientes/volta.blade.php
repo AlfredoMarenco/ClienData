@@ -40,7 +40,7 @@
             <div class="text-center">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <a href="http://bit.ly/ojodeaguamerida" target="_blank" class="btn btn-primary">Descargar contenido completo</a>
+                        <a href="http://bit.ly/voltacafe" target="_blank" class="btn btn-primary">Descargar contenido completo</a>
                     </div>
                 </div>
             </div>
