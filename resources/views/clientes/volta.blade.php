@@ -1,6 +1,6 @@
 @extends('layouts.contacto')
 @section('title', 'Volta Café Mérida Altabrisa')
-@section('description', 'Los mejores jugos y fruta de temporada desde 1950')
+@section('description', 'VOLTACAFÉ es más que café, es el combustible de experiencias que se entrelazan con cada sorbo, despertando sentidos y creatividad en cada momento.')
 @section('content')
 <header>
     <div class="container">
