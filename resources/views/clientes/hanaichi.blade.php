@@ -13,7 +13,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-5.webp')}}" class="img-fluid" alt="Sushi">
                 </figure>
@@ -21,12 +21,12 @@
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-6.webp')}}" class="img-fluid" alt="Gyoza">
                 </figure>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-14.webp')}}" class="img-fluid" alt="Sapporo Light">
                 </figure>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-10.webp')}}" class="img-fluid" alt="brindis con cocteles">
                 </figure>

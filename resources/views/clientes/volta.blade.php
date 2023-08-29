@@ -14,7 +14,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/volta/7.webp')}}" class="img-fluid" alt="Barra de cafetería">
                 </figure>
@@ -22,12 +22,12 @@
                     <img src="{{asset('img/2023/volta/3.webp')}}" class="img-fluid" alt="Persona sosteniendo una hamburguesa">
                 </figure>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/volta/2.webp')}}" class="img-fluid" alt="Hamburguesa con vino">
                 </figure>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/volta/6.webp')}}" class="img-fluid" alt="Cheese cake">
                 </figure>
