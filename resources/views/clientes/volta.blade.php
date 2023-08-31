@@ -1,6 +1,7 @@
 @extends('layouts.contacto')
 @section('title', 'Volta Café Mérida Altabrisa')
 @section('description', 'VOLTACAFÉ es más que café, es el combustible de experiencias que se entrelazan con cada sorbo, despertando sentidos y creatividad en cada momento.')
+@section('image', 'https://agenciavandu.com/img/volta.jpg')
 @section('content')
 <header>
     <div class="container">

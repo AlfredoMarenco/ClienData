@@ -1,6 +1,7 @@
 @extends('layouts.contacto')
 @section('title', 'Restaurante Hanaichi Mérida')
 @section('description', 'Comida Japonesa tradicional, siempre buscando la mejor calidad en platillos y bebidas.')
+@section('image', 'https://agenciavandu.com/img/hanaichi.jpg')
 @section('content')
 <header>
     <div class="container">

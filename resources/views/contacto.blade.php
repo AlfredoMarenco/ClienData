@@ -1,6 +1,7 @@
 @extends('layouts.contacto')
 @section('title', 'Contactar a un asesor')
 @section('description', 'Nuestro enfoque es simple pero revolucionario: ofrecemos soluciones digitales que cautivan, inspiran y generan resultados extraordinarios. Si buscas una agencia que eleve tu presencia en línea a niveles insuperables, te invitamos a unirte a nosotros en el viaje hacia el éxito digital.')
+@section('image', 'https://agenciavandu.com/img/1.jpg')
 @section('content')
     
     <section>

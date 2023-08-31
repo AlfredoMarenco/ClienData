@@ -1,4 +1,5 @@
 @extends('layouts.guest-landing')
+@section('image', 'https://agenciavandu.com/img/1.jpg')
 @section('content')
   
     <header id="header">

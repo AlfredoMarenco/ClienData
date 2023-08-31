@@ -26,7 +26,7 @@
     <meta name="og:description" content="@yield('description')" />
     <meta name="og:url" content="https://www.agenciavandu.com" />
     <meta name="og:site_name" content="Vandu" />
-    <meta name="og:image" content="https://agenciavandu.com/img/1.jpg" />
+    <meta name="og:image" content="@yield('image')" />
     <meta name="facebook-domain-verification" content="f1h8rt3r949cfydn9bzpxdwgx9a4ah" />
     <!-- Styles -->
 
