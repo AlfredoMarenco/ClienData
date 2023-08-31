@@ -14,7 +14,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12">
+            <!-- <div class="col-lg-4 col-md-12 col-sm-12">
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-5.webp')}}" class="img-fluid" alt="Sushi">
                 </figure>
@@ -26,11 +26,11 @@
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-14.webp')}}" class="img-fluid" alt="Sapporo Light">
                 </figure>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <figure>
+            </div> -->
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <!--   <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-10.webp')}}" class="img-fluid" alt="brindis con cocteles">
-                </figure>
+                </figure> -->
                 <figure>
                     <img src="{{asset('img/2023/hanaichi/Hanaichi-13.webp')}}" class="img-fluid" alt="Hatcake logo">
                 </figure>
