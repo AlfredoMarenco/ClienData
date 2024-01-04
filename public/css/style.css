@@ -1,12 +1,12 @@
-* {
-    font-family: 'Saira';
-}
+a
 .vandu-bold {
     font-weight: 700;
 }
 .vandu-semibold {
     font-weight: 600;
 }
+
+
 
 .bg__header h1 {
     font-size: 4em;
