@@ -27,6 +27,18 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/fontello.css') }}"> --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/domen/logo-domen.png') }}">
     @livewireStyles
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZKY3EMLEK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XZKY3EMLEK');
+    </script>
 </head>
 
 <body>

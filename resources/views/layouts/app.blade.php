@@ -37,6 +37,19 @@
 
         gtag('config', 'UA-208883762-1');
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZKY3EMLEK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XZKY3EMLEK');
+    </script>
 </head>
 
 <body class="font-sans antialiased">
@@ -61,9 +74,9 @@
     </div>
 
     @stack('modals')
-    
+
     @livewireScripts
-    
+
     @stack('js')
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>
